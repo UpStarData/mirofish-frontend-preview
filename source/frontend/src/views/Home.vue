@@ -126,6 +126,10 @@
         <!-- 右栏：交互控制台 -->
         <div class="right-panel">
           <div class="console-box">
+            <div v-if="agriContext" class="agri-import">
+              <strong>已从 AgriLink 接收推演输入</strong>
+              <span>{{ agriContext.facts.length }} 条事实{{ agriContext.relation ? ' · 1 条关系' : '' }}；已填入问题和证据文件。</span>
+            </div>
             <!-- 上传区域 -->
             <div class="console-section">
               <div class="console-header">
@@ -212,12 +216,29 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import HistoryDatabase from '../components/HistoryDatabase.vue'
 import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 
 const router = useRouter()
+const agriContext = ref(null)
+
+const receiveAgriContext = (event) => {
+  if (event.origin !== 'https://upstardata.github.io' && event.origin !== window.location.origin) return
+  if (event.source !== window.parent || event.data?.type !== 'agrilink:simulation-context' || event.data.version !== 1) return
+  const payload = event.data.context
+  if (!payload || !Array.isArray(payload.facts) || typeof payload.requirement !== 'string') return
+  const facts = payload.facts.slice(0, 30).filter(f => typeof f.id === 'string' && typeof f.title === 'string')
+  const relation = payload.relation && typeof payload.relation.id === 'string' ? payload.relation : null
+  agriContext.value = { facts, relation }
+  formData.value.simulationRequirement = payload.requirement.slice(0, 4000)
+  const lines = ['AgriLink 推演输入', '', '事实：', ...facts.map(f => `${f.id} | ${f.date || ''} | ${f.region || ''} | ${f.title}`)]
+  if (relation) lines.push('', `关系：${relation.id} | ${relation.type || ''} | ${relation.note || ''}`)
+  files.value = [new File([lines.join('\n')], 'AgriLink-推演证据.txt', { type: 'text/plain' })]
+}
+onMounted(() => window.addEventListener('message', receiveAgriContext))
+onUnmounted(() => window.removeEventListener('message', receiveAgriContext))
 
 // 表单数据
 const formData = ref({
@@ -312,6 +333,8 @@ const startSimulation = () => {
 </script>
 
 <style scoped>
+.agri-import{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:12px 18px;background:#fff3ed;border-bottom:1px solid #ffcab8;color:#662109;font-size:12px}
+.agri-import strong{color:#db3b0b}
 /* 全局变量与重置 */
 :root {
   --black: #000000;

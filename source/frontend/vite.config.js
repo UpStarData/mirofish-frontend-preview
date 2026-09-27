@@ -8,7 +8,8 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     outDir: '../../docs',
-    emptyOutDir: true
+    // Keep the separately published AgriLink integration preview under docs/.
+    emptyOutDir: false
   },
   resolve: {
     alias: {
