@@ -1,7 +1,7 @@
 <template>
   <router-view />
   <aside class="demo-notice" role="status">
-    MiroFish 前端体验页 · 无后端，图谱生成与推演暂不可用。上传文件和需求仅暂存于当前浏览器页面，不会发送到服务器。
+    agrilink 演示模式 · 页面中的图谱、轮次、报告和互动答复均为模拟数据，不是实际预测。输入只在当前浏览器中处理，不发送到服务器。
   </aside>
 </template>
 
@@ -24,6 +24,9 @@
   color: #000000;
   background-color: #ffffff;
 }
+
+/* Backend endpoint names are not useful in a browser-only walkthrough. */
+.api-note { display: none !important; }
 
 /* 滚动条样式 */
 ::-webkit-scrollbar {
@@ -51,16 +54,15 @@ button {
 .demo-notice {
   position: fixed;
   z-index: 9999;
-  right: 16px;
-  bottom: 16px;
-  max-width: min(560px, calc(100vw - 32px));
-  padding: 12px 16px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 6px 12px;
   color: #fff;
   background: #161616;
-  border: 1px solid #ff6a33;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px #0003;
-  font-size: 13px;
-  line-height: 1.5;
+  border-top: 1px solid #ff6a33;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.35;
 }
 </style>

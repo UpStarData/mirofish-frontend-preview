@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { demoResponse } from './demo'
 
 // 创建axios实例
 const service = axios.create({
@@ -12,8 +13,9 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   config => {
-    // Public GitHub Pages has no backend. Never send a visitor's files or text.
-    return Promise.reject(new Error('当前是纯前端体验页，未连接 MiroFish 后端；图谱生成与推演暂不可用。'))
+    // The public preview uses an in-browser adapter. No visitor input is sent over the network.
+    config.adapter = demoResponse
+    return config
   },
   error => {
     console.error('Request error:', error)

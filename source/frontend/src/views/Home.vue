@@ -2,12 +2,10 @@
   <div class="home-container">
     <!-- 顶部导航栏 -->
     <nav class="navbar">
-      <div class="nav-brand">MIROFISH</div>
+      <div class="nav-brand">agrilink</div>
       <div class="nav-links">
         <LanguageSwitcher />
-        <a href="https://github.com/666ghj/MiroFish" target="_blank" class="github-link">
-          {{ $t('nav.visitGithub') }} <span class="arrow">↗</span>
-        </a>
+        <span class="demo-tag">演示模式</span>
       </div>
     </nav>
 
@@ -44,7 +42,7 @@
         <div class="hero-right">
           <!-- Logo 区域 -->
           <div class="logo-container">
-            <img src="../assets/logo/MiroFish_logo_left.jpeg" alt="MiroFish Logo" class="hero-logo" />
+            <div class="agrilink-mark" aria-label="agrilink">🌾<span>agrilink</span></div>
           </div>
           
           <button class="scroll-down-btn" @click="scrollToBottom">
@@ -131,6 +129,7 @@
               <span>{{ agriContext.facts.length }} 条事实{{ agriContext.relation ? ' · 1 条关系' : '' }}；已填入问题和证据文件。</span>
             </div>
             <!-- 上传区域 -->
+            <button type="button" class="sample-btn" @click="loadSample">使用农业交易演示数据</button>
             <div class="console-section">
               <div class="console-header">
                 <span class="console-label">{{ $t('home.realitySeed') }}</span>
@@ -256,6 +255,11 @@ const isDragOver = ref(false)
 // 文件输入引用
 const fileInput = ref(null)
 
+const loadSample = () => {
+  formData.value.simulationRequirement = '假设马来西亚榴莲供应增加，推演长沙红星市场的到货量、批发价和市场份额如何变化。请区分事实、假设和待验证结论。'
+  files.value = [new File(['演示材料：马来西亚榴莲产区供应变化；长沙红星市场到货、批发价与冷链能力需要进一步核实。'], 'agrilink-演示证据.txt', { type: 'text/plain' })]
+}
+
 // 计算属性:是否可以提交
 const canSubmit = computed(() => {
   return formData.value.simulationRequirement.trim() !== '' && files.value.length > 0
@@ -333,6 +337,11 @@ const startSimulation = () => {
 </script>
 
 <style scoped>
+.demo-tag{font-size:12px;color:#ff9c7c;border:1px solid #844334;padding:5px 8px}
+.agrilink-mark{width:min(100%,500px);min-height:220px;display:flex;align-items:center;justify-content:center;gap:18px;background:#0e1712;color:#fff;font-size:72px;border:1px solid #314236}
+.agrilink-mark span{font:700 clamp(30px,4vw,58px) 'Space Grotesk',sans-serif;letter-spacing:-.04em}
+.sample-btn{width:100%;padding:10px 12px;margin-bottom:12px;text-align:left;background:#fff3ed;color:#b7350f;border:1px solid #ffb89c;cursor:pointer;font-weight:700}
+.sample-btn:hover{background:#ffe6da}
 .agri-import{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:12px 18px;background:#fff3ed;border-bottom:1px solid #ffcab8;color:#662109;font-size:12px}
 .agri-import strong{color:#db3b0b}
 /* 全局变量与重置 */
