@@ -5,11 +5,11 @@
       <div class="header-left">
         <div class="brand" @click="router.push('/')">agrilink</div>
       </div>
-      
+
       <div class="header-center">
         <div class="view-switcher">
-          <button 
-            v-for="mode in ['graph', 'split', 'workbench']" 
+          <button
+            v-for="mode in ['graph', 'split', 'workbench']"
             :key="mode"
             class="switch-btn"
             :class="{ active: viewMode === mode }"
@@ -24,7 +24,7 @@
         <LanguageSwitcher />
         <div class="step-divider"></div>
         <div class="workflow-step">
-          <span class="step-num">Step 2/5</span>
+
           <span class="step-name">{{ $tm('main.stepNames')[1] }}</span>
         </div>
         <div class="step-divider"></div>
@@ -39,7 +39,7 @@
     <main class="content-area">
       <!-- Left Panel: Graph -->
       <div class="panel-wrapper left" :style="leftPanelStyle">
-        <GraphPanel 
+        <GraphPanel
           :graphData="graphData"
           :loading="graphLoading"
           :currentPhase="2"
@@ -159,18 +159,18 @@ const handleNextStep = (params = {}) => {
   } else {
     addLog(t('log.useAutoRounds'))
   }
-  
+
   // 构建路由参数
   const routeParams = {
     name: 'SimulationRun',
     params: { simulationId: currentSimulationId.value }
   }
-  
+
   // 如果有自定义轮数，通过 query 参数传递
   if (params.maxRounds) {
     routeParams.query = { maxRounds: params.maxRounds }
   }
-  
+
   // 跳转到 Step 3 页面
   router.push(routeParams)
 }
@@ -183,21 +183,21 @@ const handleNextStep = (params = {}) => {
  */
 const checkAndStopRunningSimulation = async () => {
   if (!currentSimulationId.value) return
-  
+
   try {
     // 先检查模拟环境是否存活
     const envStatusRes = await getEnvStatus({ simulation_id: currentSimulationId.value })
-    
+
     if (envStatusRes.success && envStatusRes.data?.env_alive) {
       addLog(t('log.detectedSimEnvRunning'))
-      
+
       // 尝试优雅关闭模拟环境
       try {
-        const closeRes = await closeSimulationEnv({ 
+        const closeRes = await closeSimulationEnv({
           simulation_id: currentSimulationId.value,
           timeout: 10  // 10秒超时
         })
-        
+
         if (closeRes.success) {
           addLog(t('log.simEnvClosed'))
         } else {
@@ -255,7 +255,7 @@ const loadSimulationData = async () => {
         if (projRes.success && projRes.data) {
           projectData.value = projRes.data
           addLog(t('log.projectLoadSuccess', { id: projRes.data.project_id }))
-          
+
           // 获取 graph 数据
           if (projRes.data.graph_id) {
             await loadGraph(projRes.data.graph_id)
@@ -293,10 +293,10 @@ const refreshGraph = () => {
 
 onMounted(async () => {
   addLog(t('log.simViewInit'))
-  
+
   // 检查并关闭正在运行的模拟（用户从 Step 3 返回时）
   await checkAndStopRunningSimulation()
-  
+
   // 加载模拟数据
   loadSimulationData()
 })

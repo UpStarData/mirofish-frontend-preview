@@ -75,7 +75,7 @@
     "layoutGraph": "图谱",
     "layoutSplit": "双栏",
     "layoutWorkbench": "工作台",
-    "stepNames": ["图谱构建", "环境搭建", "开始模拟", "报告生成", "深度互动"]
+    "stepNames": ["本体生成与 GraphRAG 构建", "生成模拟配置", "双/单环境推演", "报告生成", "深度追问"]
   },
   "step1": {
     "ontologyGeneration": "本体生成",
@@ -88,7 +88,7 @@
     "graphRagDesc": "基于生成的本体，将文档自动分块后调用 Zep 构建知识图谱，提取实体和关系，并形成时序记忆与社区摘要",
     "entityNodes": "实体节点",
     "relationEdges": "关系边",
-    "schemaTypes": "SCHEMA类型",
+    "schemaTypes": "本体类型",
     "buildComplete": "构建完成",
     "buildCompleteDesc": "图谱构建已完成，请进入下一步进行模拟环境搭建",
     "inProgress": "进行中",
@@ -285,13 +285,13 @@
     "selectAgentFirst": "请先选择一个模拟个体"
   },
   "graph": {
-    "panelTitle": "Graph Relationship Visualization",
+    "panelTitle": "推演知识图谱",
     "refreshGraph": "刷新图谱",
     "graphMemoryRealtime": "GraphRAG长短期记忆实时更新中",
     "realtimeUpdating": "实时更新中...",
     "pendingContentHint": "还有少量内容处理中，建议稍后手动刷新图谱",
-    "nodeDetails": "Node Details",
-    "relationship": "Relationship",
+    "nodeDetails": "本体详情",
+    "relationship": "关系详情",
     "graphDataLoading": "图谱数据加载中...",
     "waitingOntology": "等待本体生成...",
     "toggleMaximize": "最大化/还原",

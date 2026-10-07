@@ -1,8 +1,5 @@
 <template>
   <router-view />
-  <aside class="demo-notice" role="status">
-    agrilink 演示模式 · 页面中的图谱、轮次、报告和互动答复均为模拟数据，不是实际预测。输入只在当前浏览器中处理，不发送到服务器。
-  </aside>
 </template>
 
 <script setup>

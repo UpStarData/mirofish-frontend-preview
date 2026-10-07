@@ -5,11 +5,11 @@
       <div class="header-left">
         <div class="brand" @click="router.push('/')">agrilink</div>
       </div>
-      
+
       <div class="header-center">
         <div class="view-switcher">
-          <button 
-            v-for="mode in ['graph', 'split', 'workbench']" 
+          <button
+            v-for="mode in ['graph', 'split', 'workbench']"
             :key="mode"
             class="switch-btn"
             :class="{ active: viewMode === mode }"
@@ -24,7 +24,7 @@
         <LanguageSwitcher />
         <div class="step-divider"></div>
         <div class="workflow-step">
-          <span class="step-num">Step 4/5</span>
+
           <span class="step-name">{{ $tm('main.stepNames')[3] }}</span>
         </div>
         <div class="step-divider"></div>
@@ -39,7 +39,7 @@
     <main class="content-area">
       <!-- Left Panel: Graph -->
       <div class="panel-wrapper left" :style="leftPanelStyle">
-        <GraphPanel 
+        <GraphPanel
           :graphData="graphData"
           :loading="graphLoading"
           :currentPhase="4"
@@ -183,7 +183,7 @@ const loadReportData = async () => {
 
 const loadGraph = async (graphId) => {
   graphLoading.value = true
-  
+
   try {
     const res = await getGraphData(graphId)
     if (res.success) {

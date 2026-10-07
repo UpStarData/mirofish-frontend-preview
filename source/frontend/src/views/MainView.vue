@@ -5,11 +5,11 @@
       <div class="header-left">
         <div class="brand" @click="router.push('/')">agrilink</div>
       </div>
-      
+
       <div class="header-center">
         <div class="view-switcher">
-          <button 
-            v-for="mode in ['graph', 'split', 'workbench']" 
+          <button
+            v-for="mode in ['graph', 'split', 'workbench']"
             :key="mode"
             class="switch-btn"
             :class="{ active: viewMode === mode }"
@@ -24,7 +24,7 @@
         <LanguageSwitcher />
         <div class="step-divider"></div>
         <div class="workflow-step">
-          <span class="step-num">Step {{ currentStep }}/5</span>
+
           <span class="step-name">{{ $tm('main.stepNames')[currentStep - 1] }}</span>
         </div>
         <div class="step-divider"></div>
@@ -39,7 +39,7 @@
     <main class="content-area">
       <!-- Left Panel: Graph -->
       <div class="panel-wrapper left" :style="leftPanelStyle">
-        <GraphPanel 
+        <GraphPanel
           :graphData="graphData"
           :loading="graphLoading"
           :currentPhase="currentPhase"
@@ -51,7 +51,7 @@
       <!-- Right Panel: Step Components -->
       <div class="panel-wrapper right" :style="rightPanelStyle">
         <!-- Step 1: 图谱构建 -->
-        <Step1GraphBuild 
+        <Step1GraphBuild
           v-if="currentStep === 1"
           :currentPhase="currentPhase"
           :projectData="projectData"
@@ -135,11 +135,11 @@ const statusClass = computed(() => {
 })
 
 const statusText = computed(() => {
-  if (error.value) return 'Error'
-  if (currentPhase.value >= 2) return 'Ready'
-  if (currentPhase.value === 1) return 'Building Graph'
-  if (currentPhase.value === 0) return 'Generating Ontology'
-  return 'Initializing'
+  if (error.value) return '失败'
+  if (currentPhase.value >= 2) return '已完成'
+  if (currentPhase.value === 1) return '正在构建 GraphRAG'
+  if (currentPhase.value === 0) return '正在生成本体'
+  return '进行中'
 })
 
 // --- Helpers ---
@@ -165,7 +165,7 @@ const handleNextStep = (params = {}) => {
   if (currentStep.value < 5) {
     currentStep.value++
     addLog(t('log.enterStep', { step: currentStep.value, name: stepNames.value[currentStep.value - 1] }))
-    
+
     // 如果是从 Step 2 进入 Step 3，记录模拟轮数配置
     if (currentStep.value === 3 && params.maxRounds) {
       addLog(t('log.customSimRounds', { rounds: params.maxRounds }))
@@ -183,7 +183,7 @@ const handleGoBack = () => {
 // --- Data Logic ---
 
 const initProject = async () => {
-  addLog('Project view initialized.')
+  addLog('进入本体生成阶段')
   if (currentProjectId.value === 'new') {
     await handleNewProject()
   } else {
@@ -198,26 +198,26 @@ const handleNewProject = async () => {
     addLog('Error: No pending files found for new project.')
     return
   }
-  
+
   try {
     loading.value = true
     currentPhase.value = 0
     ontologyProgress.value = { message: 'Uploading and analyzing docs...' }
-    addLog('Starting ontology generation: Uploading files...')
-    
+    addLog('上传种子材料，正在生成本体')
+
     const formData = new FormData()
     pending.files.forEach(f => formData.append('files', f))
     formData.append('simulation_requirement', pending.simulationRequirement)
-    
+
     const res = await generateOntology(formData)
     if (res.success) {
       clearPendingUpload()
       currentProjectId.value = res.data.project_id
       projectData.value = res.data
-      
+
       router.replace({ name: 'Process', params: { projectId: res.data.project_id } })
       ontologyProgress.value = null
-      addLog(`Ontology generated successfully for project ${res.data.project_id}`)
+      addLog(`本体生成完成：${res.data.project_id}`)
       await startBuildGraph()
     } else {
       error.value = res.error || 'Ontology generation failed'
@@ -240,7 +240,7 @@ const loadProject = async () => {
       projectData.value = res.data
       updatePhaseByStatus(res.data.status)
       addLog(`Project loaded. Status: ${res.data.status}`)
-      
+
       if (res.data.status === 'ontology_generated' && !res.data.graph_id) {
         await startBuildGraph()
       } else if (res.data.status === 'graph_building' && res.data.graph_build_task_id) {
@@ -276,8 +276,8 @@ const startBuildGraph = async () => {
   try {
     currentPhase.value = 1
     buildProgress.value = { progress: 0, message: 'Starting build...' }
-    addLog('Initiating graph build...')
-    
+    addLog('进入 GraphRAG 构建阶段')
+
     const res = await buildGraph({ project_id: currentProjectId.value })
     if (res.success) {
       if (res.data.reused && res.data.graph_id) {
@@ -337,20 +337,20 @@ const pollTaskStatus = async (taskId) => {
     const res = await getTaskStatus(taskId)
     if (res.success) {
       const task = res.data
-      
+
       // Log progress message if it changed
       if (task.message && task.message !== buildProgress.value?.message) {
         addLog(task.message)
       }
-      
+
       buildProgress.value = { progress: task.progress || 0, message: task.message }
-      
+
       if (task.status === 'completed') {
         addLog('Graph build task completed.')
         stopPolling()
         stopGraphPolling() // Stop polling, do final load
         currentPhase.value = 2
-        
+
         // Final load
         const projRes = await getProject(currentProjectId.value)
         if (projRes.success && projRes.data.graph_id) {
@@ -370,12 +370,12 @@ const pollTaskStatus = async (taskId) => {
 
 const loadGraph = async (graphId) => {
   graphLoading.value = true
-  addLog(`Loading full graph data: ${graphId}`)
+  addLog(`正在加载推演知识图谱：${graphId}`)
   try {
     const res = await getGraphData(graphId)
     if (res.success) {
       graphData.value = res.data
-      addLog('Graph data loaded successfully.')
+      addLog('推演知识图谱加载完成')
     } else {
       addLog(`Failed to load graph data: ${res.error}`)
     }

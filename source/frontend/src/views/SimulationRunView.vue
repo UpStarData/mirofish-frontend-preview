@@ -5,11 +5,11 @@
       <div class="header-left">
         <div class="brand" @click="router.push('/')">agrilink</div>
       </div>
-      
+
       <div class="header-center">
         <div class="view-switcher">
-          <button 
-            v-for="mode in ['graph', 'split', 'workbench']" 
+          <button
+            v-for="mode in ['graph', 'split', 'workbench']"
             :key="mode"
             class="switch-btn"
             :class="{ active: viewMode === mode }"
@@ -24,7 +24,7 @@
         <LanguageSwitcher />
         <div class="step-divider"></div>
         <div class="workflow-step">
-          <span class="step-num">Step 3/5</span>
+
           <span class="step-name">{{ $tm('main.stepNames')[2] }}</span>
         </div>
         <div class="step-divider"></div>
@@ -39,7 +39,7 @@
     <main class="content-area">
       <!-- Left Panel: Graph -->
       <div class="panel-wrapper left" :style="leftPanelStyle">
-        <GraphPanel 
+        <GraphPanel
           :graphData="graphData"
           :loading="graphLoading"
           :currentPhase="3"
@@ -152,18 +152,18 @@ const toggleMaximize = (target) => {
 const handleGoBack = async () => {
   // 在返回 Step 2 之前，先关闭正在运行的模拟
   addLog(t('log.preparingGoBack'))
-  
+
   // 停止轮询
   stopGraphRefresh()
-  
+
   try {
     // 先尝试优雅关闭模拟环境
     const envStatusRes = await getEnvStatus({ simulation_id: currentSimulationId.value })
-    
+
     if (envStatusRes.success && envStatusRes.data?.env_alive) {
       addLog(t('log.closingSimEnv'))
       try {
-        await closeSimulationEnv({ 
+        await closeSimulationEnv({
           simulation_id: currentSimulationId.value,
           timeout: 10
         })
@@ -192,7 +192,7 @@ const handleGoBack = async () => {
   } catch (err) {
     addLog(t('log.checkStatusFailed', { error: err.message }))
   }
-  
+
   // 返回到 Step 2 (环境搭建)
   router.push({ name: 'Simulation', params: { simulationId: currentSimulationId.value } })
 }
@@ -207,12 +207,12 @@ const handleNextStep = () => {
 const loadSimulationData = async () => {
   try {
     addLog(t('log.loadingSimData', { id: currentSimulationId.value }))
-    
+
     // 获取 simulation 信息
     const simRes = await getSimulation(currentSimulationId.value)
     if (simRes.success && simRes.data) {
       const simData = simRes.data
-      
+
       // 获取 simulation config 以获取 minutes_per_round
       try {
         const configRes = await getSimulationConfig(currentSimulationId.value)
@@ -223,14 +223,14 @@ const loadSimulationData = async () => {
       } catch (configErr) {
         addLog(t('log.timeConfigFetchFailed', { minutes: minutesPerRound.value }))
       }
-      
+
       // 获取 project 信息
       if (simData.project_id) {
         const projRes = await getProject(simData.project_id)
         if (projRes.success && projRes.data) {
           projectData.value = projRes.data
           addLog(t('log.projectLoadSuccess', { id: projRes.data.project_id }))
-          
+
           // 获取 graph 数据
           if (projRes.data.graph_id) {
             await loadGraph(projRes.data.graph_id)
@@ -251,7 +251,7 @@ const loadGraph = async (graphId) => {
   if (!isSimulating.value) {
     graphLoading.value = true
   }
-  
+
   try {
     const res = await getGraphData(graphId)
     if (res.success) {
@@ -301,12 +301,12 @@ watch(isSimulating, (newValue) => {
 
 onMounted(() => {
   addLog(t('log.simRunViewInit'))
-  
+
   // 记录 maxRounds 配置（值已在初始化时从 query 参数获取）
   if (maxRounds.value) {
     addLog(t('log.customRounds', { rounds: maxRounds.value }))
   }
-  
+
   loadSimulationData()
 })
 
