@@ -15,9 +15,19 @@
       <aside class="recommend" aria-label="推荐内容">
         <h2>推荐内容</h2>
         <section class="suggest-group"><h3>热门推演主题</h3>
-          <button class="suggest-card" v-for="(item, index) in popularSuggestions" :key="item" @click="useSuggestion(item)">
-            <span class="suggest-number">{{ String(index + 1).padStart(2, '0') }}</span>
-            <span class="suggest-title">{{ item }}</span><span class="suggest-arrow" aria-hidden="true">↗</span>
+          <button class="suggest-card cover" v-for="(item, index) in popularSuggestions" :key="item.title"
+            @click="useSuggestion(item.title)">
+            <span class="suggest-cover"><CoverArt :art="item.art" /></span>
+            <span class="suggest-body">
+              <span class="suggest-head">
+                <span class="suggest-number">{{ String(index + 1).padStart(2, '0') }}</span>
+                <span class="suggest-tag">{{ item.tag }}</span>
+                <span class="suggest-arrow" aria-hidden="true">↗</span>
+              </span>
+              <span class="suggest-title">{{ item.title }}</span>
+              <span class="suggest-desc">{{ item.desc }}</span>
+            </span>
+            <span class="card-bottom-line"></span>
           </button>
         </section>
         <section v-if="agriContext?.facts.length" class="suggest-group"><h3>相关推演建议</h3>
@@ -41,6 +51,8 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import HistoryDatabase from '../components/HistoryDatabase.vue'
+import CoverArt from '../components/CoverArt.vue'
+import { suggestThemes, relatedSuggestions } from '../components/suggestThemes.js'
 
 const router = useRouter()
 const agriContext = ref(null)
@@ -49,8 +61,7 @@ const showConfig = ref(false)
 const historyPeriod = ref('最近 3 个月')
 const rounds = ref(40)
 const environment = ref('双环境')
-const popularSuggestions = ['榴莲价格波动推演', '车厘子供应链中断推演']
-const relatedSuggestions = ['评估促销对价格的影响']
+const popularSuggestions = suggestThemes
 const pendingSuggestion = ref('')
 
 const receiveAgriContext = (event) => {
@@ -168,7 +179,7 @@ const startSimulation = () => {
 
 <style scoped>
 .launch-page{--line:#e5e7eb;--ink:#111827;--muted:#6b7280;--accent:#ff6236;min-height:100vh;background:#fff;color:var(--ink);font-family:'Space Grotesk','Noto Sans SC',system-ui,sans-serif}
-.layout{display:grid;grid-template-columns:240px minmax(420px,1fr) 315px;min-height:100vh}
+.layout{display:grid;grid-template-columns:316px minmax(400px,1fr) 315px;min-height:100vh}
 .history,.recommend{padding:28px 18px;background:#fbfbfb}.history{border-right:1px solid var(--line)}.recommend{border-left:1px solid var(--line)}
 h2{font-size:14px;font-weight:700;letter-spacing:-.01em}.new-run{width:100%;margin:20px 0;padding:11px 13px;text-align:left;color:#fff;background:#161616;border:1px solid #161616;border-radius:6px;font:600 12px inherit;cursor:pointer;transition:background .2s}.new-run:hover{background:#343434}
 .main{width:min(100%,840px);margin:0 auto;padding:clamp(80px,17vh,180px) clamp(28px,5vw,74px) 45px}
@@ -177,9 +188,14 @@ h2{font-size:14px;font-weight:700;letter-spacing:-.01em}.new-run{width:100%;marg
 .composer textarea{display:block;width:100%;min-height:140px;padding:10px 0;border:0;outline:0;resize:vertical;background:transparent;font:15px/1.7 'Space Grotesk','Noto Sans SC',system-ui,sans-serif;color:var(--ink)}.composer textarea::placeholder{color:#9ca3af}
 .actions{border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;gap:10px}.actions div{display:flex;gap:7px;flex-wrap:wrap}.actions button,.confirm-actions button{padding:8px 12px;background:#fff;border:1px solid #d1d5db;border-radius:6px;color:#333;font:600 12px 'Space Grotesk','Noto Sans SC',system-ui,sans-serif;cursor:pointer;transition:border-color .2s,background .2s}.actions button:hover,.confirm-actions button:hover{border-color:#111;background:#fafafa}.actions .send,.confirm-actions .confirm-primary{background:var(--accent);border-color:var(--accent);color:#fff;min-width:65px}.actions .send:hover,.confirm-actions .confirm-primary:hover{background:#df4a20;border-color:#df4a20}.send:disabled{opacity:.4;cursor:not-allowed}
 .hint{color:#6b7280;font-size:11px;margin:13px 0 40px}.config{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px;padding:17px;border:1px solid var(--line);border-radius:8px;background:#fafafa}.config label{font-size:12px;color:var(--muted);display:grid;gap:7px}.config select,.config input{min-width:0;border:1px solid #d1d5db;background:#fff;border-radius:5px;padding:8px;font:inherit;accent-color:var(--accent)}.config button{justify-self:start}
-.suggest-group{margin-top:28px}.suggest-group h3{font-size:11px;font-weight:700;letter-spacing:.07em;color:#6b7280;margin-bottom:10px}.suggest-card{width:100%;display:grid;grid-template-columns:25px minmax(0,1fr) 15px;align-items:start;gap:9px;margin:8px 0;padding:15px 11px;text-align:left;background:#fff;border:1px solid #e5e7eb;border-radius:8px;box-shadow:0 2px 7px #11111108;color:var(--ink);cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s}.suggest-card:hover,.suggest-card:focus-visible{transform:translateY(-2px);border-color:#ff9a74;box-shadow:0 9px 23px #ff623621;outline:0}.suggest-number{font:700 11px 'JetBrains Mono',monospace;color:var(--accent);padding-top:3px}.suggest-title{font-size:13px;line-height:1.6;font-weight:600}.suggest-arrow{color:var(--accent);font-size:17px;line-height:1}
-.suggest-card{position:relative;min-height:104px;align-items:center;grid-template-columns:30px minmax(0,1fr) 27px;gap:12px;padding:17px 14px 17px 18px;border-color:#e4e6e8;background:linear-gradient(145deg,#fff 55%,#fff9f5);box-shadow:0 7px 22px #1f29370b;overflow:hidden}.suggest-card::before{content:"";position:absolute;left:0;top:13px;bottom:13px;width:3px;border-radius:0 4px 4px 0;background:var(--accent);opacity:.75}.suggest-number{font-size:16px;color:#df5430;align-self:start;padding-top:2px}.suggest-title{font-size:14px;font-weight:650;line-height:1.55}.suggest-arrow{width:26px;height:26px;border:1px solid #ffddcf;border-radius:50%;display:grid;place-items:center;background:#fff6f1;font-size:16px}.suggest-card:hover,.suggest-card:focus-visible{border-color:#fb9775;box-shadow:0 12px 28px #e8623624}.suggest-card:hover .suggest-arrow{background:var(--accent);border-color:var(--accent);color:#fff}
+.suggest-group{margin-top:26px}.suggest-group h3{font-size:11px;font-weight:700;letter-spacing:.07em;color:#6b7280;margin-bottom:10px}
+/* 卡片沿用左侧历史卡片的语言：白底、细边框、直角、角标 + 悬停底线 */
+.suggest-card{position:relative;width:100%;display:grid;grid-template-columns:30px minmax(0,1fr) 27px;align-items:center;gap:12px;margin:8px 0;padding:16px 14px 16px 18px;text-align:left;color:var(--ink);cursor:pointer;background:#fff;border:1px solid #e5e7eb;border-radius:0;box-shadow:0 1px 2px #1111110a;transition:transform .18s,border-color .18s,box-shadow .18s}.suggest-card::before{content:"";position:absolute;left:-1px;top:13px;bottom:13px;width:3px;background:var(--accent);opacity:.75}.suggest-card:hover,.suggest-card:focus-visible{transform:translateY(-2px);border-color:rgba(0,0,0,.45);box-shadow:0 10px 24px #1f29371f;outline:0}.suggest-number{font:700 16px 'JetBrains Mono',monospace;color:#df5430;align-self:start;padding-top:2px}.suggest-title{font-size:14px;font-weight:650;line-height:1.55}.suggest-arrow{width:26px;height:26px;border:1px solid #ffddcf;border-radius:50%;display:grid;place-items:center;background:#fff6f1;color:var(--accent);font-size:16px}.suggest-card:hover .suggest-arrow{background:var(--accent);border-color:var(--accent);color:#fff}
+/* 热门推演主题：封面在上，文案在下 */
+.suggest-card.cover{display:block;padding:0;overflow:hidden;background:#fff}.suggest-card.cover::before{display:none}.suggest-cover{position:relative;display:block;aspect-ratio:16/9;background:#0e222c;border-bottom:1px solid #e5e7eb}.suggest-cover::before{content:"";position:absolute;left:8px;top:8px;width:9px;height:9px;border-top:1.5px solid rgba(255,255,255,.55);border-left:1.5px solid rgba(255,255,255,.55);z-index:2}.suggest-body{display:block;padding:13px 14px 15px}.suggest-head{display:flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace}.suggest-head .suggest-number{align-self:center;padding-top:0;font-size:12px}.suggest-tag{margin-right:auto;padding:2px 6px;font-size:10px;letter-spacing:.08em;color:#b74c2c;background:#fff2ec;border:1px solid #ffddce}.suggest-head .suggest-arrow{width:22px;height:22px;font-size:13px}.suggest-card.cover .suggest-title{display:block;margin-top:9px}.suggest-desc{display:block;margin-top:6px;font-size:11.5px;line-height:1.65;color:#6b7280}
+.card-bottom-line{position:absolute;left:0;bottom:0;height:2px;width:0;background:#161616;transition:width .5s cubic-bezier(.23,1,.32,1);z-index:2}.suggest-card:hover .card-bottom-line,.suggest-card:focus-visible .card-bottom-line{width:100%}
 .confirm-backdrop{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#11182780;backdrop-filter:blur(3px)}.confirm-dialog{width:min(360px,calc(100vw - 32px));padding:24px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 25px 80px #0004}.confirm-dialog h2{font-size:16px}.confirm-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:25px}
-@media(max-width:1080px){.layout{grid-template-columns:210px minmax(0,1fr)}.recommend{grid-column:2;border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.recommend h2{grid-column:1/-1}.suggest-group{margin-top:16px}}
+@media(max-width:1080px){.layout{grid-template-columns:268px minmax(0,1fr)}.recommend{grid-column:2;border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.recommend h2{grid-column:1/-1}.suggest-group{margin-top:16px}.suggest-card.cover{display:block}}
+@media(max-width:560px){.recommend{grid-template-columns:1fr}}
 @media(max-width:700px){.layout{display:block}.history{padding:15px;border-right:0;border-bottom:1px solid var(--line)}.main{padding:65px 20px 35px}.recommend{display:block;border-top:1px solid var(--line)}.config{grid-template-columns:1fr}}
 </style>

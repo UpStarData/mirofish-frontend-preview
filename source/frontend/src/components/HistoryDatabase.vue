@@ -208,85 +208,64 @@ const hoveringCard = ref(null)
 const historyContainer = ref(null)
 const selectedProject = ref(null)  // 当前选中的项目（用于弹窗）
 let observer = null
+let railObserver = null
 let isAnimating = false  // 动画锁，防止闪烁
 let expandDebounceTimer = null  // 防抖定时器
 let pendingState = null  // 记录待执行的目标状态
 
-// 卡片布局配置 - 调整为更宽的比例
-const CARDS_PER_ROW = 4
-const CARD_WIDTH = 280  
-const CARD_HEIGHT = 280 
-const CARD_GAP = 24
+// 卡片布局：卡片宽度跟随所在栏宽，扇形堆叠始终完整落在栏内。
+const CARD_MAX_WIDTH = 280
+const railWidth = ref(CARD_MAX_WIDTH)
+
+// 扇形左右各让出的距离，取栏宽的一小部分，窄栏也不会溢出。
+// CARD_INSET 预留旋转后四角伸出的宽度，保证缩放/旋转后仍不超过栏宽。
+const CARD_INSET = 14
+const fanStep = computed(() => Math.max(6, Math.min(16, Math.round(railWidth.value * 0.05))))
+const cardWidth = computed(() => Math.max(140, Math.min(CARD_MAX_WIDTH, railWidth.value - 2 * fanStep.value - CARD_INSET)))
+
+const measureRail = () => {
+  const el = historyContainer.value
+  if (!el) return
+  const w = el.clientWidth
+  if (w > 0) railWidth.value = w
+}
 
 // 动态计算容器高度样式
-const containerStyle = computed(() => {
-  if (!isExpanded.value) {
-    // 折叠态：固定高度
-    return { minHeight: '420px' }
-  }
-  
-  // 展开态：根据卡片数量动态计算高度
-  const total = projects.value.length
-  if (total === 0) {
-    return { minHeight: '280px' }
-  }
-  
-  const rows = Math.ceil(total / CARDS_PER_ROW)
-  // 计算实际需要的高度：行数 * 卡片高度 + (行数-1) * 间距 + 少量底部间距
-  const expandedHeight = rows * CARD_HEIGHT + (rows - 1) * CARD_GAP + 10
-  
-  return { minHeight: `${expandedHeight}px` }
-})
+const containerStyle = computed(() => ({
+  '--card-w': `${cardWidth.value}px`,
+  // 展开态是常规文档流列表，高度由内容决定
+  minHeight: isExpanded.value ? 'auto' : '340px'
+}))
 
 // 获取卡片样式
 const getCardStyle = (index) => {
   const total = projects.value.length
-  
+  const transition = 'transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease, border-color 0.3s ease'
+
   if (isExpanded.value) {
-    // 展开态：网格布局
-    const transition = 'transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease, border-color 0.3s ease'
-
-    const col = index % CARDS_PER_ROW
-    const row = Math.floor(index / CARDS_PER_ROW)
-    
-    // 计算当前行的卡片数量，确保每行居中
-    const currentRowStart = row * CARDS_PER_ROW
-    const currentRowCards = Math.min(CARDS_PER_ROW, total - currentRowStart)
-    
-    const rowWidth = currentRowCards * CARD_WIDTH + (currentRowCards - 1) * CARD_GAP
-    
-    const startX = -(rowWidth / 2) + (CARD_WIDTH / 2)
-    const colInRow = index % CARDS_PER_ROW
-    const x = startX + colInRow * (CARD_WIDTH + CARD_GAP)
-    
-    // 向下展开，增加与标题的间距
-    const y = 20 + row * (CARD_HEIGHT + CARD_GAP)
-
+    // 展开态：栏内纵向列表，卡片保持可读的全宽
     return {
-      transform: `translate(${x}px, ${y}px) rotate(0deg) scale(1)`,
-      zIndex: 100 + index,
-      opacity: 1,
-      transition: transition
-    }
-  } else {
-    // 折叠态：扇形堆叠
-    const transition = 'transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease, border-color 0.3s ease'
-
-    const centerIndex = (total - 1) / 2
-    const offset = index - centerIndex
-    
-    const x = offset * 35
-    // 调整起始位置，靠近标题但保持适当间距
-    const y = 25 + Math.abs(offset) * 8
-    const r = offset * 3
-    const s = 0.95 - Math.abs(offset) * 0.05
-    
-    return {
-      transform: `translate(${x}px, ${y}px) rotate(${r}deg) scale(${s})`,
+      position: 'static',
+      transform: 'none',
       zIndex: 10 + index,
       opacity: 1,
       transition: transition
     }
+  }
+
+  // 折叠态：扇形堆叠
+  const offset = index - (total - 1) / 2
+  // 限制横向偏移，卡片再多也不会推出栏外
+  const x = Math.max(-1, Math.min(1, offset)) * fanStep.value
+  const y = 25 + Math.abs(offset) * 6
+  const r = offset * 2
+  const s = 1 - Math.min(0.06, Math.abs(offset) * 0.025)
+
+  return {
+    transform: `translate(${x}px, ${y}px) rotate(${r}deg) scale(${s})`,
+    zIndex: 10 + index,
+    opacity: 1,
+    transition: transition
   }
 }
 
@@ -549,7 +528,14 @@ watch(() => route.path, (newPath) => {
 onMounted(async () => {
   // 确保 DOM 渲染完成后再加载数据
   await nextTick()
+  measureRail()
+  if (typeof ResizeObserver !== 'undefined' && historyContainer.value) {
+    railObserver = new ResizeObserver(measureRail)
+    railObserver.observe(historyContainer.value)
+  }
   await loadHistory()
+  await nextTick()
+  measureRail()
   
   // 等待 DOM 渲染后初始化观察器
   setTimeout(() => {
@@ -567,6 +553,10 @@ onUnmounted(() => {
   if (observer) {
     observer.disconnect()
     observer = null
+  }
+  if (railObserver) {
+    railObserver.disconnect()
+    railObserver = null
   }
   // 清理防抖定时器
   if (expandDebounceTimer) {
@@ -665,15 +655,26 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 40px;
+  padding: 0;
   transition: min-height 700ms cubic-bezier(0.23, 1, 0.32, 1);
   /* min-height 由 JS 动态计算，根据卡片数量自适应 */
+}
+
+/* 展开态：改为栏内纵向列表 */
+.cards-container.expanded {
+  display: block;
+  padding: 0;
+}
+
+.cards-container.expanded .project-card + .project-card {
+  margin-top: 12px;
 }
 
 /* 项目卡片 */
 .project-card {
   position: absolute;
-  width: 280px;
+  /* 宽度由 JS 按栏宽写回，卡片不会再溢出所在栏 */
+  width: var(--card-w, 280px);
   background: #FFFFFF;
   border: 1px solid #E5E7EB;
   border-radius: 0;
@@ -923,6 +924,8 @@ onUnmounted(() => {
 .card-footer {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 6px;
   justify-content: space-between;
   align-items: center;
   padding-top: 12px;
@@ -938,6 +941,12 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+/* 窄栏时日期与时间换行而不是被挤压 */
+.card-date,
+.card-time {
+  white-space: nowrap;
 }
 
 /* 底部轮数进度显示 */
@@ -1003,21 +1012,7 @@ onUnmounted(() => {
   to { transform: rotate(360deg); }
 }
 
-/* 响应式 */
-@media (max-width: 1200px) {
-  .project-card {
-    width: 240px;
-  }
-}
-
-@media (max-width: 768px) {
-  .cards-container {
-    padding: 0 20px;
-  }
-  .project-card {
-    width: 200px;
-  }
-}
+/* 卡片宽度跟随栏宽（见 --card-w），此处不再写死宽度 */
 
 /* ===== 历史回放详情弹窗样式 ===== */
 .modal-overlay {
