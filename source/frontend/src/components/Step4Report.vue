@@ -4,7 +4,9 @@
     <div class="main-split-layout">
       <!-- LEFT PANEL: Report Style -->
       <div class="left-panel report-style" ref="leftPanel">
-        <div v-if="reportOutline" class="report-content-wrapper">
+        <!-- 数据报表风格：一页一页的报表（内置推演）；其余走专家风格（逐段文档） -->
+        <DataReport v-if="pagedReport" :item="pagedReport" @switch-style="onSwitchStyle" />
+        <div v-else-if="reportOutline" class="report-content-wrapper">
           <!-- Report Header -->
           <div class="report-header-block">
             <div class="report-meta">
@@ -394,6 +396,8 @@ import { ref, computed, watch, onMounted, onUnmounted, nextTick, h, reactive } f
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { getAgentLog, getConsoleLog } from '../api/report'
+import DataReport from './DataReport.vue'
+import { builtinFlows } from '../data/builtin/mirofish'
 
 const router = useRouter()
 const { t } = useI18n()
@@ -419,6 +423,15 @@ const consoleLogs = ref([])
 const agentLogLine = ref(0)
 const consoleLogLine = ref(0)
 const reportOutline = ref(null)
+/* 报告风格：启动前在首页选（专家风格 / 数据报表风格），这里决定左栏怎么排版。
+   内置推演（report_id 形如 BUILTIN-…-REPORT）在数据报表风格下换成整页报表。 */
+const reportStyle = ref('expert')
+const onSwitchStyle = (next) => { reportStyle.value = next; try { localStorage.setItem('agrilink.report_style', next) } catch (e) {} }
+const pagedReport = computed(() => {
+  if (reportStyle.value !== 'data') return null
+  const id = String(props.reportId || '')
+  return builtinFlows.find(b => id.startsWith(b.report_id)) || null
+})
 const currentSectionIndex = ref(null)
 const generatedSections = ref({})
 const expandedContent = ref(new Set())
@@ -2177,6 +2190,7 @@ const stopPolling = () => {
 
 // Lifecycle
 onMounted(() => {
+  try { reportStyle.value = localStorage.getItem('agrilink.report_style') || 'expert' } catch (e) {}
   if (props.reportId) {
     addLog(`Report Agent initialized: ${props.reportId}`)
     startPolling()

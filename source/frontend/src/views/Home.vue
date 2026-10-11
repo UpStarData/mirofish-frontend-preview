@@ -14,13 +14,6 @@
       </main>
       <aside class="recommend" aria-label="推荐内容">
         <h2>推荐内容</h2>
-        <section class="suggest-group"><h3>内置推演（示例 · 两种风格）</h3>
-          <button class="suggest-card" v-for="(b, i) in builtins" :key="b.id" @click="router.push('/builtin/' + b.id)">
-            <span class="suggest-number">{{ String(i + 1).padStart(2, '0') }}</span>
-            <span class="suggest-title">{{ b.title }}<em class="bi-note">{{ b.rounds }} 轮 · {{ b.agents }} 主体 · 数据报表 / 专家风格</em></span>
-            <span class="suggest-arrow" aria-hidden="true">↗</span>
-          </button>
-        </section>
         <section class="suggest-group"><h3>热门推演主题</h3>
           <button class="suggest-card cover" :class="'st-' + item.style" v-for="(item, index) in popularSuggestions"
             :key="item.title" @click="useSuggestion(item.title)">
@@ -170,6 +163,8 @@ const confirmSuggestion = () => { formData.value.simulationRequirement = pending
 // 开始模拟 - 立即跳转，API调用在Process页面进行
 const startSimulation = () => {
   if (!canSubmit.value || loading.value) return
+  /* 报告风格在启动时就定下来：流程走到报告那一步时按它排版 */
+  try { localStorage.setItem('agrilink.report_style', reportStyle.value === '数据报表风格' ? 'data' : 'expert') } catch (e) {}
   
   // 存储待上传的数据
   import('../store/pendingUpload.js').then(({ setPendingUpload }) => {

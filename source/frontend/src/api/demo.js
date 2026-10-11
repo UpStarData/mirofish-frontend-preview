@@ -1,4 +1,6 @@
 // Browser-only walkthrough for the public AgriLink preview. No request reaches a server.
+// 内置推演（榴莲 / 产地之争）走 api/builtinFlow.js：整条流程由内置数据驱动。
+import { respondWithBuiltin } from './builtinFlow'
 const projectId = 'AGRILINK-DEMO-PROJECT'
 const graphId = 'AGRILINK-DEMO-GRAPH'
 const simulationId = 'AGRILINK-DEMO-SIM'
@@ -126,6 +128,8 @@ export async function demoResponse(config) {
   const path = config.url.split('?')[0]
   const input = body(config)
   let data
+  const builtin = respondWithBuiltin(path, input)
+  if (builtin) return { data: { success: true, data: builtin }, status: 200, statusText: 'OK', headers: {}, config }
   if (path === '/api/graph/ontology/generate') {
     state.requirement = String(input.get?.('simulation_requirement') || state.requirement).slice(0, 4000)
     state.projectReady = true

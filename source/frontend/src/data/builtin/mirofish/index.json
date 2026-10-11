@@ -1,0 +1,18 @@
+{
+  "BUILTIN-DURIAN": {
+    "id": "builtin-durian",
+    "title": "榴莲价格波动推演",
+    "topic": "榴莲",
+    "tag": "价格",
+    "rounds": 24,
+    "agents": 8
+  },
+  "BUILTIN-ORIGIN": {
+    "id": "builtin-origin",
+    "title": "泰越产地竞争与到货量推演",
+    "topic": "产地之争",
+    "tag": "到货量",
+    "rounds": 24,
+    "agents": 8
+  }
+}

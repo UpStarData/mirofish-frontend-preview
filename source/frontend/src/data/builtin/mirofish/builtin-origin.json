@@ -1,0 +1,2222 @@
+{
+  "id": "builtin-origin",
+  "project_id": "BUILTIN-ORIGIN",
+  "graph_id": "BUILTIN-ORIGIN-GRAPH",
+  "simulation_id": "BUILTIN-ORIGIN-SIM",
+  "report_id": "BUILTIN-ORIGIN-REPORT",
+  "topic": "产地之争",
+  "title": "泰越产地竞争与到货量推演",
+  "tag": "到货量",
+  "requirement": "推演泰国与越南同期上市后的到货节奏、价差收窄与份额分工。",
+  "rounds": 24,
+  "agents": 8,
+  "generatedAt": "2026-10-12",
+  "ontology": {
+    "entity_types": [
+      {
+        "name": "产区",
+        "description": "竞争中的来源地",
+        "examples": [
+          "泰国尖竹汶",
+          "越南前江"
+        ]
+      },
+      {
+        "name": "农产品",
+        "description": "参与竞争的品类与等级",
+        "examples": [
+          "金枕",
+          "Ri6"
+        ]
+      },
+      {
+        "name": "口岸",
+        "description": "决定到货节奏的通道",
+        "examples": [
+          "友谊关",
+          "曼谷—广州"
+        ]
+      },
+      {
+        "name": "角色",
+        "description": "链条上的行为主体",
+        "examples": [
+          "出口商",
+          "进口商",
+          "批发商"
+        ]
+      },
+      {
+        "name": "指标",
+        "description": "份额、价差与到货量",
+        "examples": [
+          "价差",
+          "份额"
+        ]
+      }
+    ],
+    "edge_types": [
+      {
+        "name": "供应流向",
+        "description": "产地到市场的货物流转"
+      },
+      {
+        "name": "份额竞争",
+        "description": "同档位品类之间的替代"
+      },
+      {
+        "name": "时效约束",
+        "description": "口岸与运力对到货节奏的限制"
+      },
+      {
+        "name": "价格传导",
+        "description": "价差变化影响终端选择"
+      }
+    ],
+    "relation_types": [
+      {
+        "name": "供应流向"
+      },
+      {
+        "name": "份额竞争"
+      },
+      {
+        "name": "时效约束"
+      },
+      {
+        "name": "价格传导"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "uuid": "n1",
+      "name": "泰国尖竹汶",
+      "labels": [
+        "Entity",
+        "产区"
+      ],
+      "summary": "金枕主产区，走高端与商超渠道"
+    },
+    {
+      "uuid": "n2",
+      "name": "越南前江",
+      "labels": [
+        "Entity",
+        "产区"
+      ],
+      "summary": "Ri6 主产区，中端走量、成本更低"
+    },
+    {
+      "uuid": "n3",
+      "name": "金枕",
+      "labels": [
+        "Entity",
+        "农产品"
+      ],
+      "summary": "高端主力，品牌与分级成熟"
+    },
+    {
+      "uuid": "n4",
+      "name": "Ri6",
+      "labels": [
+        "Entity",
+        "农产品"
+      ],
+      "summary": "中端主力，价格弹性大"
+    },
+    {
+      "uuid": "n5",
+      "name": "友谊关",
+      "labels": [
+        "Entity",
+        "口岸"
+      ],
+      "summary": "陆运边贸，时效快但受排队影响"
+    },
+    {
+      "uuid": "n6",
+      "name": "曼谷—广州海运",
+      "labels": [
+        "Entity",
+        "口岸"
+      ],
+      "summary": "海运批量大，时效稳定但周期长"
+    },
+    {
+      "uuid": "n7",
+      "name": "广州江南市场",
+      "labels": [
+        "Entity",
+        "市场"
+      ],
+      "summary": "全国价格发现与分流"
+    },
+    {
+      "uuid": "n8",
+      "name": "长沙红星市场",
+      "labels": [
+        "Entity",
+        "市场"
+      ],
+      "summary": "华中集散，终端价格敏感"
+    },
+    {
+      "uuid": "n9",
+      "name": "泰国出口商",
+      "labels": [
+        "Entity",
+        "角色"
+      ],
+      "summary": "维护品牌溢价，不愿降价"
+    },
+    {
+      "uuid": "n10",
+      "name": "越南出口商",
+      "labels": [
+        "Entity",
+        "角色"
+      ],
+      "summary": "以价换量，抢中端货架"
+    },
+    {
+      "uuid": "n11",
+      "name": "进口商",
+      "labels": [
+        "Entity",
+        "角色"
+      ],
+      "summary": "按价差与时效分配两国货量"
+    },
+    {
+      "uuid": "n12",
+      "name": "价差",
+      "labels": [
+        "Entity",
+        "指标"
+      ],
+      "summary": "金枕与 Ri6 的批发价差"
+    },
+    {
+      "uuid": "n13",
+      "name": "份额",
+      "labels": [
+        "Entity",
+        "指标"
+      ],
+      "summary": "按产地计的货架与销量占比"
+    },
+    {
+      "uuid": "n14",
+      "name": "到货量",
+      "labels": [
+        "Entity",
+        "指标"
+      ],
+      "summary": "周度到货吨数"
+    }
+  ],
+  "edges": [
+    {
+      "uuid": "e1",
+      "source_node_uuid": "n1",
+      "target_node_uuid": "n3",
+      "name": "供应流向",
+      "fact": "尖竹汶金枕按品牌分级出货"
+    },
+    {
+      "uuid": "e2",
+      "source_node_uuid": "n2",
+      "target_node_uuid": "n4",
+      "name": "供应流向",
+      "fact": "前江 Ri6 以成本优势放量"
+    },
+    {
+      "uuid": "e3",
+      "source_node_uuid": "n4",
+      "target_node_uuid": "n3",
+      "name": "份额竞争",
+      "fact": "Ri6 价差收窄后抢占中端货架"
+    },
+    {
+      "uuid": "e4",
+      "source_node_uuid": "n5",
+      "target_node_uuid": "n14",
+      "name": "时效约束",
+      "fact": "边贸排队使到货节奏波动 1—3 天"
+    },
+    {
+      "uuid": "e5",
+      "source_node_uuid": "n6",
+      "target_node_uuid": "n14",
+      "name": "时效约束",
+      "fact": "海运批量到港，单次冲击更大"
+    },
+    {
+      "uuid": "e6",
+      "source_node_uuid": "n14",
+      "target_node_uuid": "n12",
+      "name": "价格传导",
+      "fact": "越南到货 +57% 使价差由 5.8 收窄至 3.4"
+    },
+    {
+      "uuid": "e7",
+      "source_node_uuid": "n12",
+      "target_node_uuid": "n8",
+      "name": "价格传导",
+      "fact": "价差 4 元/kg 以内终端开始替代"
+    },
+    {
+      "uuid": "e8",
+      "source_node_uuid": "n9",
+      "target_node_uuid": "n3",
+      "name": "份额竞争",
+      "fact": "泰国保价不保量，主动让出中端"
+    },
+    {
+      "uuid": "e9",
+      "source_node_uuid": "n10",
+      "target_node_uuid": "n4",
+      "name": "份额竞争",
+      "fact": "越南以价换量，份额 +6.4pp"
+    },
+    {
+      "uuid": "e10",
+      "source_node_uuid": "n11",
+      "target_node_uuid": "n5",
+      "name": "供应流向",
+      "fact": "进口商按口岸时效动态分配货量"
+    },
+    {
+      "uuid": "e11",
+      "source_node_uuid": "n3",
+      "target_node_uuid": "n7",
+      "name": "供应流向",
+      "fact": "高端货集中江南市场做价格发现"
+    },
+    {
+      "uuid": "e12",
+      "source_node_uuid": "n4",
+      "target_node_uuid": "n8",
+      "name": "供应流向",
+      "fact": "中端货直奔华中终端"
+    },
+    {
+      "uuid": "e13",
+      "source_node_uuid": "n13",
+      "target_node_uuid": "n9",
+      "name": "份额竞争",
+      "fact": "份额下滑迫使泰国调整渠道结构"
+    },
+    {
+      "uuid": "e14",
+      "source_node_uuid": "n5",
+      "target_node_uuid": "n6",
+      "name": "时效约束",
+      "fact": "两条通道时效差 2.6 天，决定先到先得"
+    }
+  ],
+  "profiles": [
+    {
+      "agent_id": 0,
+      "name": "thai_exporter",
+      "username": "泰国出口商",
+      "profession": "泰国出口商",
+      "entity_type": "产区",
+      "bio": "保价不保量，维护品牌溢价。",
+      "interested_topics": [
+        "品牌价",
+        "高端"
+      ]
+    },
+    {
+      "agent_id": 1,
+      "name": "vn_exporter",
+      "username": "越南出口商",
+      "profession": "越南出口商",
+      "entity_type": "产区",
+      "bio": "以价换量，抢中端货架。",
+      "interested_topics": [
+        "价差",
+        "走量"
+      ]
+    },
+    {
+      "agent_id": 2,
+      "name": "importer",
+      "username": "进口商",
+      "profession": "进口商",
+      "entity_type": "经营主体",
+      "bio": "按价差与口岸时效分配两国货量。",
+      "interested_topics": [
+        "价差",
+        "时效"
+      ]
+    },
+    {
+      "agent_id": 3,
+      "name": "wholesaler",
+      "username": "批发商",
+      "profession": "批发商",
+      "entity_type": "市场",
+      "bio": "最先感知替代速度。",
+      "interested_topics": [
+        "批发价",
+        "份额"
+      ]
+    },
+    {
+      "agent_id": 4,
+      "name": "retailer",
+      "username": "零售商",
+      "profession": "零售商",
+      "entity_type": "渠道",
+      "bio": "按档位排货架，两头都有明确客人。",
+      "interested_topics": [
+        "档位",
+        "动销"
+      ]
+    },
+    {
+      "agent_id": 5,
+      "name": "border",
+      "username": "边贸报关",
+      "profession": "边贸报关",
+      "entity_type": "口岸",
+      "bio": "排队时长直接决定谁先到。",
+      "interested_topics": [
+        "排队",
+        "放行"
+      ]
+    },
+    {
+      "agent_id": 6,
+      "name": "shipping",
+      "username": "海运承运",
+      "profession": "海运承运",
+      "entity_type": "物流",
+      "bio": "批量到港，单次冲击大。",
+      "interested_topics": [
+        "船期",
+        "批量"
+      ]
+    },
+    {
+      "agent_id": 7,
+      "name": "market_admin",
+      "username": "市场管理",
+      "profession": "市场管理",
+      "entity_type": "制度",
+      "bio": "关注价差失真与分级口径。",
+      "interested_topics": [
+        "分级",
+        "口径"
+      ]
+    }
+  ],
+  "simulationConfig": {
+    "time_config": {
+      "total_simulation_hours": 12,
+      "minutes_per_round": 30,
+      "agents_per_hour_min": 2,
+      "agents_per_hour_max": 6,
+      "peak_hours": [
+        8,
+        9,
+        10
+      ],
+      "peak_activity_multiplier": 1.5,
+      "work_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "work_activity_multiplier": 1,
+      "morning_hours": [
+        6,
+        7,
+        8
+      ],
+      "morning_activity_multiplier": 1.2,
+      "off_peak_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "off_peak_activity_multiplier": 0.5
+    },
+    "agent_configs": [
+      {
+        "agent_id": 0,
+        "entity_name": "泰国出口商",
+        "entity_type": "产区",
+        "stance": "neutral",
+        "active_hours": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16
+        ],
+        "posts_per_hour": 2,
+        "comments_per_hour": 3,
+        "response_delay_min": 2,
+        "response_delay_max": 8,
+        "activity_level": 0.6,
+        "sentiment_bias": 0,
+        "influence_weight": 0.5
+      },
+      {
+        "agent_id": 1,
+        "entity_name": "越南出口商",
+        "entity_type": "产区",
+        "stance": "neutral",
+        "active_hours": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16
+        ],
+        "posts_per_hour": 3,
+        "comments_per_hour": 3,
+        "response_delay_min": 2,
+        "response_delay_max": 8,
+        "activity_level": 0.7,
+        "sentiment_bias": 0,
+        "influence_weight": 0.6
+      },
+      {
+        "agent_id": 2,
+        "entity_name": "进口商",
+        "entity_type": "经营主体",
+        "stance": "neutral",
+        "active_hours": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16
+        ],
+        "posts_per_hour": 2,
+        "comments_per_hour": 3,
+        "response_delay_min": 2,
+        "response_delay_max": 8,
+        "activity_level": 0.8,
+        "sentiment_bias": 0,
+        "influence_weight": 0.7
+      },
+      {
+        "agent_id": 3,
+        "entity_name": "批发商",
+        "entity_type": "市场",
+        "stance": "neutral",
+        "active_hours": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16
+        ],
+        "posts_per_hour": 3,
+        "comments_per_hour": 3,
+        "response_delay_min": 2,
+        "response_delay_max": 8,
+        "activity_level": 0.6,
+        "sentiment_bias": 0,
+        "influence_weight": 0.8
+      },
+      {
+        "agent_id": 4,
+        "entity_name": "零售商",
+        "entity_type": "渠道",
+        "stance": "neutral",
+        "active_hours": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16
+        ],
+        "posts_per_hour": 2,
+        "comments_per_hour": 3,
+        "response_delay_min": 2,
+        "response_delay_max": 8,
+        "activity_level": 0.7,
+        "sentiment_bias": 0,
+        "influence_weight": 0.5
+      },
+      {
+        "agent_id": 5,
+        "entity_name": "边贸报关",
+        "entity_type": "口岸",
+        "stance": "neutral",
+        "active_hours": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16
+        ],
+        "posts_per_hour": 3,
+        "comments_per_hour": 3,
+        "response_delay_min": 2,
+        "response_delay_max": 8,
+        "activity_level": 0.8,
+        "sentiment_bias": 0,
+        "influence_weight": 0.6
+      },
+      {
+        "agent_id": 6,
+        "entity_name": "海运承运",
+        "entity_type": "物流",
+        "stance": "neutral",
+        "active_hours": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16
+        ],
+        "posts_per_hour": 2,
+        "comments_per_hour": 3,
+        "response_delay_min": 2,
+        "response_delay_max": 8,
+        "activity_level": 0.6,
+        "sentiment_bias": 0,
+        "influence_weight": 0.7
+      },
+      {
+        "agent_id": 7,
+        "entity_name": "市场管理",
+        "entity_type": "制度",
+        "stance": "neutral",
+        "active_hours": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16
+        ],
+        "posts_per_hour": 3,
+        "comments_per_hour": 3,
+        "response_delay_min": 2,
+        "response_delay_max": 8,
+        "activity_level": 0.7,
+        "sentiment_bias": 0,
+        "influence_weight": 0.8
+      }
+    ],
+    "twitter_config": {
+      "recency_weight": 0.6,
+      "popularity_weight": 0.3,
+      "relevance_weight": 0.8,
+      "viral_threshold": 0.7,
+      "echo_chamber_strength": 0.2
+    },
+    "reddit_config": {
+      "recency_weight": 0.4,
+      "popularity_weight": 0.4,
+      "relevance_weight": 0.9,
+      "viral_threshold": 0.6,
+      "echo_chamber_strength": 0.3
+    },
+    "event_config": {
+      "narrative_direction": "推演泰国与越南同期上市后的到货节奏、价差收窄与份额分工。",
+      "hot_topics": [
+        "产地之争",
+        "泰国份额",
+        "越南到货量"
+      ],
+      "initial_posts": [
+        {
+          "poster_type": "泰国出口商",
+          "poster_agent_id": 0,
+          "content": "同日上市：尖竹汶与前江同期开秤，价差 5.8 元/kg。"
+        },
+        {
+          "poster_type": "越南出口商",
+          "poster_agent_id": 1,
+          "content": "模拟显示，泰越产地同期上市后价差将从 5.8 元/kg 收窄至 3.4 元/kg，越南到货量上升 57% 并拿走 6.4 个百分点的份额。"
+        }
+      ]
+    },
+    "generation_reasoning": "按本体主体生成 8 个角色|围绕「产地之争」设置双环境与双平台|用 24 轮观测到货节奏、价差与份额变化"
+  },
+  "actions": [
+    {
+      "id": "builtin-origin-a1",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】尖竹汶金枕按品牌分级出货",
+      "timestamp": "2026-10-12T00:30:00.000Z",
+      "round_num": 1
+    },
+    {
+      "id": "builtin-origin-a2",
+      "platform": "twitter",
+      "agent_id": 3,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】价差从 5.8 收窄至 3.4 元/kg，收窄 41.4%",
+      "timestamp": "2026-10-12T00:30:00.000Z",
+      "round_num": 1
+    },
+    {
+      "id": "builtin-origin-a3",
+      "platform": "reddit",
+      "agent_id": 5,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+0 同日上市】（边贸报关）降价一次，明年就没法按品牌价卖了。",
+      "timestamp": "2026-10-12T00:30:00.000Z",
+      "round_num": 1
+    },
+    {
+      "id": "builtin-origin-a4",
+      "platform": "reddit",
+      "agent_id": 7,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】14 个主体、14 条关系，含 4 条反向竞争边。",
+      "timestamp": "2026-10-12T00:30:00.000Z",
+      "round_num": 1
+    },
+    {
+      "id": "builtin-origin-a5",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】前江 Ri6 以成本优势放量",
+      "timestamp": "2026-10-12T01:00:00.000Z",
+      "round_num": 2
+    },
+    {
+      "id": "builtin-origin-a6",
+      "platform": "twitter",
+      "agent_id": 4,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】跌破 4 元/kg 后终端替代开始",
+      "timestamp": "2026-10-12T01:00:00.000Z",
+      "round_num": 2
+    },
+    {
+      "id": "builtin-origin-a7",
+      "platform": "reddit",
+      "agent_id": 6,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+0 同日上市】（海运承运）差 4 块以内，客户根本不问产地。",
+      "timestamp": "2026-10-12T01:00:00.000Z",
+      "round_num": 2
+    },
+    {
+      "id": "builtin-origin-a8",
+      "platform": "reddit",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】竞争按同期起跑、不同到货节奏展开。",
+      "timestamp": "2026-10-12T01:00:00.000Z",
+      "round_num": 2
+    },
+    {
+      "id": "builtin-origin-a9",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】Ri6 价差收窄后抢占中端货架",
+      "timestamp": "2026-10-12T01:30:00.000Z",
+      "round_num": 3
+    },
+    {
+      "id": "builtin-origin-a10",
+      "platform": "twitter",
+      "agent_id": 5,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】泰国保价的结果是让出中端货架",
+      "timestamp": "2026-10-12T01:30:00.000Z",
+      "round_num": 3
+    },
+    {
+      "id": "builtin-origin-a11",
+      "platform": "reddit",
+      "agent_id": 7,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+0 同日上市】（市场管理）车排在关口，果在车上熟，早一天就是钱。",
+      "timestamp": "2026-10-12T01:30:00.000Z",
+      "round_num": 3
+    },
+    {
+      "id": "builtin-origin-a12",
+      "platform": "reddit",
+      "agent_id": 1,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】竞争按同期起跑、不同到货节奏展开。",
+      "timestamp": "2026-10-12T01:30:00.000Z",
+      "round_num": 3
+    },
+    {
+      "id": "builtin-origin-a13",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】边贸排队使到货节奏波动 1—3 天",
+      "timestamp": "2026-10-12T02:00:00.000Z",
+      "round_num": 4
+    },
+    {
+      "id": "builtin-origin-a14",
+      "platform": "twitter",
+      "agent_id": 6,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】边贸与海运时效差 2.6 天",
+      "timestamp": "2026-10-12T02:00:00.000Z",
+      "round_num": 4
+    },
+    {
+      "id": "builtin-origin-a15",
+      "platform": "reddit",
+      "agent_id": 0,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+0 同日上市】（泰国出口商）先到的那批，价格是我们说了算。",
+      "timestamp": "2026-10-12T02:00:00.000Z",
+      "round_num": 4
+    },
+    {
+      "id": "builtin-origin-a16",
+      "platform": "reddit",
+      "agent_id": 2,
+      "action_type": "CREATE_POST",
+      "content": "【T+0 同日上市】第 5 轮价差首次跌破 4 元/kg，第 12 轮份额交叉。",
+      "timestamp": "2026-10-12T02:00:00.000Z",
+      "round_num": 4
+    },
+    {
+      "id": "builtin-origin-a17",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】海运批量到港，单次冲击更大",
+      "timestamp": "2026-10-12T02:30:00.000Z",
+      "round_num": 5
+    },
+    {
+      "id": "builtin-origin-a18",
+      "platform": "twitter",
+      "agent_id": 7,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】越南货提前 2 天进入中端",
+      "timestamp": "2026-10-12T02:30:00.000Z",
+      "round_num": 5
+    },
+    {
+      "id": "builtin-origin-a19",
+      "platform": "reddit",
+      "agent_id": 1,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+4 越南货先到中端】（越南出口商）贵的有人买，便宜的走得快，货架不冲突。",
+      "timestamp": "2026-10-12T02:30:00.000Z",
+      "round_num": 5
+    },
+    {
+      "id": "builtin-origin-a20",
+      "platform": "reddit",
+      "agent_id": 3,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】第 5 轮价差首次跌破 4 元/kg，第 12 轮份额交叉。",
+      "timestamp": "2026-10-12T02:30:00.000Z",
+      "round_num": 5
+    },
+    {
+      "id": "builtin-origin-a21",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】越南到货 +57% 使价差由 5.8 收窄至 3.4",
+      "timestamp": "2026-10-12T03:00:00.000Z",
+      "round_num": 6
+    },
+    {
+      "id": "builtin-origin-a22",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】边贸排队 3 天会回吐 0.6 元/kg 的价差优势",
+      "timestamp": "2026-10-12T03:00:00.000Z",
+      "round_num": 6
+    },
+    {
+      "id": "builtin-origin-a23",
+      "platform": "reddit",
+      "agent_id": 2,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+4 越南货先到中端】（进口商）真正难受的是两头都不沾的中档货。",
+      "timestamp": "2026-10-12T03:00:00.000Z",
+      "round_num": 6
+    },
+    {
+      "id": "builtin-origin-a24",
+      "platform": "reddit",
+      "agent_id": 4,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】边贸排队让越南中端窗口缩短 2 天，价差回弹 0.6 元/kg。",
+      "timestamp": "2026-10-12T03:00:00.000Z",
+      "round_num": 6
+    },
+    {
+      "id": "builtin-origin-a25",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】价差 4 元/kg 以内终端开始替代",
+      "timestamp": "2026-10-12T03:30:00.000Z",
+      "round_num": 7
+    },
+    {
+      "id": "builtin-origin-a26",
+      "platform": "twitter",
+      "agent_id": 1,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】泰国份额 58.2%（-6.4pp）但高端价稳",
+      "timestamp": "2026-10-12T03:30:00.000Z",
+      "round_num": 7
+    },
+    {
+      "id": "builtin-origin-a27",
+      "platform": "reddit",
+      "agent_id": 3,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+4 越南货先到中端】（批发商）中档的最尴尬，上不去下不来，只能压价走。",
+      "timestamp": "2026-10-12T03:30:00.000Z",
+      "round_num": 7
+    },
+    {
+      "id": "builtin-origin-a28",
+      "platform": "reddit",
+      "agent_id": 5,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】边贸排队让越南中端窗口缩短 2 天，价差回弹 0.6 元/kg。",
+      "timestamp": "2026-10-12T03:30:00.000Z",
+      "round_num": 7
+    },
+    {
+      "id": "builtin-origin-a29",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】泰国保价不保量，主动让出中端",
+      "timestamp": "2026-10-12T04:00:00.000Z",
+      "round_num": 8
+    },
+    {
+      "id": "builtin-origin-a30",
+      "platform": "twitter",
+      "agent_id": 2,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】越南到货 +57%、份额 41.8%",
+      "timestamp": "2026-10-12T04:00:00.000Z",
+      "round_num": 8
+    },
+    {
+      "id": "builtin-origin-a31",
+      "platform": "reddit",
+      "agent_id": 4,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+4 越南货先到中端】（零售商）两头都有明确客人，中档要看促销。",
+      "timestamp": "2026-10-12T04:00:00.000Z",
+      "round_num": 8
+    },
+    {
+      "id": "builtin-origin-a32",
+      "platform": "reddit",
+      "agent_id": 6,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】未两败俱伤：高端价稳、中端让利，整体均价仅 -3.1%。",
+      "timestamp": "2026-10-12T04:00:00.000Z",
+      "round_num": 8
+    },
+    {
+      "id": "builtin-origin-a33",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】越南以价换量，份额 +6.4pp",
+      "timestamp": "2026-10-12T04:30:00.000Z",
+      "round_num": 9
+    },
+    {
+      "id": "builtin-origin-a34",
+      "platform": "twitter",
+      "agent_id": 3,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】整体均价仅 -3.1%，未出现踩踏",
+      "timestamp": "2026-10-12T04:30:00.000Z",
+      "round_num": 9
+    },
+    {
+      "id": "builtin-origin-a35",
+      "platform": "reddit",
+      "agent_id": 5,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+4 越南货先到中端】（边贸报关）降价一次，明年就没法按品牌价卖了。",
+      "timestamp": "2026-10-12T04:30:00.000Z",
+      "round_num": 9
+    },
+    {
+      "id": "builtin-origin-a36",
+      "platform": "reddit",
+      "agent_id": 7,
+      "action_type": "CREATE_POST",
+      "content": "【T+4 越南货先到中端】未两败俱伤：高端价稳、中端让利，整体均价仅 -3.1%。",
+      "timestamp": "2026-10-12T04:30:00.000Z",
+      "round_num": 9
+    },
+    {
+      "id": "builtin-origin-a37",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】进口商按口岸时效动态分配货量",
+      "timestamp": "2026-10-12T05:00:00.000Z",
+      "round_num": 10
+    },
+    {
+      "id": "builtin-origin-a38",
+      "platform": "twitter",
+      "agent_id": 4,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】中端同档位价格 -9.6%",
+      "timestamp": "2026-10-12T05:00:00.000Z",
+      "round_num": 10
+    },
+    {
+      "id": "builtin-origin-a39",
+      "platform": "reddit",
+      "agent_id": 6,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+9 价差跌破 4 元】（海运承运）差 4 块以内，客户根本不问产地。",
+      "timestamp": "2026-10-12T05:00:00.000Z",
+      "round_num": 10
+    },
+    {
+      "id": "builtin-origin-a40",
+      "platform": "reddit",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T05:00:00.000Z",
+      "round_num": 10
+    },
+    {
+      "id": "builtin-origin-a41",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】高端货集中江南市场做价格发现",
+      "timestamp": "2026-10-12T05:30:00.000Z",
+      "round_num": 11
+    },
+    {
+      "id": "builtin-origin-a42",
+      "platform": "twitter",
+      "agent_id": 5,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】高端价格仅 -1.2%",
+      "timestamp": "2026-10-12T05:30:00.000Z",
+      "round_num": 11
+    },
+    {
+      "id": "builtin-origin-a43",
+      "platform": "reddit",
+      "agent_id": 7,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+9 价差跌破 4 元】（市场管理）车排在关口，果在车上熟，早一天就是钱。",
+      "timestamp": "2026-10-12T05:30:00.000Z",
+      "round_num": 11
+    },
+    {
+      "id": "builtin-origin-a44",
+      "platform": "reddit",
+      "agent_id": 1,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T05:30:00.000Z",
+      "round_num": 11
+    },
+    {
+      "id": "builtin-origin-a45",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】中端货直奔华中终端",
+      "timestamp": "2026-10-12T06:00:00.000Z",
+      "round_num": 12
+    },
+    {
+      "id": "builtin-origin-a46",
+      "platform": "twitter",
+      "agent_id": 6,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】中端库存周转天数 +4.2 天",
+      "timestamp": "2026-10-12T06:00:00.000Z",
+      "round_num": 12
+    },
+    {
+      "id": "builtin-origin-a47",
+      "platform": "reddit",
+      "agent_id": 0,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+9 价差跌破 4 元】（泰国出口商）先到的那批，价格是我们说了算。",
+      "timestamp": "2026-10-12T06:00:00.000Z",
+      "round_num": 12
+    },
+    {
+      "id": "builtin-origin-a48",
+      "platform": "reddit",
+      "agent_id": 2,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T06:00:00.000Z",
+      "round_num": 12
+    },
+    {
+      "id": "builtin-origin-a49",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】份额下滑迫使泰国调整渠道结构",
+      "timestamp": "2026-10-12T06:30:00.000Z",
+      "round_num": 13
+    },
+    {
+      "id": "builtin-origin-a50",
+      "platform": "twitter",
+      "agent_id": 7,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】价差从 5.8 收窄至 3.4 元/kg，收窄 41.4%",
+      "timestamp": "2026-10-12T06:30:00.000Z",
+      "round_num": 13
+    },
+    {
+      "id": "builtin-origin-a51",
+      "platform": "reddit",
+      "agent_id": 1,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+9 价差跌破 4 元】（越南出口商）贵的有人买，便宜的走得快，货架不冲突。",
+      "timestamp": "2026-10-12T06:30:00.000Z",
+      "round_num": 13
+    },
+    {
+      "id": "builtin-origin-a52",
+      "platform": "reddit",
+      "agent_id": 3,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T06:30:00.000Z",
+      "round_num": 13
+    },
+    {
+      "id": "builtin-origin-a53",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】两条通道时效差 2.6 天，决定先到先得",
+      "timestamp": "2026-10-12T07:00:00.000Z",
+      "round_num": 14
+    },
+    {
+      "id": "builtin-origin-a54",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】跌破 4 元/kg 后终端替代开始",
+      "timestamp": "2026-10-12T07:00:00.000Z",
+      "round_num": 14
+    },
+    {
+      "id": "builtin-origin-a55",
+      "platform": "reddit",
+      "agent_id": 2,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+9 价差跌破 4 元】（进口商）真正难受的是两头都不沾的中档货。",
+      "timestamp": "2026-10-12T07:00:00.000Z",
+      "round_num": 14
+    },
+    {
+      "id": "builtin-origin-a56",
+      "platform": "reddit",
+      "agent_id": 4,
+      "action_type": "CREATE_POST",
+      "content": "【T+9 价差跌破 4 元】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T07:00:00.000Z",
+      "round_num": 14
+    },
+    {
+      "id": "builtin-origin-a57",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】尖竹汶金枕按品牌分级出货",
+      "timestamp": "2026-10-12T07:30:00.000Z",
+      "round_num": 15
+    },
+    {
+      "id": "builtin-origin-a58",
+      "platform": "twitter",
+      "agent_id": 1,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】泰国保价的结果是让出中端货架",
+      "timestamp": "2026-10-12T07:30:00.000Z",
+      "round_num": 15
+    },
+    {
+      "id": "builtin-origin-a59",
+      "platform": "reddit",
+      "agent_id": 3,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+12 份额交叉】（批发商）中档的最尴尬，上不去下不来，只能压价走。",
+      "timestamp": "2026-10-12T07:30:00.000Z",
+      "round_num": 15
+    },
+    {
+      "id": "builtin-origin-a60",
+      "platform": "reddit",
+      "agent_id": 5,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T07:30:00.000Z",
+      "round_num": 15
+    },
+    {
+      "id": "builtin-origin-a61",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】前江 Ri6 以成本优势放量",
+      "timestamp": "2026-10-12T08:00:00.000Z",
+      "round_num": 16
+    },
+    {
+      "id": "builtin-origin-a62",
+      "platform": "twitter",
+      "agent_id": 2,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】边贸与海运时效差 2.6 天",
+      "timestamp": "2026-10-12T08:00:00.000Z",
+      "round_num": 16
+    },
+    {
+      "id": "builtin-origin-a63",
+      "platform": "reddit",
+      "agent_id": 4,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+12 份额交叉】（零售商）两头都有明确客人，中档要看促销。",
+      "timestamp": "2026-10-12T08:00:00.000Z",
+      "round_num": 16
+    },
+    {
+      "id": "builtin-origin-a64",
+      "platform": "reddit",
+      "agent_id": 6,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T08:00:00.000Z",
+      "round_num": 16
+    },
+    {
+      "id": "builtin-origin-a65",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】Ri6 价差收窄后抢占中端货架",
+      "timestamp": "2026-10-12T08:30:00.000Z",
+      "round_num": 17
+    },
+    {
+      "id": "builtin-origin-a66",
+      "platform": "twitter",
+      "agent_id": 3,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】越南货提前 2 天进入中端",
+      "timestamp": "2026-10-12T08:30:00.000Z",
+      "round_num": 17
+    },
+    {
+      "id": "builtin-origin-a67",
+      "platform": "reddit",
+      "agent_id": 5,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+12 份额交叉】（边贸报关）降价一次，明年就没法按品牌价卖了。",
+      "timestamp": "2026-10-12T08:30:00.000Z",
+      "round_num": 17
+    },
+    {
+      "id": "builtin-origin-a68",
+      "platform": "reddit",
+      "agent_id": 7,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T08:30:00.000Z",
+      "round_num": 17
+    },
+    {
+      "id": "builtin-origin-a69",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】边贸排队使到货节奏波动 1—3 天",
+      "timestamp": "2026-10-12T09:00:00.000Z",
+      "round_num": 18
+    },
+    {
+      "id": "builtin-origin-a70",
+      "platform": "twitter",
+      "agent_id": 4,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】边贸排队 3 天会回吐 0.6 元/kg 的价差优势",
+      "timestamp": "2026-10-12T09:00:00.000Z",
+      "round_num": 18
+    },
+    {
+      "id": "builtin-origin-a71",
+      "platform": "reddit",
+      "agent_id": 6,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+12 份额交叉】（海运承运）差 4 块以内，客户根本不问产地。",
+      "timestamp": "2026-10-12T09:00:00.000Z",
+      "round_num": 18
+    },
+    {
+      "id": "builtin-origin-a72",
+      "platform": "reddit",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T09:00:00.000Z",
+      "round_num": 18
+    },
+    {
+      "id": "builtin-origin-a73",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】海运批量到港，单次冲击更大",
+      "timestamp": "2026-10-12T09:30:00.000Z",
+      "round_num": 19
+    },
+    {
+      "id": "builtin-origin-a74",
+      "platform": "twitter",
+      "agent_id": 5,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】泰国份额 58.2%（-6.4pp）但高端价稳",
+      "timestamp": "2026-10-12T09:30:00.000Z",
+      "round_num": 19
+    },
+    {
+      "id": "builtin-origin-a75",
+      "platform": "reddit",
+      "agent_id": 7,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+12 份额交叉】（市场管理）车排在关口，果在车上熟，早一天就是钱。",
+      "timestamp": "2026-10-12T09:30:00.000Z",
+      "round_num": 19
+    },
+    {
+      "id": "builtin-origin-a76",
+      "platform": "reddit",
+      "agent_id": 1,
+      "action_type": "CREATE_POST",
+      "content": "【T+12 份额交叉】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T09:30:00.000Z",
+      "round_num": 19
+    },
+    {
+      "id": "builtin-origin-a77",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】越南到货 +57% 使价差由 5.8 收窄至 3.4",
+      "timestamp": "2026-10-12T10:00:00.000Z",
+      "round_num": 20
+    },
+    {
+      "id": "builtin-origin-a78",
+      "platform": "twitter",
+      "agent_id": 6,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】越南到货 +57%、份额 41.8%",
+      "timestamp": "2026-10-12T10:00:00.000Z",
+      "round_num": 20
+    },
+    {
+      "id": "builtin-origin-a79",
+      "platform": "reddit",
+      "agent_id": 0,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+18 分工固化】（泰国出口商）先到的那批，价格是我们说了算。",
+      "timestamp": "2026-10-12T10:00:00.000Z",
+      "round_num": 20
+    },
+    {
+      "id": "builtin-origin-a80",
+      "platform": "reddit",
+      "agent_id": 2,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T10:00:00.000Z",
+      "round_num": 20
+    },
+    {
+      "id": "builtin-origin-a81",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】价差 4 元/kg 以内终端开始替代",
+      "timestamp": "2026-10-12T10:30:00.000Z",
+      "round_num": 21
+    },
+    {
+      "id": "builtin-origin-a82",
+      "platform": "twitter",
+      "agent_id": 7,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】整体均价仅 -3.1%，未出现踩踏",
+      "timestamp": "2026-10-12T10:30:00.000Z",
+      "round_num": 21
+    },
+    {
+      "id": "builtin-origin-a83",
+      "platform": "reddit",
+      "agent_id": 1,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+18 分工固化】（越南出口商）贵的有人买，便宜的走得快，货架不冲突。",
+      "timestamp": "2026-10-12T10:30:00.000Z",
+      "round_num": 21
+    },
+    {
+      "id": "builtin-origin-a84",
+      "platform": "reddit",
+      "agent_id": 3,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T10:30:00.000Z",
+      "round_num": 21
+    },
+    {
+      "id": "builtin-origin-a85",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】泰国保价不保量，主动让出中端",
+      "timestamp": "2026-10-12T11:00:00.000Z",
+      "round_num": 22
+    },
+    {
+      "id": "builtin-origin-a86",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】中端同档位价格 -9.6%",
+      "timestamp": "2026-10-12T11:00:00.000Z",
+      "round_num": 22
+    },
+    {
+      "id": "builtin-origin-a87",
+      "platform": "reddit",
+      "agent_id": 2,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+18 分工固化】（进口商）真正难受的是两头都不沾的中档货。",
+      "timestamp": "2026-10-12T11:00:00.000Z",
+      "round_num": 22
+    },
+    {
+      "id": "builtin-origin-a88",
+      "platform": "reddit",
+      "agent_id": 4,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T11:00:00.000Z",
+      "round_num": 22
+    },
+    {
+      "id": "builtin-origin-a89",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】越南以价换量，份额 +6.4pp",
+      "timestamp": "2026-10-12T11:30:00.000Z",
+      "round_num": 23
+    },
+    {
+      "id": "builtin-origin-a90",
+      "platform": "twitter",
+      "agent_id": 1,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】高端价格仅 -1.2%",
+      "timestamp": "2026-10-12T11:30:00.000Z",
+      "round_num": 23
+    },
+    {
+      "id": "builtin-origin-a91",
+      "platform": "reddit",
+      "agent_id": 3,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+18 分工固化】（批发商）中档的最尴尬，上不去下不来，只能压价走。",
+      "timestamp": "2026-10-12T11:30:00.000Z",
+      "round_num": 23
+    },
+    {
+      "id": "builtin-origin-a92",
+      "platform": "reddit",
+      "agent_id": 5,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T11:30:00.000Z",
+      "round_num": 23
+    },
+    {
+      "id": "builtin-origin-a93",
+      "platform": "twitter",
+      "agent_id": 0,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】进口商按口岸时效动态分配货量",
+      "timestamp": "2026-10-12T12:00:00.000Z",
+      "round_num": 24
+    },
+    {
+      "id": "builtin-origin-a94",
+      "platform": "twitter",
+      "agent_id": 2,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】中端库存周转天数 +4.2 天",
+      "timestamp": "2026-10-12T12:00:00.000Z",
+      "round_num": 24
+    },
+    {
+      "id": "builtin-origin-a95",
+      "platform": "reddit",
+      "agent_id": 4,
+      "action_type": "CREATE_COMMENT",
+      "content": "【T+18 分工固化】（零售商）两头都有明确客人，中档要看促销。",
+      "timestamp": "2026-10-12T12:00:00.000Z",
+      "round_num": 24
+    },
+    {
+      "id": "builtin-origin-a96",
+      "platform": "reddit",
+      "agent_id": 6,
+      "action_type": "CREATE_POST",
+      "content": "【T+18 分工固化】三条动作对应先到、并跑、收窄三个窗口。",
+      "timestamp": "2026-10-12T12:00:00.000Z",
+      "round_num": 24
+    }
+  ],
+  "outline": {
+    "title": "泰越产地竞争与到货量推演",
+    "summary": "模拟显示，泰国与越南产地同期上市后，价差将从 5.8 元/kg 收窄至 3.4 元/kg，越南到货量上升 57% 并拿走 6.4 个百分点的份额；两国并未两败俱伤，而是分化为「泰国保高端、越南占中端」的双轨格局，胜负手在口岸时效与到货错位。",
+    "sections": [
+      {
+        "title": "价差是这场竞争的真正战场"
+      },
+      {
+        "title": "口岸时效决定谁定义开局价格"
+      },
+      {
+        "title": "竞争结果不是两败俱伤，而是双轨分化"
+      },
+      {
+        "title": "同档位的中端最容易被牺牲"
+      },
+      {
+        "title": "预测结论"
+      },
+      {
+        "title": "口径与来源"
+      }
+    ]
+  },
+  "reportLogs": [
+    {
+      "action": "report_start",
+      "timestamp": "2026-10-12T00:00:00Z",
+      "details": {}
+    },
+    {
+      "action": "planning_complete",
+      "timestamp": "2026-10-12T00:00:01Z",
+      "details": {
+        "outline": {
+          "title": "泰越产地竞争与到货量推演",
+          "summary": "模拟显示，泰国与越南产地同期上市后，价差将从 5.8 元/kg 收窄至 3.4 元/kg，越南到货量上升 57% 并拿走 6.4 个百分点的份额；两国并未两败俱伤，而是分化为「泰国保高端、越南占中端」的双轨格局，胜负手在口岸时效与到货错位。",
+          "sections": [
+            {
+              "title": "价差是这场竞争的真正战场"
+            },
+            {
+              "title": "口岸时效决定谁定义开局价格"
+            },
+            {
+              "title": "竞争结果不是两败俱伤，而是双轨分化"
+            },
+            {
+              "title": "同档位的中端最容易被牺牲"
+            },
+            {
+              "title": "预测结论"
+            },
+            {
+              "title": "口径与来源"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "action": "section_complete",
+      "section_index": 1,
+      "timestamp": "2026-10-12T00:00:02Z",
+      "details": {
+        "content": "**同日开秤：一场挂在同一口径上的比较**\n\n推演从两国同日上市开始。为了比较成立，产区、品种、口岸、市场、角色与指标被放进同一张图谱：14 个主体、14 条关系，其中 4 条是反向的竞争边。尖竹汶的金枕与前江的 Ri6 按同一套批发口径报价，起点价差 5.8 元/kg。这个起点本身就是分层的注脚——竞争从一开始就不是同价竞争，而是区间竞争。\n\n**收窄 41.4%：价差比单边价格更早给出信号**\n\n多主体推演进行了 24 轮。第 5 轮，价差首次跌破 4 元/kg；到第 9 天，终端开始出现替代，金枕动销放缓。最终价差收在 3.4 元/kg，较起点收窄 41.4%。值得注意的是，两条单边价格曲线的变化远不如价差曲线陡峭——真正的竞争信息藏在价差里：\n\n- 价差从 5.8 收窄至 3.4 元/kg，收窄 41.4%；\n\n- 跌破 4 元/kg 后，终端替代开始；\n\n- 泰国保价的结果，是让出中端货架。\n\n**泰国出口商：让出的是货架，不是利润率**\n\n泰国一侧的策略在推演中非常稳定：保价不保量。品牌分级建立起来的溢价不允许主动击穿，哪怕代价是份额。模拟中泰国出口商的原话是：\n\n> _“降价一次，明年就没法按品牌价卖了。”_\n\n这句话背后是一整套渠道约束：高端与商超渠道认分级、认品牌，价格一旦松动，伤害的是明年的定价权，而不仅是这一季的走量。\n\n**进口商：只认价差与时效**\n\n进口商的行为把价差信号直接翻译成配货动作。当两个产地的到岸价差落到足够窄的区间，切换成本就消失了：\n\n> _“差 4 块以内，客户根本不问产地。”_\n\n可以预测，价差将继续扮演这场竞争的核心指标：盯住 4 元/kg 这条阈值，比盯住任何一方的单边价格，都更能提前预判替代发生的时点。"
+      }
+    },
+    {
+      "action": "section_complete",
+      "section_index": 2,
+      "timestamp": "2026-10-12T00:00:03Z",
+      "details": {
+        "content": "**2.6 天的时效差：通道就是筹码**\n\n两国货量走的通道不同：越南前江的 Ri6 走友谊关陆运边贸，泰国尖竹汶的金枕走曼谷—广州海运。两条通道的时效差为 2.6 天，海运批量大、周期稳定，边贸快、但受排队影响，到货节奏波动 1—3 天。推演中，正是这 2.6 天决定了开局定价权归谁。\n\n**先到的两三天，等于拿到定价权**\n\n第 4 天，边贸通道把 Ri6 提前 2 天铺进华中市场。先到的货享受的是一段没有参照物的窗口期，批发商在这段窗口里掌握议价主动：\n\n> _“车排在关口，果在车上熟，早一天就是钱。”_\n\n> _“先到的那批，价格是我们说了算。”_\n\n**排队的代价：3 天回吐 0.6 元/kg**\n\n冲击测试给出了通道风险的量化结果：当友谊关排队延长至 3 天，越南货在中端的价格窗口缩短 2 天，价差优势回吐 0.6 元/kg。也就是说，通道带来的先手，会以几乎对称的速度被通道的拥堵收回。可以预测，通道能力将持续作为竞争资源被争夺，而不仅仅被当作物流成本核算——它应该被写进产地策略本身。"
+      }
+    },
+    {
+      "action": "section_complete",
+      "section_index": 3,
+      "timestamp": "2026-10-12T00:00:04Z",
+      "details": {
+        "content": "**份额交叉：58.2% 对 41.8%**\n\n第 12 天，份额曲线交叉：越南份额升至 41.8%，泰国回落至 58.2%，降幅 6.4 个百分点；同期越南到货量上升 57%。交叉没有引发价格战升级，反而成为分工的起点。\n\n**整体均价仅 -3.1%：没有踩踏**\n\n按档位拆解后可以看到，竞争造成的整体均价下移只有 3.1%。高端价格基本守住了阵地，让利集中发生在中端同档位内部。零售端的货架逻辑解释了为什么双轨能够各自成立：\n\n> _“贵的有人买，便宜的走得快，货架不冲突。”_\n\n批发商则指出了真正的受力点：\n\n> _“真正难受的是两头都不沾的中档货。”_\n\n**第 18 天：分工固化**\n\n到第 18 天，格局固化下来：泰国退守高端与商超渠道，越南占据中端走量。两国出口商的目标函数从争同一段货架，变为各守一段价格区间。可以预测，把这种双轨分工主动固化下来，比强行用统一档次去硬拼，更能保住链条的整体毛利。"
+      }
+    },
+    {
+      "action": "section_complete",
+      "section_index": 4,
+      "timestamp": "2026-10-12T00:00:05Z",
+      "details": {
+        "content": "**-9.6% 对 -1.2%：中端承担了几乎全部让利**\n\n竞争的账并不平均。同档位比较时，中端价格下行 9.6%，而高端价格仅下行 1.2%。被替代的不是高端，而是夹在中间、定位模糊的那一层。\n\n**周转天数 +4.2 天：库存变成泄压口**\n\n价格下行叠加动销放缓，中端库存周转天数增加 4.2 天，资金占用随之上升。链条两端对此的观察是一致的：\n\n> _“中档的最尴尬，上不去下不来，只能压价走。”_\n\n> _“两头都有明确客人，中档要看促销。”_\n\n可以预测，若不提前锁定促销与档期，中端将持续充当整场竞争的泄压口：压力先到这里，也最后离开这里。档期安排应当与价差预警联动，而不是等库存高企后再被动处理。"
+      }
+    },
+    {
+      "action": "section_complete",
+      "section_index": 5,
+      "timestamp": "2026-10-12T00:00:06Z",
+      "details": {
+        "content": "在这场推演中，8 类主体并未朝同一方向收敛，而是各自沿着自己的目标函数行事，分化本身就是结果的一部分。\n\n泰国出口商的行为核心是维护品牌溢价。降价一次的成本被理解为跨年度的定价权损失，因此即便份额下滑 6.4 个百分点，其报价纪律仍然稳定——保价不保量，主动让出中端。\n\n越南出口商的策略几乎相反：以价换量。Ri6 依托更低的成本结构，在价差收窄的过程中持续放量，份额升至 41.8%。它并不试图挑战高端，而是把中端做实。\n\n进口商是链条上的翻译器，把价差与时效两个信号直接翻译成配货比例。价差阈值与口岸时效差共同决定两国货量的分配，它不站队任何产地。\n\n批发商的行为围绕到货节奏展开：先到的货享有定价窗口，集中到港的批次则立刻把议价权推向买方。其对通道拥堵高度敏感。\n\n零售商在货架层面完成分层：高端与中端各有明确客群，动销互不冲突；真正需要促销拉动的是定位模糊的中档。\n\n口岸与通道本身在推演中表现为一种被动但关键的角色：边贸排队 3 天即可回吐 0.6 元/kg 的价差优势，时效差超过 3 天就足以改变货量分配。通道不是中立的背景，而是被争夺的资源。\n\n正因为各主体的目标函数不同——保价、放量、套利、走量、稳货架——这场竞争不会收敛为单一均衡，而是稳定在一个双轨结构上。\n\n1. 把价差 4 元/kg 设为预警线，跌破即启动档位错位安排。\n\n2. 通道分工：越南走边贸抢时间，泰国走海运保稳定与批量。\n\n3. 档位分工：泰国守高端与商超，越南做中端与走量，中档单独排促销。\n\n4. 以周为单位跟踪口岸时效差，时效差超过 3 天即重新分配货量。\n\n口径与来源：泰国尖竹汶产区（产地，金枕分级与品牌价）、越南前江产区（产地，Ri6 成本与放量节奏）、友谊关口岸（口岸，边贸排队时长）、曼谷—广州海运（口岸，批量与周期）、广州江南市场（市场，价格发现与价差口径）、长沙红星市场（市场，华中终端替代速度）。"
+      }
+    },
+    {
+      "action": "section_complete",
+      "section_index": 6,
+      "timestamp": "2026-10-12T00:00:59Z",
+      "details": {
+        "content": "口径与来源：泰国尖竹汶产区（产地）、越南前江产区（产地）、友谊关口岸（口岸）、曼谷—广州海运（口岸）、广州江南市场（市场）、长沙红星市场（市场）。"
+      }
+    },
+    {
+      "action": "report_complete",
+      "timestamp": "2026-10-12T00:01:00Z",
+      "details": {}
+    }
+  ],
+  "dataset": {
+    "id": "builtin-origin",
+    "title": "泰越产地竞争与到货量推演",
+    "topic": "产地之争",
+    "tag": "到货量",
+    "requirement": "推演泰国与越南同期上市后的到货节奏、价差收窄与份额分工。",
+    "rounds": 24,
+    "agents": 8,
+    "generatedAt": "2026-10-12",
+    "summary": "模拟显示，泰越产地同期上市后价差将从 5.8 元/kg 收窄至 3.4 元/kg，越南到货量上升 57% 并拿走 6.4 个百分点的份额；两国并未两败俱伤，而是分化为「泰国保高端、越南占中端」的双轨格局，胜负手在口岸时效与到货错位。",
+    "kpis": [
+      {
+        "label": "泰国份额",
+        "value": "58.2",
+        "unit": "%",
+        "delta": "-6.4pp",
+        "tone": "down"
+      },
+      {
+        "label": "越南到货量",
+        "value": "+57",
+        "unit": "%",
+        "delta": "季度同比",
+        "tone": "up"
+      },
+      {
+        "label": "产地价差",
+        "value": "3.4",
+        "unit": "元/kg",
+        "delta": "收窄 41.4%",
+        "tone": "risk"
+      },
+      {
+        "label": "口岸时效差",
+        "value": "2.6",
+        "unit": "天",
+        "delta": "边贸 vs 海运",
+        "tone": "flat"
+      }
+    ],
+    "ontology": {
+      "entity_types": [
+        {
+          "name": "产区",
+          "description": "竞争中的来源地",
+          "examples": [
+            "泰国尖竹汶",
+            "越南前江"
+          ]
+        },
+        {
+          "name": "农产品",
+          "description": "参与竞争的品类与等级",
+          "examples": [
+            "金枕",
+            "Ri6"
+          ]
+        },
+        {
+          "name": "口岸",
+          "description": "决定到货节奏的通道",
+          "examples": [
+            "友谊关",
+            "曼谷—广州"
+          ]
+        },
+        {
+          "name": "角色",
+          "description": "链条上的行为主体",
+          "examples": [
+            "出口商",
+            "进口商",
+            "批发商"
+          ]
+        },
+        {
+          "name": "指标",
+          "description": "份额、价差与到货量",
+          "examples": [
+            "价差",
+            "份额"
+          ]
+        }
+      ],
+      "edge_types": [
+        {
+          "name": "供应流向",
+          "description": "产地到市场的货物流转"
+        },
+        {
+          "name": "份额竞争",
+          "description": "同档位品类之间的替代"
+        },
+        {
+          "name": "时效约束",
+          "description": "口岸与运力对到货节奏的限制"
+        },
+        {
+          "name": "价格传导",
+          "description": "价差变化影响终端选择"
+        }
+      ]
+    },
+    "graph": {
+      "nodes": [
+        {
+          "id": "n1",
+          "name": "泰国尖竹汶",
+          "type": "产区",
+          "group": "source",
+          "summary": "金枕主产区，走高端与商超渠道"
+        },
+        {
+          "id": "n2",
+          "name": "越南前江",
+          "type": "产区",
+          "group": "source",
+          "summary": "Ri6 主产区，中端走量、成本更低"
+        },
+        {
+          "id": "n3",
+          "name": "金枕",
+          "type": "农产品",
+          "group": "goods",
+          "summary": "高端主力，品牌与分级成熟"
+        },
+        {
+          "id": "n4",
+          "name": "Ri6",
+          "type": "农产品",
+          "group": "goods",
+          "summary": "中端主力，价格弹性大"
+        },
+        {
+          "id": "n5",
+          "name": "友谊关",
+          "type": "口岸",
+          "group": "rule",
+          "summary": "陆运边贸，时效快但受排队影响"
+        },
+        {
+          "id": "n6",
+          "name": "曼谷—广州海运",
+          "type": "口岸",
+          "group": "rule",
+          "summary": "海运批量大，时效稳定但周期长"
+        },
+        {
+          "id": "n7",
+          "name": "广州江南市场",
+          "type": "市场",
+          "group": "market",
+          "summary": "全国价格发现与分流"
+        },
+        {
+          "id": "n8",
+          "name": "长沙红星市场",
+          "type": "市场",
+          "group": "market",
+          "summary": "华中集散，终端价格敏感"
+        },
+        {
+          "id": "n9",
+          "name": "泰国出口商",
+          "type": "角色",
+          "group": "actor",
+          "summary": "维护品牌溢价，不愿降价"
+        },
+        {
+          "id": "n10",
+          "name": "越南出口商",
+          "type": "角色",
+          "group": "actor",
+          "summary": "以价换量，抢中端货架"
+        },
+        {
+          "id": "n11",
+          "name": "进口商",
+          "type": "角色",
+          "group": "actor",
+          "summary": "按价差与时效分配两国货量"
+        },
+        {
+          "id": "n12",
+          "name": "价差",
+          "type": "指标",
+          "group": "metric",
+          "summary": "金枕与 Ri6 的批发价差"
+        },
+        {
+          "id": "n13",
+          "name": "份额",
+          "type": "指标",
+          "group": "metric",
+          "summary": "按产地计的货架与销量占比"
+        },
+        {
+          "id": "n14",
+          "name": "到货量",
+          "type": "指标",
+          "group": "metric",
+          "summary": "周度到货吨数"
+        }
+      ],
+      "edges": [
+        {
+          "id": "e1",
+          "source": "n1",
+          "target": "n3",
+          "name": "供应流向",
+          "fact": "尖竹汶金枕按品牌分级出货",
+          "weight": 4
+        },
+        {
+          "id": "e2",
+          "source": "n2",
+          "target": "n4",
+          "name": "供应流向",
+          "fact": "前江 Ri6 以成本优势放量",
+          "weight": 4
+        },
+        {
+          "id": "e3",
+          "source": "n4",
+          "target": "n3",
+          "name": "份额竞争",
+          "fact": "Ri6 价差收窄后抢占中端货架",
+          "weight": 5
+        },
+        {
+          "id": "e4",
+          "source": "n5",
+          "target": "n14",
+          "name": "时效约束",
+          "fact": "边贸排队使到货节奏波动 1—3 天",
+          "weight": 4
+        },
+        {
+          "id": "e5",
+          "source": "n6",
+          "target": "n14",
+          "name": "时效约束",
+          "fact": "海运批量到港，单次冲击更大",
+          "weight": 3
+        },
+        {
+          "id": "e6",
+          "source": "n14",
+          "target": "n12",
+          "name": "价格传导",
+          "fact": "越南到货 +57% 使价差由 5.8 收窄至 3.4",
+          "weight": 5
+        },
+        {
+          "id": "e7",
+          "source": "n12",
+          "target": "n8",
+          "name": "价格传导",
+          "fact": "价差 4 元/kg 以内终端开始替代",
+          "weight": 4
+        },
+        {
+          "id": "e8",
+          "source": "n9",
+          "target": "n3",
+          "name": "份额竞争",
+          "fact": "泰国保价不保量，主动让出中端",
+          "weight": 4
+        },
+        {
+          "id": "e9",
+          "source": "n10",
+          "target": "n4",
+          "name": "份额竞争",
+          "fact": "越南以价换量，份额 +6.4pp",
+          "weight": 4
+        },
+        {
+          "id": "e10",
+          "source": "n11",
+          "target": "n5",
+          "name": "供应流向",
+          "fact": "进口商按口岸时效动态分配货量",
+          "weight": 3
+        },
+        {
+          "id": "e11",
+          "source": "n3",
+          "target": "n7",
+          "name": "供应流向",
+          "fact": "高端货集中江南市场做价格发现",
+          "weight": 3
+        },
+        {
+          "id": "e12",
+          "source": "n4",
+          "target": "n8",
+          "name": "供应流向",
+          "fact": "中端货直奔华中终端",
+          "weight": 3
+        },
+        {
+          "id": "e13",
+          "source": "n13",
+          "target": "n9",
+          "name": "份额竞争",
+          "fact": "份额下滑迫使泰国调整渠道结构",
+          "weight": 3
+        },
+        {
+          "id": "e14",
+          "source": "n5",
+          "target": "n6",
+          "name": "时效约束",
+          "fact": "两条通道时效差 2.6 天，决定先到先得",
+          "weight": 4
+        }
+      ]
+    },
+    "process": [
+      {
+        "step": 1,
+        "phase": "图谱构建",
+        "title": "把两国放同一张图",
+        "detail": "产区、品种、口岸、市场、角色、指标六类主体同图，价差与份额挂在同一口径上。",
+        "finding": "14 个主体、14 条关系，含 4 条反向竞争边。",
+        "signal": "同图可比"
+      },
+      {
+        "step": 2,
+        "phase": "环境设定",
+        "title": "同期上市 + 通道差异",
+        "detail": "两组产地同日上市，但分别走边贸与海运，注入不同的排队波动。",
+        "finding": "竞争按同期起跑、不同到货节奏展开。",
+        "signal": "同期起跑"
+      },
+      {
+        "step": 3,
+        "phase": "多主体推演",
+        "title": "24 轮价格与货量博弈",
+        "detail": "两国出口商分别以保价与保量出招，进口商按价差与时效切换分配。",
+        "finding": "第 5 轮价差首次跌破 4 元/kg，第 12 轮份额交叉。",
+        "signal": "价差破 4"
+      },
+      {
+        "step": 4,
+        "phase": "冲击测试",
+        "title": "边贸排队 + 海运集中到港",
+        "detail": "分别注入友谊关排队 3 天与海运集中到港两个冲击。",
+        "finding": "边贸排队让越南中端窗口缩短 2 天，价差回弹 0.6 元/kg。",
+        "signal": "窗口 -2 天"
+      },
+      {
+        "step": 5,
+        "phase": "结构分析",
+        "title": "检查是否两败俱伤",
+        "detail": "按档位拆份额与毛利，判断竞争是否摧毁整体价格体系。",
+        "finding": "未两败俱伤：高端价稳、中端让利，整体均价仅 -3.1%。",
+        "signal": "双轨而非双输"
+      },
+      {
+        "step": 6,
+        "phase": "结论固化",
+        "title": "输出分工建议",
+        "detail": "把结论收敛为通道分工、档位错位、价差阈值三条动作。",
+        "finding": "三条动作对应先到、并跑、收窄三个窗口。",
+        "signal": "三动作"
+      }
+    ],
+    "timeline": [
+      {
+        "t": "T+0",
+        "label": "同日上市",
+        "detail": "尖竹汶与前江同期开秤，价差 5.8 元/kg。"
+      },
+      {
+        "t": "T+4",
+        "label": "越南货先到中端",
+        "detail": "边贸通道把 Ri6 提前 2 天铺到华中。",
+        "detailNote": ""
+      },
+      {
+        "t": "T+9",
+        "label": "价差跌破 4 元",
+        "detail": "终端开始出现替代，金枕动销放缓。"
+      },
+      {
+        "t": "T+12",
+        "label": "份额交叉",
+        "detail": "越南份额升至 41.8%，泰国回落至 58.2%。"
+      },
+      {
+        "t": "T+18",
+        "label": "分工固化",
+        "detail": "泰国退守高端与商超，越南占据中端走量。"
+      }
+    ],
+    "findings": [
+      {
+        "no": "01",
+        "heading": "价差是这场竞争的真正战场",
+        "lead": "两国争的不是总量，而是价差区间。",
+        "points": [
+          "价差从 5.8 收窄至 3.4 元/kg，收窄 41.4%",
+          "跌破 4 元/kg 后终端替代开始",
+          "泰国保价的结果是让出中端货架"
+        ],
+        "quotes": [
+          {
+            "who": "泰国出口商",
+            "text": "降价一次，明年就没法按品牌价卖了。"
+          },
+          {
+            "who": "进口商",
+            "text": "差 4 块以内，客户根本不问产地。"
+          }
+        ],
+        "conclusion": "盯住价差阈值（4 元/kg）比盯住单边价格更能预判替代时点。"
+      },
+      {
+        "no": "02",
+        "heading": "口岸时效决定谁定义开局价格",
+        "lead": "先到的两三天，等于拿到定价权。",
+        "points": [
+          "边贸与海运时效差 2.6 天",
+          "越南货提前 2 天进入中端",
+          "边贸排队 3 天会回吐 0.6 元/kg 的价差优势"
+        ],
+        "quotes": [
+          {
+            "who": "口岸报关",
+            "text": "车排在关口，果在车上熟，早一天就是钱。"
+          },
+          {
+            "who": "批发商",
+            "text": "先到的那批，价格是我们说了算。"
+          }
+        ],
+        "conclusion": "通道能力是竞争资源，应纳入产地策略而不只是物流成本。"
+      },
+      {
+        "no": "03",
+        "heading": "竞争结果不是两败俱伤，而是双轨分化",
+        "lead": "高端与中端各自成立，整体均价小幅下移。",
+        "points": [
+          "泰国份额 58.2%（-6.4pp）但高端价稳",
+          "越南到货 +57%、份额 41.8%",
+          "整体均价仅 -3.1%，未出现踩踏"
+        ],
+        "quotes": [
+          {
+            "who": "零售商",
+            "text": "贵的有人买，便宜的走得快，货架不冲突。"
+          },
+          {
+            "who": "批发商",
+            "text": "真正难受的是两头都不沾的中档货。"
+          }
+        ],
+        "conclusion": "把双轨分工固化下来，比强行统一档次更能保住整体毛利。"
+      },
+      {
+        "no": "04",
+        "heading": "同档位的中端最容易被牺牲",
+        "lead": "被替代的不是高端，而是夹在中间的那一层。",
+        "points": [
+          "中端同档位价格 -9.6%",
+          "高端价格仅 -1.2%",
+          "中端库存周转天数 +4.2 天"
+        ],
+        "quotes": [
+          {
+            "who": "进口商",
+            "text": "中档的最尴尬，上不去下不来，只能压价走。"
+          },
+          {
+            "who": "零售商",
+            "text": "两头都有明确客人，中档要看促销。"
+          }
+        ],
+        "conclusion": "中端需要提前锁定促销与档期，否则会变成竞争的泄压口。"
+      }
+    ],
+    "risks": [
+      {
+        "name": "边贸排队常态化",
+        "impact": 4,
+        "likelihood": 4,
+        "note": "排队 3 天即回吐 0.6 元/kg 价差优势。"
+      },
+      {
+        "name": "价差过快跌破阈值",
+        "impact": 5,
+        "likelihood": 3,
+        "note": "跌破 4 元/kg 后替代加速，高端溢价受损。"
+      },
+      {
+        "name": "海运集中到港",
+        "impact": 4,
+        "likelihood": 3,
+        "note": "单次大批量到港造成周内价格塌陷。"
+      },
+      {
+        "name": "中端库存积压",
+        "impact": 3,
+        "likelihood": 4,
+        "note": "中端周转天数 +4.2 天，占用资金。"
+      },
+      {
+        "name": "品质分级不统一",
+        "impact": 3,
+        "likelihood": 3,
+        "note": "跨国分级口径不同，价差失真。"
+      }
+    ],
+    "conclusion": [
+      "把价差 4 元/kg 设为预警线，跌破即启动档位错位安排。",
+      "通道分工：越南走边贸抢时间，泰国走海运保稳定与批量。",
+      "档位分工：泰国守高端与商超，越南做中端与走量，中档单独排促销。",
+      "以周为单位跟踪口岸时效差，时效差超过 3 天即重新分配货量。"
+    ],
+    "sources": [
+      {
+        "name": "泰国尖竹汶产区",
+        "type": "产地",
+        "note": "金枕分级与品牌价"
+      },
+      {
+        "name": "越南前江产区",
+        "type": "产地",
+        "note": "Ri6 成本与放量节奏"
+      },
+      {
+        "name": "友谊关口岸",
+        "type": "口岸",
+        "note": "边贸排队时长"
+      },
+      {
+        "name": "曼谷—广州海运",
+        "type": "口岸",
+        "note": "批量与周期"
+      },
+      {
+        "name": "广州江南市场",
+        "type": "市场",
+        "note": "价格发现与价差口径"
+      },
+      {
+        "name": "长沙红星市场",
+        "type": "市场",
+        "note": "华中终端替代速度"
+      }
+    ]
+  }
+}
