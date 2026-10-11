@@ -8,12 +8,19 @@
           <div v-if="files.length" class="file-chip">▤ {{ files[0].name }} · {{ Math.ceil(files[0].size / 1024) }} KB <button @click="files = []" aria-label="删除附件">×</button></div>
           <textarea v-model="formData.simulationRequirement" @keydown="onPromptKeydown" rows="5" aria-label="推演要求" placeholder="请输入推演要求"></textarea>
           <div class="actions"><div><button @click="triggerFileInput">＋ 添加附件</button><button @click="showConfig = !showConfig" :aria-expanded="showConfig">⚙ 配置项</button><input ref="fileInput" type="file" hidden accept=".pdf,.doc,.docx,.xls,.xlsx,.md,.txt" @change="handleFileSelect" /></div><button class="send" :disabled="!canSubmit || loading" @click="startSimulation" aria-label="发送">发送</button></div>
-          <div v-if="showConfig" class="config"><label>历史数据周期<select v-model="historyPeriod"><option>最近 1 个月</option><option>最近 3 个月</option><option>最近 6 个月</option></select></label><label>推演轮次<input type="range" min="10" max="40" v-model.number="rounds" />{{ rounds }} 轮</label><label>环境模式<select v-model="environment"><option>双环境</option><option>单环境</option></select></label><label>报告风格<select><option>专家风格</option></select></label><button type="button" @click="showConfig = false">保存</button></div>
+          <div v-if="showConfig" class="config"><label>历史数据周期<select v-model="historyPeriod"><option>最近 1 个月</option><option>最近 3 个月</option><option>最近 6 个月</option></select></label><label>推演轮次<input type="range" min="10" max="40" v-model.number="rounds" />{{ rounds }} 轮</label><label>环境模式<select v-model="environment"><option>双环境</option><option>单环境</option></select></label><label>报告风格<select v-model="reportStyle"><option>专家风格</option><option>数据报表风格</option></select></label><button type="button" @click="showConfig = false">保存</button></div>
         </div>
         <p class="hint">请至少输入推演要求、保留系统种子或上传附件</p>
       </main>
       <aside class="recommend" aria-label="推荐内容">
         <h2>推荐内容</h2>
+        <section class="suggest-group"><h3>内置推演（示例 · 两种风格）</h3>
+          <button class="suggest-card" v-for="(b, i) in builtins" :key="b.id" @click="router.push('/builtin/' + b.id)">
+            <span class="suggest-number">{{ String(i + 1).padStart(2, '0') }}</span>
+            <span class="suggest-title">{{ b.title }}<em class="bi-note">{{ b.rounds }} 轮 · {{ b.agents }} 主体 · 数据报表 / 专家风格</em></span>
+            <span class="suggest-arrow" aria-hidden="true">↗</span>
+          </button>
+        </section>
         <section class="suggest-group"><h3>热门推演主题</h3>
           <button class="suggest-card cover" :class="'st-' + item.style" v-for="(item, index) in popularSuggestions"
             :key="item.title" @click="useSuggestion(item.title)">
@@ -53,6 +60,7 @@ import { useRouter } from 'vue-router'
 import HistoryDatabase from '../components/HistoryDatabase.vue'
 import CoverArt from '../components/CoverArt.vue'
 import { suggestThemes, relatedSuggestions } from '../components/suggestThemes.js'
+import { builtins } from '../data/builtin'
 
 const router = useRouter()
 const agriContext = ref(null)
@@ -62,6 +70,7 @@ const historyPeriod = ref('最近 3 个月')
 const rounds = ref(40)
 const environment = ref('双环境')
 const popularSuggestions = suggestThemes
+const reportStyle = ref('专家风格')
 const pendingSuggestion = ref('')
 
 const receiveAgriContext = (event) => {
@@ -193,6 +202,7 @@ h2{font-size:14px;font-weight:700;letter-spacing:-.01em}.new-run{width:100%;marg
 .suggest-card{position:relative;width:100%;display:grid;grid-template-columns:30px minmax(0,1fr) 27px;align-items:center;gap:12px;margin:8px 0;padding:16px 14px 16px 18px;text-align:left;color:var(--ink);cursor:pointer;background:#fff;border:1px solid #e5e7eb;border-radius:0;box-shadow:0 1px 2px #1111110a;transition:transform .18s,border-color .18s,box-shadow .18s}.suggest-card::before{content:"";position:absolute;left:-1px;top:13px;bottom:13px;width:3px;background:var(--accent);opacity:.75}.suggest-card:hover,.suggest-card:focus-visible{transform:translateY(-2px);border-color:rgba(0,0,0,.45);box-shadow:0 10px 24px #1f29371f;outline:0}.suggest-number{font:700 16px 'JetBrains Mono',monospace;color:#df5430;align-self:start;padding-top:2px}.suggest-title{font-size:14px;font-weight:650;line-height:1.55}.suggest-arrow{width:26px;height:26px;border:1px solid #ffddcf;border-radius:50%;display:grid;place-items:center;background:#fff6f1;color:var(--accent);font-size:16px}.suggest-card:hover .suggest-arrow{background:var(--accent);border-color:var(--accent);color:#fff}
 /* 热门推演主题：封面在上，文案在下 */
 .suggest-card.cover{display:block;padding:0;overflow:hidden;background:#fff}.suggest-card.cover::before{display:none}.suggest-cover{position:relative;display:block;aspect-ratio:16/9;background:#0e222c;border-bottom:1px solid #e5e7eb}.suggest-cover::before{content:"";position:absolute;left:8px;top:8px;width:9px;height:9px;border-top:1.5px solid rgba(255,255,255,.55);border-left:1.5px solid rgba(255,255,255,.55);z-index:2}.suggest-body{display:block;padding:13px 14px 15px}.suggest-head{display:flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace}.suggest-head .suggest-number{align-self:center;padding-top:0;font-size:12px}.suggest-tag{margin-right:auto;padding:2px 6px;font-size:10px;letter-spacing:.08em;color:#b74c2c;background:#fff2ec;border:1px solid #ffddce}.suggest-head .suggest-arrow{width:22px;height:22px;font-size:13px}.suggest-card.cover .suggest-title{display:block;margin-top:9px}
+.bi-note{display:block;margin-top:5px;font:500 10.5px 'JetBrains Mono',monospace;color:#6b7280;font-style:normal}
 /* 每套封面风格对应的卡片外壳（B 蓝图 / C 纸感台账 / D 地块地图 / E 告警面板） */
 .suggest-card.cover.st-B{background:#fbfdff;border-color:#cfe2f2}.suggest-card.cover.st-B::before{display:none}
 .suggest-card.cover.st-B .suggest-head .suggest-number{color:#1d6fa5}.suggest-card.cover.st-B .suggest-tag{background:#eaf5ff;border-color:#cfe6fb;color:#1d6fa5}.suggest-card.cover.st-B .suggest-arrow{background:#f4faff;border-color:#cfe6fb;color:#1d6fa5}
