@@ -346,13 +346,24 @@ function startReveal(target) {
   }, 220)
 }
 const simStarted = ref(false)
+/* 构建阶段（currentPhase）：0 本体生成 → 1 GraphRAG 构建 → >=2 构建完成；
+   每个阶段只放出一部分，环境搭建阶段不再变动，启动双平台后才继续补第二批 */
+const buildStage = computed(() => {
+  const ph = Number(props.currentPhase)
+  if (!Number.isFinite(ph)) return 3
+  return ph <= 0 ? 1 : ph === 1 ? 2 : 3
+})
+const revealTarget = () => {
+  if (simStarted.value) return targetOf()
+  const w1 = wave1Of()
+  const st = buildStage.value
+  return st === 1 ? Math.min(8, w1) : st === 2 ? Math.min(64, w1) : w1
+}
 const onSimStart = () => { simStarted.value = true; startReveal(targetOf()) }
-/* 数据刷新不重置进度：第一批展开到 120 左右就停住，启动双平台后才继续补第二批 */
-watch(() => props.graphData, () => {
-  const target = simStarted.value ? targetOf() : wave1Of()
-  /* 已在推演中重挂时，第一批直接摆好，只让第二批 120 个逐步补进来 */
+watch(() => [props.graphData, buildStage.value], () => {
+  const target = revealTarget()
   if (simStarted.value && revealed.value < wave1Of()) revealed.value = wave1Of()
-  if (revealed.value < target) nextTick(() => startReveal(target))
+  if (revealed.value !== target) nextTick(() => startReveal(target))
 }, { immediate: true })
 watch(() => props.isSimulating, (v) => { if (v) { simStarted.value = true; startReveal(targetOf()) } })
 watch(shownGraph, () => nextTick(renderGraph))
@@ -503,20 +514,32 @@ const renderGraph = () => {
   const getColor = (type) => colorMap[type] || '#999'
 
   // Simulation - 根据边数量动态调整节点间距
+  /* 类型 → 聚簇中心（3×2 网格），同类型挤成一团，团与团之间留缝 */
+  const CLUSTERS = {
+    '产区': [0.22, 0.30], '农产品': [0.50, 0.22], '市场': [0.78, 0.30],
+    '角色': [0.26, 0.72], '指标': [0.52, 0.78], '制度': [0.78, 0.70]
+  }
+  const clusterAt = (d) => {
+    const key = Object.keys(CLUSTERS).find((k) => String(d.type || '').includes(k)) || '农产品'
+    const [fx, fy] = CLUSTERS[key]
+    return { x: fx * width, y: fy * height }
+  }
+
   const simulation = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(edges).id(d => d.id).distance(d => {
       // 根据这对节点之间的边数量动态调整距离
       // 基础距离 150，每多一条边增加 40
-      const baseDistance = 150
+      const baseDistance = 62
       const edgeCount = d.pairTotal || 1
-      return baseDistance + (edgeCount - 1) * 50
+      return baseDistance + (edgeCount - 1) * 22
     }))
-    .force('charge', d3.forceManyBody().strength(-400))
+    /* 紧凑 + 按本体类型聚簇：每类各自成团，能看出核心与边缘，而不是四散的长脚 */
+    .force('charge', d3.forceManyBody().strength(-26).distanceMax(260))
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collide', d3.forceCollide(50))
+    .force('collide', d3.forceCollide(16))
     // 添加向中心的引力，让独立的节点群聚集到中心区域
-    .force('x', d3.forceX(width / 2).strength(0.04))
-    .force('y', d3.forceY(height / 2).strength(0.04))
+    .force('x', d3.forceX(d => clusterAt(d).x).strength(0.16))
+    .force('y', d3.forceY(d => clusterAt(d).y).strength(0.16))
   
   currentSimulation = simulation
 

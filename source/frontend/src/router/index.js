@@ -6,6 +6,7 @@ import SimulationRunView from '../views/SimulationRunView.vue'
 import ReportView from '../views/ReportView.vue'
 import InteractionView from '../views/InteractionView.vue'
 import BuiltinView from '../views/BuiltinView.vue'
+import ReportStandalone from '../views/ReportStandalone.vue'
 
 const routes = [
   {
@@ -35,6 +36,12 @@ const routes = [
     path: '/builtin/:id',
     name: 'Builtin',
     component: BuiltinView,
+    props: true
+  },
+  {
+    path: '/report-standalone/:reportId',
+    name: 'ReportStandalone',
+    component: ReportStandalone,
     props: true
   },
   {

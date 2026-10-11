@@ -6,6 +6,7 @@
 -->
 <template>
   <div class="rp" ref="root">
+    <a v-if="!standalone" class="open-tab" :href="standaloneHref" target="_blank" rel="noopener" title="在浏览器打开这份报告">在浏览器打开 ↗</a>
     <nav class="dots" aria-label="页面导航">
       <button v-for="(p, i) in pageDefs" :key="i" :class="{ on: i === page }" :title="p.name" @click="goto(i)"></button>
     </nav>
@@ -166,7 +167,9 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 
-const props = defineProps({ item: { type: Object, required: true } })
+const props = defineProps({ item: { type: Object, required: true }, standalone: { type: Boolean, default: false } })
+/* 独立链接：报告在浏览器新标签里整页打开 */
+const standaloneHref = computed(() => location.href.split('#')[0] + '#/report-standalone/' + props.item.report_id)
 const d = computed(() => props.item.dataset)
 const page = ref(0)
 const root = ref(null)
@@ -257,6 +260,9 @@ const envCount = (platform) => (props.item.actions || []).filter((a) => a.platfo
   position:relative;height:100%;background:linear-gradient(180deg,#f7f9ff 0%,#eef3fd 100%);color:var(--ink)}
 .pages{height:100%;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
 .page{min-height:100%;scroll-snap-align:start;padding:34px clamp(18px,4vw,54px) 40px;display:flex;flex-direction:column;gap:16px;max-width:1240px;margin:0 auto}
+.open-tab{position:absolute;top:12px;right:14px;z-index:10;font:600 11px 'JetBrains Mono',monospace;color:#1d4ed8;background:#fff;
+  border:1px solid #c7d7fb;border-radius:8px;padding:6px 11px;text-decoration:none;box-shadow:0 4px 14px #1d4ed81a;transition:.18s}
+.open-tab:hover{background:#eaf0fd;transform:translateY(-1px)}
 .dots{position:absolute;right:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:9}
 .dots button{width:8px;height:8px;padding:0;border-radius:50%;border:1px solid #a9b8d6;background:#fff;cursor:pointer;transition:.2s}
 .dots button.on{background:var(--accent);border-color:var(--accent);transform:scale(1.35);box-shadow:0 0 0 3px #1d4ed81a}

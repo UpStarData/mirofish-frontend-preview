@@ -5458,8 +5458,14 @@
       "id": "builtin-durian-a1",
       "platform": "twitter",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【市场交易环境 · 产地报价】彭亨主产季与泰国东部重叠，可供量短期抬升",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【市场交易环境 · 产地报价】彭亨主产季与泰国东部重叠，可供量短期抬升",
+        "text": "T+0 产季重叠确认｜【市场交易环境 · 产地报价】彭亨主产季与泰国东部重叠，可供量短期抬升"
+      },
       "timestamp": "2026-10-12T00:30:00.000Z",
       "round_num": 1
     },
@@ -5467,8 +5473,14 @@
       "id": "builtin-durian-a2",
       "platform": "twitter",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【市场交易环境】到货量周环比 +42% 与价格 +31.4% 同期出现",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【市场交易环境】到货量周环比 +42% 与价格 +31.4% 同期出现",
+        "text": "T+0 产季重叠确认｜【市场交易环境】到货量周环比 +42% 与价格 +31.4% 同期出现"
+      },
       "timestamp": "2026-10-12T00:30:00.000Z",
       "round_num": 1
     },
@@ -5476,8 +5488,14 @@
       "id": "builtin-durian-a3",
       "platform": "reddit",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_COMMENT",
       "content": "T+0 产季重叠确认｜【产业协作环境并行 · 产地共建基地】货是同一批货，早到三天就是另一个价格。",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【产业协作环境并行 · 产地共建基地】货是同一批货，早到三天就是另一个价格。",
+        "text": "T+0 产季重叠确认｜【产业协作环境并行 · 产地共建基地】货是同一批货，早到三天就是另一个价格。"
+      },
       "timestamp": "2026-10-12T00:30:00.000Z",
       "round_num": 1
     },
@@ -5485,8 +5503,14 @@
       "id": "builtin-durian-a4",
       "platform": "reddit",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【产业协作环境并行】14 个主体、14 条关系进入推演图。",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【产业协作环境并行】14 个主体、14 条关系进入推演图。",
+        "text": "T+0 产季重叠确认｜【产业协作环境并行】14 个主体、14 条关系进入推演图。"
+      },
       "timestamp": "2026-10-12T00:30:00.000Z",
       "round_num": 1
     },
@@ -5494,8 +5518,14 @@
       "id": "builtin-durian-a5",
       "platform": "twitter",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【市场交易环境 · 到岸成本核算】尖竹汶提前上市，金枕先到",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【市场交易环境 · 到岸成本核算】尖竹汶提前上市，金枕先到",
+        "text": "T+0 产季重叠确认｜【市场交易环境 · 到岸成本核算】尖竹汶提前上市，金枕先到"
+      },
       "timestamp": "2026-10-12T01:00:00.000Z",
       "round_num": 2
     },
@@ -5503,8 +5533,14 @@
       "id": "builtin-durian-a6",
       "platform": "twitter",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【市场交易环境】峰值集中在前两周",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【市场交易环境】峰值集中在前两周",
+        "text": "T+0 产季重叠确认｜【市场交易环境】峰值集中在前两周"
+      },
       "timestamp": "2026-10-12T01:00:00.000Z",
       "round_num": 2
     },
@@ -5512,8 +5548,14 @@
       "id": "builtin-durian-a7",
       "platform": "reddit",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_COMMENT",
       "content": "T+0 产季重叠确认｜【产业协作环境并行 · 联合采购小组】高峰当天的议价权在买方手里，报价只能往下压。",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【产业协作环境并行 · 联合采购小组】高峰当天的议价权在买方手里，报价只能往下压。",
+        "text": "T+0 产季重叠确认｜【产业协作环境并行 · 联合采购小组】高峰当天的议价权在买方手里，报价只能往下压。"
+      },
       "timestamp": "2026-10-12T01:00:00.000Z",
       "round_num": 2
     },
@@ -5521,8 +5563,14 @@
       "id": "builtin-durian-a8",
       "platform": "reddit",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【产业协作环境并行】14 个主体、14 条关系进入推演图。",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【产业协作环境并行】14 个主体、14 条关系进入推演图。",
+        "text": "T+0 产季重叠确认｜【产业协作环境并行】14 个主体、14 条关系进入推演图。"
+      },
       "timestamp": "2026-10-12T01:00:00.000Z",
       "round_num": 2
     },
@@ -5530,8 +5578,14 @@
       "id": "builtin-durian-a9",
       "platform": "twitter",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【市场交易环境 · 一批成交】榴莲经广州江南分拨后进入红星市场",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【市场交易环境 · 一批成交】榴莲经广州江南分拨后进入红星市场",
+        "text": "T+0 产季重叠确认｜【市场交易环境 · 一批成交】榴莲经广州江南分拨后进入红星市场"
+      },
       "timestamp": "2026-10-12T01:30:00.000Z",
       "round_num": 3
     },
@@ -5539,8 +5593,14 @@
       "id": "builtin-durian-a10",
       "platform": "twitter",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【市场交易环境】第三周开始回吐，年内均价仅 +6.2%",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【市场交易环境】第三周开始回吐，年内均价仅 +6.2%",
+        "text": "T+0 产季重叠确认｜【市场交易环境】第三周开始回吐，年内均价仅 +6.2%"
+      },
       "timestamp": "2026-10-12T01:30:00.000Z",
       "round_num": 3
     },
@@ -5548,8 +5608,14 @@
       "id": "builtin-durian-a11",
       "platform": "reddit",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_COMMENT",
       "content": "T+0 产季重叠确认｜【产业协作环境并行 · 共享冷库】同一条船，早放行一天，损耗和报价都不一样。",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【产业协作环境并行 · 共享冷库】同一条船，早放行一天，损耗和报价都不一样。",
+        "text": "T+0 产季重叠确认｜【产业协作环境并行 · 共享冷库】同一条船，早放行一天，损耗和报价都不一样。"
+      },
       "timestamp": "2026-10-12T01:30:00.000Z",
       "round_num": 3
     },
@@ -5557,8 +5623,14 @@
       "id": "builtin-durian-a12",
       "platform": "reddit",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【产业协作环境并行】两组环境在同一需求曲线下运行，差异只来自供给与时效。",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【产业协作环境并行】两组环境在同一需求曲线下运行，差异只来自供给与时效。",
+        "text": "T+0 产季重叠确认｜【产业协作环境并行】两组环境在同一需求曲线下运行，差异只来自供给与时效。"
+      },
       "timestamp": "2026-10-12T01:30:00.000Z",
       "round_num": 3
     },
@@ -5566,8 +5638,14 @@
       "id": "builtin-durian-a13",
       "platform": "twitter",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【市场交易环境 · 二批分销】江南市场承担价格发现功能",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【市场交易环境 · 二批分销】江南市场承担价格发现功能",
+        "text": "T+0 产季重叠确认｜【市场交易环境 · 二批分销】江南市场承担价格发现功能"
+      },
       "timestamp": "2026-10-12T02:00:00.000Z",
       "round_num": 4
     },
@@ -5575,8 +5653,14 @@
       "id": "builtin-durian-a14",
       "platform": "twitter",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【市场交易环境】通关每延长 1 天，周到货量下降约 6%",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【市场交易环境】通关每延长 1 天，周到货量下降约 6%",
+        "text": "T+0 产季重叠确认｜【市场交易环境】通关每延长 1 天，周到货量下降约 6%"
+      },
       "timestamp": "2026-10-12T02:00:00.000Z",
       "round_num": 4
     },
@@ -5584,8 +5668,14 @@
       "id": "builtin-durian-a15",
       "platform": "reddit",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_COMMENT",
       "content": "T+0 产季重叠确认｜【产业协作环境并行 · 干线共配】断链超过 48 小时，货就进了次一级的通道。",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【产业协作环境并行 · 干线共配】断链超过 48 小时，货就进了次一级的通道。",
+        "text": "T+0 产季重叠确认｜【产业协作环境并行 · 干线共配】断链超过 48 小时，货就进了次一级的通道。"
+      },
       "timestamp": "2026-10-12T02:00:00.000Z",
       "round_num": 4
     },
@@ -5593,8 +5683,14 @@
       "id": "builtin-durian-a16",
       "platform": "reddit",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_POST",
       "content": "T+0 产季重叠确认｜【产业协作环境并行】两组环境在同一需求曲线下运行，差异只来自供给与时效。",
+      "action_args": {
+        "content": "T+0 产季重叠确认｜【产业协作环境并行】两组环境在同一需求曲线下运行，差异只来自供给与时效。",
+        "text": "T+0 产季重叠确认｜【产业协作环境并行】两组环境在同一需求曲线下运行，差异只来自供给与时效。"
+      },
       "timestamp": "2026-10-12T02:00:00.000Z",
       "round_num": 4
     },
@@ -5602,8 +5698,14 @@
       "id": "builtin-durian-a17",
       "platform": "twitter",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境 · 补货指令】到货量周环比 +42% 时，批发价两周内 +31.4%",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境 · 补货指令】到货量周环比 +42% 时，批发价两周内 +31.4%",
+        "text": "T+3 首船集中到港｜【市场交易环境 · 补货指令】到货量周环比 +42% 时，批发价两周内 +31.4%"
+      },
       "timestamp": "2026-10-12T02:30:00.000Z",
       "round_num": 5
     },
@@ -5611,8 +5713,14 @@
       "id": "builtin-durian-a18",
       "platform": "twitter",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境】峰值前延长 2 天，峰值抬升 1.4 元/kg",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境】峰值前延长 2 天，峰值抬升 1.4 元/kg",
+        "text": "T+3 首船集中到港｜【市场交易环境】峰值前延长 2 天，峰值抬升 1.4 元/kg"
+      },
       "timestamp": "2026-10-12T02:30:00.000Z",
       "round_num": 5
     },
@@ -5620,8 +5728,14 @@
       "id": "builtin-durian-a19",
       "platform": "reddit",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_COMMENT",
       "content": "T+3 首船集中到港｜【产业协作环境并行 · 标准分级共建】客人问的是有没有，不是哪个产地。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行 · 标准分级共建】客人问的是有没有，不是哪个产地。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行 · 标准分级共建】客人问的是有没有，不是哪个产地。"
+      },
       "timestamp": "2026-10-12T02:30:00.000Z",
       "round_num": 5
     },
@@ -5629,8 +5743,14 @@
       "id": "builtin-durian-a20",
       "platform": "reddit",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【产业协作环境并行】两组环境在同一需求曲线下运行，差异只来自供给与时效。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行】两组环境在同一需求曲线下运行，差异只来自供给与时效。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行】两组环境在同一需求曲线下运行，差异只来自供给与时效。"
+      },
       "timestamp": "2026-10-12T02:30:00.000Z",
       "round_num": 5
     },
@@ -5638,8 +5758,14 @@
       "id": "builtin-durian-a21",
       "platform": "twitter",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境 · 调运排期】批发价变化 3—7 天后反映到零售端",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境 · 调运排期】批发价变化 3—7 天后反映到零售端",
+        "text": "T+3 首船集中到港｜【市场交易环境 · 调运排期】批发价变化 3—7 天后反映到零售端"
+      },
       "timestamp": "2026-10-12T03:00:00.000Z",
       "round_num": 6
     },
@@ -5647,8 +5773,14 @@
       "id": "builtin-durian-a22",
       "platform": "twitter",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境】在途超过 5 天，损耗率升至 4.8%",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境】在途超过 5 天，损耗率升至 4.8%",
+        "text": "T+3 首船集中到港｜【市场交易环境】在途超过 5 天，损耗率升至 4.8%"
+      },
       "timestamp": "2026-10-12T03:00:00.000Z",
       "round_num": 6
     },
@@ -5656,8 +5788,14 @@
       "id": "builtin-durian-a23",
       "platform": "reddit",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_COMMENT",
       "content": "T+3 首船集中到港｜【产业协作环境并行 · 信息互通机制】高端压不动就往中端走，走的是同一个货架。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行 · 信息互通机制】高端压不动就往中端走，走的是同一个货架。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行 · 信息互通机制】高端压不动就往中端走，走的是同一个货架。"
+      },
       "timestamp": "2026-10-12T03:00:00.000Z",
       "round_num": 6
     },
@@ -5665,8 +5803,14 @@
       "id": "builtin-durian-a24",
       "platform": "reddit",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【产业协作环境并行】第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行】第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行】第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。"
+      },
       "timestamp": "2026-10-12T03:00:00.000Z",
       "round_num": 6
     },
@@ -5674,8 +5818,14 @@
       "id": "builtin-durian-a25",
       "platform": "twitter",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境 · 冷库出入库】通关每延长 1 天，周到货量下降约 6%",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境 · 冷库出入库】通关每延长 1 天，周到货量下降约 6%",
+        "text": "T+3 首船集中到港｜【市场交易环境 · 冷库出入库】通关每延长 1 天，周到货量下降约 6%"
+      },
       "timestamp": "2026-10-12T03:30:00.000Z",
       "round_num": 7
     },
@@ -5683,8 +5833,14 @@
       "id": "builtin-durian-a26",
       "platform": "twitter",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境】金枕份额 +7.4 个百分点",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境】金枕份额 +7.4 个百分点",
+        "text": "T+3 首船集中到港｜【市场交易环境】金枕份额 +7.4 个百分点"
+      },
       "timestamp": "2026-10-12T03:30:00.000Z",
       "round_num": 7
     },
@@ -5692,8 +5848,14 @@
       "id": "builtin-durian-a27",
       "platform": "reddit",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_COMMENT",
       "content": "T+3 首船集中到港｜【产业协作环境并行 · 价格指数共建】降的时候没人愿意先动，涨的时候都跟着动。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行 · 价格指数共建】降的时候没人愿意先动，涨的时候都跟着动。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行 · 价格指数共建】降的时候没人愿意先动，涨的时候都跟着动。"
+      },
       "timestamp": "2026-10-12T03:30:00.000Z",
       "round_num": 7
     },
@@ -5701,8 +5863,14 @@
       "id": "builtin-durian-a28",
       "platform": "reddit",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【产业协作环境并行】第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行】第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行】第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。"
+      },
       "timestamp": "2026-10-12T03:30:00.000Z",
       "round_num": 7
     },
@@ -5710,8 +5878,14 @@
       "id": "builtin-durian-a29",
       "platform": "twitter",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境 · 商超陈列调整】在途时间超过 5 天，损耗率升至 4.8%",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境 · 商超陈列调整】在途时间超过 5 天，损耗率升至 4.8%",
+        "text": "T+3 首船集中到港｜【市场交易环境 · 商超陈列调整】在途时间超过 5 天，损耗率升至 4.8%"
+      },
       "timestamp": "2026-10-12T04:00:00.000Z",
       "round_num": 8
     },
@@ -5719,8 +5893,14 @@
       "id": "builtin-durian-a30",
       "platform": "twitter",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境】D24 份额 -4.1 个百分点",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境】D24 份额 -4.1 个百分点",
+        "text": "T+3 首船集中到港｜【市场交易环境】D24 份额 -4.1 个百分点"
+      },
       "timestamp": "2026-10-12T04:00:00.000Z",
       "round_num": 8
     },
@@ -5728,8 +5908,14 @@
       "id": "builtin-durian-a31",
       "platform": "reddit",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_COMMENT",
       "content": "T+3 首船集中到港｜【产业协作环境并行 · 质量追溯联盟】贵了就先不买，等一周再说。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行 · 质量追溯联盟】贵了就先不买，等一周再说。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行 · 质量追溯联盟】贵了就先不买，等一周再说。"
+      },
       "timestamp": "2026-10-12T04:00:00.000Z",
       "round_num": 8
     },
@@ -5737,8 +5923,14 @@
       "id": "builtin-durian-a32",
       "platform": "reddit",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【产业协作环境并行】第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行】第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行】第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。"
+      },
       "timestamp": "2026-10-12T04:00:00.000Z",
       "round_num": 8
     },
@@ -5746,8 +5938,14 @@
       "id": "builtin-durian-a33",
       "platform": "twitter",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境 · 促销活动】需求回落使高位价格在第三周回吐 8%",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境 · 促销活动】需求回落使高位价格在第三周回吐 8%",
+        "text": "T+3 首船集中到港｜【市场交易环境 · 促销活动】需求回落使高位价格在第三周回吐 8%"
+      },
       "timestamp": "2026-10-12T04:30:00.000Z",
       "round_num": 9
     },
@@ -5755,8 +5953,14 @@
       "id": "builtin-durian-a34",
       "platform": "twitter",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【市场交易环境】总量维持在基准 ±3% 区间",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【市场交易环境】总量维持在基准 ±3% 区间",
+        "text": "T+3 首船集中到港｜【市场交易环境】总量维持在基准 ±3% 区间"
+      },
       "timestamp": "2026-10-12T04:30:00.000Z",
       "round_num": 9
     },
@@ -5764,8 +5968,14 @@
       "id": "builtin-durian-a35",
       "platform": "reddit",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_COMMENT",
       "content": "T+3 首船集中到港｜【产业协作环境并行 · 产销对接会】货是同一批货，早到三天就是另一个价格。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行 · 产销对接会】货是同一批货，早到三天就是另一个价格。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行 · 产销对接会】货是同一批货，早到三天就是另一个价格。"
+      },
       "timestamp": "2026-10-12T04:30:00.000Z",
       "round_num": 9
     },
@@ -5773,8 +5983,14 @@
       "id": "builtin-durian-a36",
       "platform": "reddit",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_POST",
       "content": "T+3 首船集中到港｜【产业协作环境并行】通关延迟把峰值推高 1.4 元/kg；需求回落在第三周回吐 8%。",
+      "action_args": {
+        "content": "T+3 首船集中到港｜【产业协作环境并行】通关延迟把峰值推高 1.4 元/kg；需求回落在第三周回吐 8%。",
+        "text": "T+3 首船集中到港｜【产业协作环境并行】通关延迟把峰值推高 1.4 元/kg；需求回落在第三周回吐 8%。"
+      },
       "timestamp": "2026-10-12T04:30:00.000Z",
       "round_num": 9
     },
@@ -5782,8 +5998,14 @@
       "id": "builtin-durian-a37",
       "platform": "twitter",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境 · 临期折价】金枕放量压缩 D24 的货架位",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境 · 临期折价】金枕放量压缩 D24 的货架位",
+        "text": "T+7 批发价跳升｜【市场交易环境 · 临期折价】金枕放量压缩 D24 的货架位"
+      },
       "timestamp": "2026-10-12T05:00:00.000Z",
       "round_num": 10
     },
@@ -5791,8 +6013,14 @@
       "id": "builtin-durian-a38",
       "platform": "twitter",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境】零售端两周内 +12.8%，约为批发涨幅的 40%",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境】零售端两周内 +12.8%，约为批发涨幅的 40%",
+        "text": "T+7 批发价跳升｜【市场交易环境】零售端两周内 +12.8%，约为批发涨幅的 40%"
+      },
       "timestamp": "2026-10-12T05:00:00.000Z",
       "round_num": 10
     },
@@ -5800,8 +6028,14 @@
       "id": "builtin-durian-a39",
       "platform": "reddit",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_COMMENT",
       "content": "T+7 批发价跳升｜【产业协作环境并行 · 技术培训】高峰当天的议价权在买方手里，报价只能往下压。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行 · 技术培训】高峰当天的议价权在买方手里，报价只能往下压。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行 · 技术培训】高峰当天的议价权在买方手里，报价只能往下压。"
+      },
       "timestamp": "2026-10-12T05:00:00.000Z",
       "round_num": 10
     },
@@ -5809,8 +6043,14 @@
       "id": "builtin-durian-a40",
       "platform": "reddit",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【产业协作环境并行】通关延迟把峰值推高 1.4 元/kg；需求回落在第三周回吐 8%。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行】通关延迟把峰值推高 1.4 元/kg；需求回落在第三周回吐 8%。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行】通关延迟把峰值推高 1.4 元/kg；需求回落在第三周回吐 8%。"
+      },
       "timestamp": "2026-10-12T05:00:00.000Z",
       "round_num": 10
     },
@@ -5818,8 +6058,14 @@
       "id": "builtin-durian-a41",
       "platform": "twitter",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境 · 退货处理】泰国提前期抢占先到先得窗口",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境 · 退货处理】泰国提前期抢占先到先得窗口",
+        "text": "T+7 批发价跳升｜【市场交易环境 · 退货处理】泰国提前期抢占先到先得窗口"
+      },
       "timestamp": "2026-10-12T05:30:00.000Z",
       "round_num": 11
     },
@@ -5827,8 +6073,14 @@
       "id": "builtin-durian-a42",
       "platform": "twitter",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境】滞后 3—7 天",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境】滞后 3—7 天",
+        "text": "T+7 批发价跳升｜【市场交易环境】滞后 3—7 天"
+      },
       "timestamp": "2026-10-12T05:30:00.000Z",
       "round_num": 11
     },
@@ -5836,8 +6088,14 @@
       "id": "builtin-durian-a43",
       "platform": "reddit",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_COMMENT",
       "content": "T+7 批发价跳升｜【产业协作环境并行 · 订单农业】同一条船，早放行一天，损耗和报价都不一样。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行 · 订单农业】同一条船，早放行一天，损耗和报价都不一样。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行 · 订单农业】同一条船，早放行一天，损耗和报价都不一样。"
+      },
       "timestamp": "2026-10-12T05:30:00.000Z",
       "round_num": 11
     },
@@ -5845,8 +6103,14 @@
       "id": "builtin-durian-a44",
       "platform": "reddit",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【产业协作环境并行】通关延迟把峰值推高 1.4 元/kg；需求回落在第三周回吐 8%。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行】通关延迟把峰值推高 1.4 元/kg；需求回落在第三周回吐 8%。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行】通关延迟把峰值推高 1.4 元/kg；需求回落在第三周回吐 8%。"
+      },
       "timestamp": "2026-10-12T05:30:00.000Z",
       "round_num": 11
     },
@@ -5854,8 +6118,14 @@
       "id": "builtin-durian-a45",
       "platform": "twitter",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境 · 在途改港】进口商锁量后集中到港，放大周内峰值",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境 · 在途改港】进口商锁量后集中到港，放大周内峰值",
+        "text": "T+7 批发价跳升｜【市场交易环境 · 在途改港】进口商锁量后集中到港，放大周内峰值"
+      },
       "timestamp": "2026-10-12T06:00:00.000Z",
       "round_num": 12
     },
@@ -5863,8 +6133,14 @@
       "id": "builtin-durian-a46",
       "platform": "twitter",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境】回落阶段零售价格更黏",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境】回落阶段零售价格更黏",
+        "text": "T+7 批发价跳升｜【市场交易环境】回落阶段零售价格更黏"
+      },
       "timestamp": "2026-10-12T06:00:00.000Z",
       "round_num": 12
     },
@@ -5872,8 +6148,14 @@
       "id": "builtin-durian-a47",
       "platform": "reddit",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_COMMENT",
       "content": "T+7 批发价跳升｜【产业协作环境并行 · 保底收购协议】断链超过 48 小时，货就进了次一级的通道。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行 · 保底收购协议】断链超过 48 小时，货就进了次一级的通道。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行 · 保底收购协议】断链超过 48 小时，货就进了次一级的通道。"
+      },
       "timestamp": "2026-10-12T06:00:00.000Z",
       "round_num": 12
     },
@@ -5881,8 +6163,14 @@
       "id": "builtin-durian-a48",
       "platform": "reddit",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【产业协作环境并行】总量未收缩，变化集中在高端与中端的分层：金枕放量、D24 让位。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行】总量未收缩，变化集中在高端与中端的分层：金枕放量、D24 让位。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行】总量未收缩，变化集中在高端与中端的分层：金枕放量、D24 让位。"
+      },
       "timestamp": "2026-10-12T06:00:00.000Z",
       "round_num": 12
     },
@@ -5890,8 +6178,14 @@
       "id": "builtin-durian-a49",
       "platform": "twitter",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境 · 船期变更】到货高峰当日议价权转向买方",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境 · 船期变更】到货高峰当日议价权转向买方",
+        "text": "T+7 批发价跳升｜【市场交易环境 · 船期变更】到货高峰当日议价权转向买方"
+      },
       "timestamp": "2026-10-12T06:30:00.000Z",
       "round_num": 13
     },
@@ -5899,8 +6193,14 @@
       "id": "builtin-durian-a50",
       "platform": "twitter",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境】到货量周环比 +42% 与价格 +31.4% 同期出现",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境】到货量周环比 +42% 与价格 +31.4% 同期出现",
+        "text": "T+7 批发价跳升｜【市场交易环境】到货量周环比 +42% 与价格 +31.4% 同期出现"
+      },
       "timestamp": "2026-10-12T06:30:00.000Z",
       "round_num": 13
     },
@@ -5908,8 +6208,14 @@
       "id": "builtin-durian-a51",
       "platform": "reddit",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_COMMENT",
       "content": "T+7 批发价跳升｜【产业协作环境并行 · 冷链协同调度】客人问的是有没有，不是哪个产地。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行 · 冷链协同调度】客人问的是有没有，不是哪个产地。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行 · 冷链协同调度】客人问的是有没有，不是哪个产地。"
+      },
       "timestamp": "2026-10-12T06:30:00.000Z",
       "round_num": 13
     },
@@ -5917,8 +6223,14 @@
       "id": "builtin-durian-a52",
       "platform": "reddit",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【产业协作环境并行】总量未收缩，变化集中在高端与中端的分层：金枕放量、D24 让位。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行】总量未收缩，变化集中在高端与中端的分层：金枕放量、D24 让位。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行】总量未收缩，变化集中在高端与中端的分层：金枕放量、D24 让位。"
+      },
       "timestamp": "2026-10-12T06:30:00.000Z",
       "round_num": 13
     },
@@ -5926,8 +6238,14 @@
       "id": "builtin-durian-a53",
       "platform": "twitter",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境 · 集装箱周转】红星市场对湘赣下游辐射半径约 300 km",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境 · 集装箱周转】红星市场对湘赣下游辐射半径约 300 km",
+        "text": "T+7 批发价跳升｜【市场交易环境 · 集装箱周转】红星市场对湘赣下游辐射半径约 300 km"
+      },
       "timestamp": "2026-10-12T07:00:00.000Z",
       "round_num": 14
     },
@@ -5935,8 +6253,14 @@
       "id": "builtin-durian-a54",
       "platform": "twitter",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【市场交易环境】峰值集中在前两周",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【市场交易环境】峰值集中在前两周",
+        "text": "T+7 批发价跳升｜【市场交易环境】峰值集中在前两周"
+      },
       "timestamp": "2026-10-12T07:00:00.000Z",
       "round_num": 14
     },
@@ -5944,8 +6268,14 @@
       "id": "builtin-durian-a55",
       "platform": "reddit",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_COMMENT",
       "content": "T+7 批发价跳升｜【产业协作环境并行 · 纸箱共用池】高端压不动就往中端走，走的是同一个货架。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行 · 纸箱共用池】高端压不动就往中端走，走的是同一个货架。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行 · 纸箱共用池】高端压不动就往中端走，走的是同一个货架。"
+      },
       "timestamp": "2026-10-12T07:00:00.000Z",
       "round_num": 14
     },
@@ -5953,8 +6283,14 @@
       "id": "builtin-durian-a56",
       "platform": "reddit",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_POST",
       "content": "T+7 批发价跳升｜【产业协作环境并行】总量未收缩，变化集中在高端与中端的分层：金枕放量、D24 让位。",
+      "action_args": {
+        "content": "T+7 批发价跳升｜【产业协作环境并行】总量未收缩，变化集中在高端与中端的分层：金枕放量、D24 让位。",
+        "text": "T+7 批发价跳升｜【产业协作环境并行】总量未收缩，变化集中在高端与中端的分层：金枕放量、D24 让位。"
+      },
       "timestamp": "2026-10-12T07:00:00.000Z",
       "round_num": 14
     },
@@ -5962,8 +6298,14 @@
       "id": "builtin-durian-a57",
       "platform": "twitter",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境 · 结算回款】彭亨主产季与泰国东部重叠，可供量短期抬升",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境 · 结算回款】彭亨主产季与泰国东部重叠，可供量短期抬升",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境 · 结算回款】彭亨主产季与泰国东部重叠，可供量短期抬升"
+      },
       "timestamp": "2026-10-12T07:30:00.000Z",
       "round_num": 15
     },
@@ -5971,8 +6313,14 @@
       "id": "builtin-durian-a58",
       "platform": "twitter",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境】第三周开始回吐，年内均价仅 +6.2%",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境】第三周开始回吐，年内均价仅 +6.2%",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境】第三周开始回吐，年内均价仅 +6.2%"
+      },
       "timestamp": "2026-10-12T07:30:00.000Z",
       "round_num": 15
     },
@@ -5980,8 +6328,14 @@
       "id": "builtin-durian-a59",
       "platform": "reddit",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_COMMENT",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 检验互助】降的时候没人愿意先动，涨的时候都跟着动。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 检验互助】降的时候没人愿意先动，涨的时候都跟着动。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行 · 检验互助】降的时候没人愿意先动，涨的时候都跟着动。"
+      },
       "timestamp": "2026-10-12T07:30:00.000Z",
       "round_num": 15
     },
@@ -5989,8 +6343,14 @@
       "id": "builtin-durian-a60",
       "platform": "reddit",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T07:30:00.000Z",
       "round_num": 15
     },
@@ -5998,8 +6358,14 @@
       "id": "builtin-durian-a61",
       "platform": "twitter",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境 · 价格调整通知】尖竹汶提前上市，金枕先到",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境 · 价格调整通知】尖竹汶提前上市，金枕先到",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境 · 价格调整通知】尖竹汶提前上市，金枕先到"
+      },
       "timestamp": "2026-10-12T08:00:00.000Z",
       "round_num": 16
     },
@@ -6007,8 +6373,14 @@
       "id": "builtin-durian-a62",
       "platform": "twitter",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境】通关每延长 1 天，周到货量下降约 6%",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境】通关每延长 1 天，周到货量下降约 6%",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境】通关每延长 1 天，周到货量下降约 6%"
+      },
       "timestamp": "2026-10-12T08:00:00.000Z",
       "round_num": 16
     },
@@ -6016,8 +6388,14 @@
       "id": "builtin-durian-a63",
       "platform": "reddit",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_COMMENT",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 出口商联合会】贵了就先不买，等一周再说。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 出口商联合会】贵了就先不买，等一周再说。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行 · 出口商联合会】贵了就先不买，等一周再说。"
+      },
       "timestamp": "2026-10-12T08:00:00.000Z",
       "round_num": 16
     },
@@ -6025,8 +6403,14 @@
       "id": "builtin-durian-a64",
       "platform": "reddit",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T08:00:00.000Z",
       "round_num": 16
     },
@@ -6034,8 +6418,14 @@
       "id": "builtin-durian-a65",
       "platform": "twitter",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境 · 库存盘点】榴莲经广州江南分拨后进入红星市场",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境 · 库存盘点】榴莲经广州江南分拨后进入红星市场",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境 · 库存盘点】榴莲经广州江南分拨后进入红星市场"
+      },
       "timestamp": "2026-10-12T08:30:00.000Z",
       "round_num": 17
     },
@@ -6043,8 +6433,14 @@
       "id": "builtin-durian-a66",
       "platform": "twitter",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境】峰值前延长 2 天，峰值抬升 1.4 元/kg",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境】峰值前延长 2 天，峰值抬升 1.4 元/kg",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境】峰值前延长 2 天，峰值抬升 1.4 元/kg"
+      },
       "timestamp": "2026-10-12T08:30:00.000Z",
       "round_num": 17
     },
@@ -6052,8 +6448,14 @@
       "id": "builtin-durian-a67",
       "platform": "reddit",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_COMMENT",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 口岸协调会】货是同一批货，早到三天就是另一个价格。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 口岸协调会】货是同一批货，早到三天就是另一个价格。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行 · 口岸协调会】货是同一批货，早到三天就是另一个价格。"
+      },
       "timestamp": "2026-10-12T08:30:00.000Z",
       "round_num": 17
     },
@@ -6061,8 +6463,14 @@
       "id": "builtin-durian-a68",
       "platform": "reddit",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T08:30:00.000Z",
       "round_num": 17
     },
@@ -6070,8 +6478,14 @@
       "id": "builtin-durian-a69",
       "platform": "twitter",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境 · 跨市场调货】江南市场承担价格发现功能",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境 · 跨市场调货】江南市场承担价格发现功能",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境 · 跨市场调货】江南市场承担价格发现功能"
+      },
       "timestamp": "2026-10-12T09:00:00.000Z",
       "round_num": 18
     },
@@ -6079,8 +6493,14 @@
       "id": "builtin-durian-a70",
       "platform": "twitter",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境】在途超过 5 天，损耗率升至 4.8%",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境】在途超过 5 天，损耗率升至 4.8%",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境】在途超过 5 天，损耗率升至 4.8%"
+      },
       "timestamp": "2026-10-12T09:00:00.000Z",
       "round_num": 18
     },
@@ -6088,8 +6508,14 @@
       "id": "builtin-durian-a71",
       "platform": "reddit",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_COMMENT",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 产业协作平台】高峰当天的议价权在买方手里，报价只能往下压。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 产业协作平台】高峰当天的议价权在买方手里，报价只能往下压。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行 · 产业协作平台】高峰当天的议价权在买方手里，报价只能往下压。"
+      },
       "timestamp": "2026-10-12T09:00:00.000Z",
       "round_num": 18
     },
@@ -6097,8 +6523,14 @@
       "id": "builtin-durian-a72",
       "platform": "reddit",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T09:00:00.000Z",
       "round_num": 18
     },
@@ -6106,8 +6538,14 @@
       "id": "builtin-durian-a73",
       "platform": "twitter",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境 · 终端补货】到货量周环比 +42% 时，批发价两周内 +31.4%",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境 · 终端补货】到货量周环比 +42% 时，批发价两周内 +31.4%",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境 · 终端补货】到货量周环比 +42% 时，批发价两周内 +31.4%"
+      },
       "timestamp": "2026-10-12T09:30:00.000Z",
       "round_num": 19
     },
@@ -6115,8 +6553,14 @@
       "id": "builtin-durian-a74",
       "platform": "twitter",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【市场交易环境】金枕份额 +7.4 个百分点",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【市场交易环境】金枕份额 +7.4 个百分点",
+        "text": "T+14 触及峰值 24.6｜【市场交易环境】金枕份额 +7.4 个百分点"
+      },
       "timestamp": "2026-10-12T09:30:00.000Z",
       "round_num": 19
     },
@@ -6124,8 +6568,14 @@
       "id": "builtin-durian-a75",
       "platform": "reddit",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_COMMENT",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 数据共享协议】同一条船，早放行一天，损耗和报价都不一样。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行 · 数据共享协议】同一条船，早放行一天，损耗和报价都不一样。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行 · 数据共享协议】同一条船，早放行一天，损耗和报价都不一样。"
+      },
       "timestamp": "2026-10-12T09:30:00.000Z",
       "round_num": 19
     },
@@ -6133,8 +6583,14 @@
       "id": "builtin-durian-a76",
       "platform": "reddit",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_POST",
       "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+14 触及峰值 24.6｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T09:30:00.000Z",
       "round_num": 19
     },
@@ -6142,8 +6598,14 @@
       "id": "builtin-durian-a77",
       "platform": "twitter",
       "agent_id": 4,
+      "agent_name": "冷链承运",
+      "agent_username": "冷链承运",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境 · 团购开团】批发价变化 3—7 天后反映到零售端",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境 · 团购开团】批发价变化 3—7 天后反映到零售端",
+        "text": "T+21 高位回吐 8%｜【市场交易环境 · 团购开团】批发价变化 3—7 天后反映到零售端"
+      },
       "timestamp": "2026-10-12T10:00:00.000Z",
       "round_num": 20
     },
@@ -6151,8 +6613,14 @@
       "id": "builtin-durian-a78",
       "platform": "twitter",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境】D24 份额 -4.1 个百分点",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境】D24 份额 -4.1 个百分点",
+        "text": "T+21 高位回吐 8%｜【市场交易环境】D24 份额 -4.1 个百分点"
+      },
       "timestamp": "2026-10-12T10:00:00.000Z",
       "round_num": 20
     },
@@ -6160,8 +6628,14 @@
       "id": "builtin-durian-a79",
       "platform": "reddit",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_COMMENT",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 风险共担基金】断链超过 48 小时，货就进了次一级的通道。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 风险共担基金】断链超过 48 小时，货就进了次一级的通道。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行 · 风险共担基金】断链超过 48 小时，货就进了次一级的通道。"
+      },
       "timestamp": "2026-10-12T10:00:00.000Z",
       "round_num": 20
     },
@@ -6169,8 +6643,14 @@
       "id": "builtin-durian-a80",
       "platform": "reddit",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T10:00:00.000Z",
       "round_num": 20
     },
@@ -6178,8 +6658,14 @@
       "id": "builtin-durian-a81",
       "platform": "twitter",
       "agent_id": 5,
+      "agent_name": "彭亨产区代表",
+      "agent_username": "彭亨产区代表",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境 · 档口竞价】通关每延长 1 天，周到货量下降约 6%",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境 · 档口竞价】通关每延长 1 天，周到货量下降约 6%",
+        "text": "T+21 高位回吐 8%｜【市场交易环境 · 档口竞价】通关每延长 1 天，周到货量下降约 6%"
+      },
       "timestamp": "2026-10-12T10:30:00.000Z",
       "round_num": 21
     },
@@ -6187,8 +6673,14 @@
       "id": "builtin-durian-a82",
       "platform": "twitter",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境】总量维持在基准 ±3% 区间",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境】总量维持在基准 ±3% 区间",
+        "text": "T+21 高位回吐 8%｜【市场交易环境】总量维持在基准 ±3% 区间"
+      },
       "timestamp": "2026-10-12T10:30:00.000Z",
       "round_num": 21
     },
@@ -6196,8 +6688,14 @@
       "id": "builtin-durian-a83",
       "platform": "reddit",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_COMMENT",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 联合品牌推广】客人问的是有没有，不是哪个产地。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 联合品牌推广】客人问的是有没有，不是哪个产地。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行 · 联合品牌推广】客人问的是有没有，不是哪个产地。"
+      },
       "timestamp": "2026-10-12T10:30:00.000Z",
       "round_num": 21
     },
@@ -6205,8 +6703,14 @@
       "id": "builtin-durian-a84",
       "platform": "reddit",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T10:30:00.000Z",
       "round_num": 21
     },
@@ -6214,8 +6718,14 @@
       "id": "builtin-durian-a85",
       "platform": "twitter",
       "agent_id": 6,
+      "agent_name": "终端消费者",
+      "agent_username": "终端消费者",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境 · 到货验收】在途时间超过 5 天，损耗率升至 4.8%",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境 · 到货验收】在途时间超过 5 天，损耗率升至 4.8%",
+        "text": "T+21 高位回吐 8%｜【市场交易环境 · 到货验收】在途时间超过 5 天，损耗率升至 4.8%"
+      },
       "timestamp": "2026-10-12T11:00:00.000Z",
       "round_num": 22
     },
@@ -6223,8 +6733,14 @@
       "id": "builtin-durian-a86",
       "platform": "twitter",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境】零售端两周内 +12.8%，约为批发涨幅的 40%",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境】零售端两周内 +12.8%，约为批发涨幅的 40%",
+        "text": "T+21 高位回吐 8%｜【市场交易环境】零售端两周内 +12.8%，约为批发涨幅的 40%"
+      },
       "timestamp": "2026-10-12T11:00:00.000Z",
       "round_num": 22
     },
@@ -6232,8 +6748,14 @@
       "id": "builtin-durian-a87",
       "platform": "reddit",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_COMMENT",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 产地溯源共建】高端压不动就往中端走，走的是同一个货架。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 产地溯源共建】高端压不动就往中端走，走的是同一个货架。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行 · 产地溯源共建】高端压不动就往中端走，走的是同一个货架。"
+      },
       "timestamp": "2026-10-12T11:00:00.000Z",
       "round_num": 22
     },
@@ -6241,8 +6763,14 @@
       "id": "builtin-durian-a88",
       "platform": "reddit",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T11:00:00.000Z",
       "round_num": 22
     },
@@ -6250,8 +6778,14 @@
       "id": "builtin-durian-a89",
       "platform": "twitter",
       "agent_id": 7,
+      "agent_name": "市场监管",
+      "agent_username": "市场监管",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境 · 分拣打包】需求回落使高位价格在第三周回吐 8%",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境 · 分拣打包】需求回落使高位价格在第三周回吐 8%",
+        "text": "T+21 高位回吐 8%｜【市场交易环境 · 分拣打包】需求回落使高位价格在第三周回吐 8%"
+      },
       "timestamp": "2026-10-12T11:30:00.000Z",
       "round_num": 23
     },
@@ -6259,8 +6793,14 @@
       "id": "builtin-durian-a90",
       "platform": "twitter",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境】滞后 3—7 天",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境】滞后 3—7 天",
+        "text": "T+21 高位回吐 8%｜【市场交易环境】滞后 3—7 天"
+      },
       "timestamp": "2026-10-12T11:30:00.000Z",
       "round_num": 23
     },
@@ -6268,8 +6808,14 @@
       "id": "builtin-durian-a91",
       "platform": "reddit",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_COMMENT",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 共建检测实验室】降的时候没人愿意先动，涨的时候都跟着动。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 共建检测实验室】降的时候没人愿意先动，涨的时候都跟着动。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行 · 共建检测实验室】降的时候没人愿意先动，涨的时候都跟着动。"
+      },
       "timestamp": "2026-10-12T11:30:00.000Z",
       "round_num": 23
     },
@@ -6277,8 +6823,14 @@
       "id": "builtin-durian-a92",
       "platform": "reddit",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T11:30:00.000Z",
       "round_num": 23
     },
@@ -6286,8 +6838,14 @@
       "id": "builtin-durian-a93",
       "platform": "twitter",
       "agent_id": 0,
+      "agent_name": "进口商",
+      "agent_username": "进口商",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境 · 批发结算】金枕放量压缩 D24 的货架位",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境 · 批发结算】金枕放量压缩 D24 的货架位",
+        "text": "T+21 高位回吐 8%｜【市场交易环境 · 批发结算】金枕放量压缩 D24 的货架位"
+      },
       "timestamp": "2026-10-12T12:00:00.000Z",
       "round_num": 24
     },
@@ -6295,8 +6853,14 @@
       "id": "builtin-durian-a94",
       "platform": "twitter",
       "agent_id": 1,
+      "agent_name": "批发商",
+      "agent_username": "批发商",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【市场交易环境】回落阶段零售价格更黏",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【市场交易环境】回落阶段零售价格更黏",
+        "text": "T+21 高位回吐 8%｜【市场交易环境】回落阶段零售价格更黏"
+      },
       "timestamp": "2026-10-12T12:00:00.000Z",
       "round_num": 24
     },
@@ -6304,8 +6868,14 @@
       "id": "builtin-durian-a95",
       "platform": "reddit",
       "agent_id": 2,
+      "agent_name": "零售商",
+      "agent_username": "零售商",
       "action_type": "CREATE_COMMENT",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 共用分选线】贵了就先不买，等一周再说。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行 · 共用分选线】贵了就先不买，等一周再说。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行 · 共用分选线】贵了就先不买，等一周再说。"
+      },
       "timestamp": "2026-10-12T12:00:00.000Z",
       "round_num": 24
     },
@@ -6313,8 +6883,14 @@
       "id": "builtin-durian-a96",
       "platform": "reddit",
       "agent_id": 3,
+      "agent_name": "口岸报关",
+      "agent_username": "口岸报关",
       "action_type": "CREATE_POST",
       "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+      "action_args": {
+        "content": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。",
+        "text": "T+21 高位回吐 8%｜【产业协作环境并行】三条动作对应峰值前、峰值中、峰值后三个窗口。"
+      },
       "timestamp": "2026-10-12T12:00:00.000Z",
       "round_num": 24
     }
@@ -6349,12 +6925,34 @@
   "reportLogs": [
     {
       "action": "report_start",
-      "timestamp": "2026-10-12T00:00:00Z",
+      "elapsed_seconds": 0.6,
+      "timestamp": "2026-10-12T00:00:02.000Z",
       "details": {}
     },
     {
+      "action": "tool_call",
+      "elapsed_seconds": 1.4,
+      "timestamp": "2026-10-12T00:00:03.000Z",
+      "details": {
+        "tool": "build_outline",
+        "parameters": {
+          "sections": 7
+        }
+      }
+    },
+    {
+      "action": "tool_result",
+      "elapsed_seconds": 1.1,
+      "timestamp": "2026-10-12T00:00:04.000Z",
+      "details": {
+        "tool": "build_outline",
+        "ok": true
+      }
+    },
+    {
       "action": "planning_complete",
-      "timestamp": "2026-10-12T00:00:02Z",
+      "elapsed_seconds": 2.3,
+      "timestamp": "2026-10-12T00:00:05.000Z",
       "details": {
         "outline": {
           "title": "榴莲价格波动推演",
@@ -6386,64 +6984,255 @@
       }
     },
     {
+      "action": "tool_call",
+      "elapsed_seconds": 1.6,
+      "timestamp": "2026-10-12T00:00:07.000Z",
+      "details": {
+        "tool": "write_section",
+        "parameters": {
+          "section_index": 1,
+          "title": "产区季重叠把峰值提前，而不是把全年抬高"
+        }
+      }
+    },
+    {
+      "action": "llm_response",
+      "elapsed_seconds": 3.1,
+      "timestamp": "2026-10-12T00:00:10.000Z",
+      "details": {
+        "response": "第 1 节已生成：产区季重叠把峰值提前，而不是把全年抬高"
+      }
+    },
+    {
+      "action": "tool_result",
+      "elapsed_seconds": 0.8,
+      "timestamp": "2026-10-12T00:00:11.000Z",
+      "details": {
+        "tool": "write_section",
+        "ok": true
+      }
+    },
+    {
       "action": "section_complete",
       "section_index": 1,
-      "timestamp": "2026-10-12T00:00:10Z",
+      "elapsed_seconds": 2.4,
+      "timestamp": "2026-10-12T00:00:12.000Z",
       "details": {
         "content": "**两个产季撞进同一个窗口：可供量短期抬升**\n\n推演的起点是两本产季日历的重叠。马来西亚彭亨的主产季集中在 6—8 月，冷链与分级较成熟；泰国东部尖竹汶一带提前 2—3 周上市，以金枕为主。当两个窗口叠在一起，产地端最先发生的动作不是降价，而是锁量——T+0 产季重叠确认，进口商随即开始锁定货量。\n\n> _\"货是同一批货，早到三天就是另一个价格。\"_\n\n这句出自推演中的进口商，也点破了此后所有价格行为的来源：这轮波动的主导变量是到货节奏，而不是全年供给总量。\n\n**到货节奏决定价格高点：+42% 对 +31.4%**\n\n二十四轮推演中，第 3 轮出现首次集中到港，第 7 轮批发价跳升，第 14 轮触及峰值。落到时间线上：T+3 首船集中到港，周到货量升至 1,410 吨，批发价开始上行；T+7 单周上涨 18.6%，批发商转为当日议价；T+14 到货量达到 1,860 吨/周，批发价触及 24.6 元/kg，进入高位震荡。整个季度价格波动幅度约 ±18%，但峰值集中出现在前两周。\n\n> _\"高峰当天的议价权在买方手里，报价只能往下压。\"_\n\n**第三周开始回吐：年内均价只抬高 6.2%**\n\n- 到货量周环比 +42% 与批发价 +31.4% 同期出现；\n\n- 峰值集中在前两周；\n\n- 第三周开始回吐，年内均价仅 +6.2%。\n\nT+21，节庆需求回落叠加通关提速，价格回吐 8% 至 22.6 元/kg。换句话说，产季重叠改变的是价格的形状——更尖、更靠前——而不是全年均价的水位。\n\n**预测结论：** 把焦点从「全年价格」改为「峰值窗口」，是锁量与分流的决策依据。"
       }
     },
     {
+      "action": "tool_call",
+      "elapsed_seconds": 1.8,
+      "timestamp": "2026-10-12T00:00:14.000Z",
+      "details": {
+        "tool": "write_section",
+        "parameters": {
+          "section_index": 2,
+          "title": "通关时效是价格的隐藏杠杆"
+        }
+      }
+    },
+    {
+      "action": "llm_response",
+      "elapsed_seconds": 3.4,
+      "timestamp": "2026-10-12T00:00:17.000Z",
+      "details": {
+        "response": "第 2 节已生成：通关时效是价格的隐藏杠杆"
+      }
+    },
+    {
+      "action": "tool_result",
+      "elapsed_seconds": 0.8,
+      "timestamp": "2026-10-12T00:00:18.000Z",
+      "details": {
+        "tool": "write_section",
+        "ok": true
+      }
+    },
+    {
       "action": "section_complete",
       "section_index": 2,
-      "timestamp": "2026-10-12T00:00:15Z",
+      "elapsed_seconds": 2.8,
+      "timestamp": "2026-10-12T00:00:19.000Z",
       "details": {
         "content": "**每延长一天，周到货量下降约 6%**\n\n在推演图里，口岸通关不是背景制度，而是直接压在到货量上的约束边。通关每延长 1 天，周到货量下降约 6%；冲击测试中，峰值前延长通关 2 天，峰值被推高 1.4 元/kg。同样的货量、同样的需求曲线，仅仅因为放行节奏不同，就得到两个不同的峰值。\n\n**在途五天与 4.8% 的损耗线**\n\n时效的第二个出口是损耗。在途时间超过 5 天，损耗率升至 4.8%，直接吃掉毛利；对冷链敏感、货架期短的鲜果来说，这 4.8% 不是统计噪声，而是档位切换的临界点。\n\n> _\"断链超过 48 小时，货就进了次一级的通道。\"_\n\n冷链承运方的这句判断，把时效与档位串在了一起：断链不只是成本问题，它决定这批货以什么身份进入市场。\n\n**放行节奏就是价格节奏**\n\n> _\"同一条船，早放行一天，损耗和报价都不一样。\"_\n\n口岸经办的视角更直接。峰值期申报量翻倍，一旦出现集中滞留，峰值会在 24.6 元/kg 之上再被推高 1—2 元/kg——这正是通关被列为高影响风险的原因：它不是稳定变量，而是峰值窗口里最容易被放大的变量。\n\n**预测结论：** 通关协同属于价格管理手段，不应只按合规成本衡量。"
       }
     },
     {
+      "action": "tool_call",
+      "elapsed_seconds": 2,
+      "timestamp": "2026-10-12T00:00:21.000Z",
+      "details": {
+        "tool": "write_section",
+        "parameters": {
+          "section_index": 3,
+          "title": "份额变化是分层，不是总量收缩"
+        }
+      }
+    },
+    {
+      "action": "llm_response",
+      "elapsed_seconds": 3.7,
+      "timestamp": "2026-10-12T00:00:24.000Z",
+      "details": {
+        "response": "第 3 节已生成：份额变化是分层，不是总量收缩"
+      }
+    },
+    {
+      "action": "tool_result",
+      "elapsed_seconds": 0.8,
+      "timestamp": "2026-10-12T00:00:25.000Z",
+      "details": {
+        "tool": "write_section",
+        "ok": true
+      }
+    },
+    {
       "action": "section_complete",
       "section_index": 3,
-      "timestamp": "2026-10-12T00:00:20Z",
+      "elapsed_seconds": 3.2,
+      "timestamp": "2026-10-12T00:00:26.000Z",
       "details": {
         "content": "**金枕放量、D24 让位**\n\n价格之外，推演给出的第二层结果是份额的重新分配：金枕份额 +7.4 个百分点，D24 份额 -4.1 个百分点。变化的机制写在关系图上——金枕放量压缩 D24 的货架位，而不是把 D24 挤出市场。\n\n**总量守住基准 ±3%**\n\n- 总量维持在基准 ±3% 区间；\n\n- 分层发生在高端与中端之间；\n\n- 替代是货架内的替代，不是货架外的消失。\n\n> _\"客人问的是有没有，不是哪个产地。\"_\n\n零售端的这句观察最能说明分层的性质：终端问的是可得性，产地标签退到了第二位。\n\n> _\"高端压不动就往中端走，走的是同一个货架。\"_\n\n批发商的补充则点明路径——高端压不动时，货并未消失，而是换了档位继续走。分流结构上，榴莲经广州江南市场分拨后进入长沙红星市场，江南市场承担价格发现，红星市场向湘赣下游辐射，分层就在这条分拨链上完成。\n\n**预测结论：** 以品种分层做货架与促销安排，比按产地做总量判断更有效。"
       }
     },
     {
+      "action": "tool_call",
+      "elapsed_seconds": 2.2,
+      "timestamp": "2026-10-12T00:00:28.000Z",
+      "details": {
+        "tool": "write_section",
+        "parameters": {
+          "section_index": 4,
+          "title": "终端传导滞后且幅度衰减"
+        }
+      }
+    },
+    {
+      "action": "llm_response",
+      "elapsed_seconds": 4,
+      "timestamp": "2026-10-12T00:00:31.000Z",
+      "details": {
+        "response": "第 4 节已生成：终端传导滞后且幅度衰减"
+      }
+    },
+    {
+      "action": "tool_result",
+      "elapsed_seconds": 0.8,
+      "timestamp": "2026-10-12T00:00:32.000Z",
+      "details": {
+        "tool": "write_section",
+        "ok": true
+      }
+    },
+    {
       "action": "section_complete",
       "section_index": 4,
-      "timestamp": "2026-10-12T00:00:25Z",
+      "elapsed_seconds": 3.6,
+      "timestamp": "2026-10-12T00:00:33.000Z",
       "details": {
         "content": "**批发涨三成，零售涨一成二**\n\n批发价 +31.4% 的高点，并没有等比例传到零售端：两周内零售涨幅 12.8%，约为批发涨幅的 40%，传导滞后 3—7 天。批发市场的尖峰，到了终端变成一段平缓的坡。\n\n**回落阶段更黏：没人愿意先动**\n\n> _\"降的时候没人愿意先动，涨的时候都跟着动。\"_\n\n零售商的报价行为在两个方向上不对称：上行时跟随很快，下行时集体观望。这种黏性把回吐的 8% 拉得更长，也让终端价格的高位停留时间超过批发端。\n\n> _\"贵了就先不买，等一周再说。\"_\n\n消费者一侧同样在削峰：需求弹性中等，价格高企时先延后购买，这本身又是第三周回吐的一部分动力。\n\n**管理窗口比批发价晚一周**\n\n滞后的方向是可以利用的：终端价格预期的管理窗口比批发价晚一周，正好覆盖批发价从峰值转向回落的拐点，为促销与货架调整留出反应时间。\n\n**预测结论：** 终端价格预期的管理窗口比批发价晚一周，可用于促销节奏安排。"
       }
     },
     {
+      "action": "tool_call",
+      "elapsed_seconds": 2.4000000000000004,
+      "timestamp": "2026-10-12T00:00:35.000Z",
+      "details": {
+        "tool": "write_section",
+        "parameters": {
+          "section_index": 5,
+          "title": "多元主体行为分化：产地抢窗口、进口商抢货、批发商抢当天、零售商抢货架"
+        }
+      }
+    },
+    {
+      "action": "llm_response",
+      "elapsed_seconds": 4.3,
+      "timestamp": "2026-10-12T00:00:38.000Z",
+      "details": {
+        "response": "第 5 节已生成：多元主体行为分化：产地抢窗口、进口商抢货、批发商抢当天、零售商抢货架"
+      }
+    },
+    {
+      "action": "tool_result",
+      "elapsed_seconds": 0.8,
+      "timestamp": "2026-10-12T00:00:39.000Z",
+      "details": {
+        "tool": "write_section",
+        "ok": true
+      }
+    },
+    {
       "action": "section_complete",
       "section_index": 5,
-      "timestamp": "2026-10-12T00:00:30Z",
+      "elapsed_seconds": 4,
+      "timestamp": "2026-10-12T00:00:40.000Z",
       "details": {
         "content": "参与推演的七类主体——产区、进口商、批发商、零售商、口岸通关、冷链承运与终端需求——并没有朝同一方向收敛，而是各自沿着自己的目标函数行动。这种分化，正是价格体系在峰值窗口内反复震荡的微观来源。\n\n**产区：抢的是先到先得的窗口**\n\n彭亨与尖竹汶的竞争不在价格表上，而在日历上。尖竹汶提前 2—3 周上市，抢占的是先到先得窗口；彭亨则以更成熟的冷链与分级守住品质端。产区的理性选择是把货往前赶，而不是压价——这解释了为什么集中到港会在前两周反复出现。\n\n**进口商：锁量与分批的矛盾**\n\n锁量在先，就必然集中到港，而集中到港恰恰放大周内峰值。进口商的困境在于：不锁量拿不到窗口价，锁了量就成为峰值的制造者之一。推演显示，把集中到港拆成两批，可以把峰值压回 1.4—2.0 元/kg——代价只是放弃一部分「早到三天」的溢价。\n\n**批发商：按日定价，议价权随到货漂移**\n\n批发商的目标函数最短：看当天。到货高峰当日议价权转向买方，报价只能往下压；到货一断，议价权立刻回摆。他们既不护价也不砸价，只是把到货节奏翻译成报价。\n\n**零售商：涨得慢、降得更慢**\n\n终端辐射半径约 300 km 的红星市场下游，零售商面对的是客流而不是行情。涨时跟随、跌时观望，叠加 3—7 天的传导滞后，零售端成为整个链条里最黏的一环——也正因为黏，它是削峰的天然缓冲层。\n\n**口岸与冷链：制度时效即商业变量**\n\n口岸通关与冷链承运在推演里表现为同一条时效链：每提前 1 天放行，约等于削峰 0.7 元/kg；每断链超过 48 小时，货就降一个通道。对这两个主体而言，合规与效率的平衡点，就是市场的价格节点。\n\n**终端需求与监管：一个削峰、一个稳预期**\n\n终端需求弹性中等，价格高企时延后购买，构成第三回吐的动力；监管不在价格里出招，而在时效与合规上设定边界，使通关协同成为可谈、可算的变量。\n\n七类主体目标各异——产区看窗口、进口商看总量与成本、批发商看当天、零售商看货架与客流、口岸与冷链看时效、终端看性价比——因此不会收敛为一致行动。价格体系的稳定，不靠全员同步，而靠峰值窗口（T+7 至 T+14）内的集中协同。"
       }
     },
     {
+      "action": "tool_call",
+      "elapsed_seconds": 2.6,
+      "timestamp": "2026-10-12T00:00:42.000Z",
+      "details": {
+        "tool": "write_section",
+        "parameters": {
+          "section_index": 6,
+          "title": "预测结论"
+        }
+      }
+    },
+    {
+      "action": "llm_response",
+      "elapsed_seconds": 4.6,
+      "timestamp": "2026-10-12T00:00:45.000Z",
+      "details": {
+        "response": "第 6 节已生成：预测结论"
+      }
+    },
+    {
+      "action": "tool_result",
+      "elapsed_seconds": 0.8,
+      "timestamp": "2026-10-12T00:00:46.000Z",
+      "details": {
+        "tool": "write_section",
+        "ok": true
+      }
+    },
+    {
       "action": "section_complete",
       "section_index": 6,
-      "timestamp": "2026-10-12T00:00:35Z",
+      "elapsed_seconds": 4.4,
+      "timestamp": "2026-10-12T00:00:47.000Z",
       "details": {
         "content": "1. 峰值窗口（T+7 至 T+14）是唯一需要集中干预的时段，其余时间按常规节奏执行。\n\n2. 锁量要分批：把集中到港拆成两批，可把峰值压回 1.4—2.0 元/kg。\n\n3. 通关协同按「时效杠杆」定价：每提前 1 天放行，等于削峰约 0.7 元/kg。\n\n4. 份额动作按分层做：金枕保货架、D24 保价格，避免相互踩踏。\n\n口径与来源：马来西亚彭亨产区、泰国尖竹汶产区（产地）；长沙红星市场、广州江南市场（市场）；口岸通关记录（制度）；冷链在途记录（物流）。"
       }
     },
     {
+      "action": "tool_call",
+      "elapsed_seconds": 1.2,
+      "timestamp": "2026-10-12T00:00:49.000Z",
+      "details": {
+        "tool": "collect_sources",
+        "parameters": {}
+      }
+    },
+    {
       "action": "section_complete",
       "section_index": 7,
-      "timestamp": "2026-10-12T00:01:00Z",
+      "elapsed_seconds": 1.5,
+      "timestamp": "2026-10-12T00:00:50.000Z",
       "details": {
         "content": "口径与来源：马来西亚彭亨产区（产地）、泰国尖竹汶产区（产地）、长沙红星市场（市场）、广州江南市场（市场）、口岸通关记录（制度）、冷链在途记录（物流）。"
       }
     },
     {
       "action": "report_complete",
-      "timestamp": "2026-10-12T00:01:05Z",
+      "elapsed_seconds": 0.9,
+      "timestamp": "2026-10-12T00:00:51.000Z",
       "details": {}
     }
   ],

@@ -11,6 +11,7 @@
           <div class="report-header-block">
             <div class="report-meta">
               <span class="report-tag">Prediction Report</span>
+              <button class="open-standalone" @click="openStandalone" title="在浏览器里打开这份报告">在浏览器打开 ↗</button>
               <span class="report-id">ID: {{ reportId || 'REF-2024-X92' }}</span>
             </div>
             <h1 class="main-title">{{ reportOutline.title }}</h1>
@@ -427,6 +428,11 @@ const reportOutline = ref(null)
    内置推演（report_id 形如 BUILTIN-…-REPORT）在数据报表风格下换成整页报表。 */
 const reportStyle = ref('expert')
 const onSwitchStyle = (next) => { reportStyle.value = next; try { localStorage.setItem('agrilink.report_style', next) } catch (e) {} }
+/* 单独链接：报告在浏览器新标签里整页打开（深度沟通那一步也用它） */
+const openStandalone = () => {
+  const base = location.href.split('#')[0]
+  window.open(base + '#/report-standalone/' + props.reportId, '_blank', 'noopener')
+}
 const pagedReport = computed(() => {
   if (reportStyle.value !== 'data') return null
   const id = String(props.reportId || '')
@@ -2190,7 +2196,13 @@ const stopPolling = () => {
 
 // Lifecycle
 onMounted(() => {
-  try { reportStyle.value = localStorage.getItem('agrilink.report_style') || 'expert' } catch (e) {}
+  /* 风格在首页启动时选定并记住：先看这份报告自己的记录，再看全局；内置推演默认数据报表 */
+  try {
+    const id = String(props.reportId || '')
+    const perReport = localStorage.getItem('agrilink.report_style.' + id)
+    const global = localStorage.getItem('agrilink.report_style')
+    reportStyle.value = perReport || global || (/^BUILTIN-/.test(id) ? 'data' : 'expert')
+  } catch (e) {}
   if (props.reportId) {
     addLog(`Report Agent initialized: ${props.reportId}`)
     startPolling()

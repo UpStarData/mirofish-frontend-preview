@@ -1,7 +1,7 @@
 // 内置推演在浏览器里跑完整流程：图谱 → 环境 → 双平台推演 → 报告，全部由内置数据驱动，不请求后端。
 import { matchRequirement, byAnyId } from '../data/builtin/mirofish'
 
-const state = { active: null, preparePolls: 0, runPolls: 0, reportStyle: 'expert', logPoll: 0, simStarted: false }
+const state = { active: null, preparePolls: 0, runPolls: 0, reportStyle: 'expert', logPoll: 0, simStarted: false, graphPolls: 0 }
 
 const project = (b) => ({
   project_id: b.project_id, graph_id: b.graph_id, name: b.title,
@@ -34,7 +34,7 @@ export function respondWithBuiltin(path, input) {
     const hit = matchRequirement(field('simulation_requirement'))
     if (!hit) { state.active = null; return null }
     state.active = hit
-    state.preparePolls = 0; state.runPolls = 0
+    state.preparePolls = 0; state.runPolls = 0; state.graphPolls = 0; state.logPoll = 0
     const style = String(field('report_style') || '')
     if (/数据|data/i.test(style)) state.reportStyle = 'data'
     else if (/专家|expert/i.test(style)) state.reportStyle = 'expert'
@@ -45,9 +45,20 @@ export function respondWithBuiltin(path, input) {
   state.active = b
 
   if (path === '/api/graph/build') return { reused: true, graph_id: b.graph_id }
-  if (path.startsWith('/api/graph/project/')) return project(b)
+  if (path.startsWith('/api/graph/project/')) {
+    const pct = Math.min(100, (state.graphPolls || 0) * 18)
+    return { ...project(b), status: pct >= 100 ? 'graph_completed' : (pct === 0 ? 'ontology_generated' : 'graph_building') }
+  }
   if (path.startsWith('/api/graph/data/')) return graph(b)
-  if (path.startsWith('/api/graph/task/')) return { status: 'completed', progress: 100, message: '内置图谱已就绪（' + b.nodes.length + ' 主体 / ' + b.edges.length + ' 关系）' }
+  if (path.startsWith('/api/graph/task/')) {
+    /* 分几步走：本体生成 → GraphRAG 构建 → 完成，每步停一会儿，图谱才有"分批长出来"的观感 */
+    state.graphPolls = (state.graphPolls || 0) + 1
+    const pct = Math.min(100, state.graphPolls * 18)
+    const done = pct >= 100
+    return { status: done ? 'completed' : 'processing', progress: pct,
+      message: done ? '内置图谱已就绪（' + b.nodes.length + ' 主体 / ' + b.edges.length + ' 关系）'
+        : (pct < 55 ? '正在生成本体（' + b.wave1Count + ' 个待建）' : 'GraphRAG 构建中：写入实体与关系') }
+  }
 
   if (path === '/api/simulation/create') return { simulation_id: b.simulation_id, project_id: b.project_id }
   if (path === '/api/simulation/prepare') {
@@ -120,7 +131,7 @@ export function respondWithBuiltin(path, input) {
     /* 报告是一步一步生成的：第 1 次轮询给"开始 + 大纲"，之后每轮多生成一节，最后收尾 */
     const sections = b.outline.sections.length
     state.logPoll++
-    const upto = Math.min(b.reportLogs.length, 2 + Math.max(0, state.logPoll - 1))
+    const upto = Math.min(b.reportLogs.length, 2 + Math.max(0, state.logPoll - 1) * 3)
     const logs = b.reportLogs.slice(from, Math.max(from, upto))
     return { logs, from_line: from + logs.length, total_lines: b.reportLogs.length, generating: from + logs.length < b.reportLogs.length }
   }

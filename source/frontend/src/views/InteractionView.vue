@@ -39,13 +39,13 @@
     <main class="content-area">
       <!-- Left Panel: Graph -->
       <div class="panel-wrapper left" :style="leftPanelStyle">
-        <GraphPanel
-          :graphData="graphData"
-          :loading="graphLoading"
-          :currentPhase="5"
-          :isSimulating="false"
-          @refresh="refreshGraph"
-          @toggle-maximize="toggleMaximize('graph')"
+        <!-- 深度沟通这一步左侧仍然是那份报告（与报告页同一份内容、同一套风格） -->
+        <Step4Report
+          :reportId="currentReportId"
+          :simulationId="simulationId"
+          :systemLogs="systemLogs"
+          @add-log="addLog"
+          @update-status="updateStatus"
         />
       </div>
 
@@ -69,6 +69,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import GraphPanel from '../components/GraphPanel.vue'
 import Step5Interaction from '../components/Step5Interaction.vue'
+import Step4Report from '../components/Step4Report.vue'
 import { getProject, getGraphData } from '../api/graph'
 import { getSimulation } from '../api/simulation'
 import { getReport } from '../api/report'

@@ -8,7 +8,7 @@
           <div v-if="files.length" class="file-chip">▤ {{ files[0].name }} · {{ Math.ceil(files[0].size / 1024) }} KB <button @click="files = []" aria-label="删除附件">×</button></div>
           <textarea v-model="formData.simulationRequirement" @keydown="onPromptKeydown" rows="5" aria-label="推演要求" placeholder="请输入推演要求"></textarea>
           <div class="actions"><div><button @click="triggerFileInput">＋ 添加附件</button><button @click="showConfig = !showConfig" :aria-expanded="showConfig">⚙ 配置项</button><input ref="fileInput" type="file" hidden accept=".pdf,.doc,.docx,.xls,.xlsx,.md,.txt" @change="handleFileSelect" /></div><button class="send" :disabled="!canSubmit || loading" @click="startSimulation" aria-label="发送">发送</button></div>
-          <div v-if="showConfig" class="config"><label>历史数据周期<select v-model="historyPeriod"><option>最近 1 个月</option><option>最近 3 个月</option><option>最近 6 个月</option></select></label><label>推演轮次<input type="range" min="10" max="40" v-model.number="rounds" />{{ rounds }} 轮</label><label>环境模式<select v-model="environment"><option>双环境</option><option>单环境</option></select></label><label>报告风格<select v-model="reportStyle"><option>专家风格</option><option>数据报表风格</option></select></label><button type="button" @click="showConfig = false">保存</button></div>
+          <div v-if="showConfig" class="config"><label>历史数据周期<select v-model="historyPeriod"><option>最近 1 个月</option><option>最近 3 个月</option><option>最近 6 个月</option></select></label><label>推演轮次<input type="range" min="10" max="40" v-model.number="rounds" />{{ rounds }} 轮</label><label>环境模式<select v-model="environment"><option>双环境</option><option>单环境</option></select></label><label>报告风格<select v-model="reportStyle"><option>数据报表风格</option><option>专家风格</option></select></label><button type="button" @click="showConfig = false">保存</button></div>
         </div>
         <p class="hint">请至少输入推演要求、保留系统种子或上传附件</p>
       </main>
@@ -63,7 +63,7 @@ const historyPeriod = ref('最近 3 个月')
 const rounds = ref(40)
 const environment = ref('双环境')
 const popularSuggestions = suggestThemes
-const reportStyle = ref('专家风格')
+const reportStyle = ref('数据报表风格')
 const pendingSuggestion = ref('')
 
 const receiveAgriContext = (event) => {
