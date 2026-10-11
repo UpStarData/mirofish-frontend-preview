@@ -217,6 +217,10 @@ const handleNewProject = async () => {
 
       router.replace({ name: 'Process', params: { projectId: res.data.project_id } })
       ontologyProgress.value = null
+      /* 本体生成阶段就把图谱取回来：这时候只应该出现几个本体 */
+      if (res.data.graph_id) {
+        try { const gRes = await getGraphData(res.data.graph_id); if (gRes.success) graphData.value = gRes.data } catch (e) {}
+      }
       addLog(`本体生成完成：${res.data.project_id}`)
       await startBuildGraph()
     } else {
@@ -344,6 +348,14 @@ const pollTaskStatus = async (taskId) => {
       }
 
       buildProgress.value = { progress: task.progress || 0, message: task.message }
+
+      /* 构建过程中就把图谱取回来：本体生成/构建/完成每一步都能看到节点在长（分期由图谱面板负责） */
+      if (!graphData.value && task.graph_id) {
+        try {
+          const gRes = await getGraphData(task.graph_id)
+          if (gRes.success) graphData.value = gRes.data
+        } catch (e) { /* 忽略早期取图失败 */ }
+      }
 
       if (task.status === 'completed') {
         addLog('Graph build task completed.')

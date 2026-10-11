@@ -2,6 +2,8 @@
 import { matchRequirement, byAnyId } from '../data/builtin/mirofish'
 
 const state = { active: null, preparePolls: 0, runPolls: 0, reportStyle: 'expert', logPoll: 0, simStarted: false, graphPolls: 0 }
+const wait = (ms) => new Promise((r) => setTimeout(r, ms))
+const BUILD_TASK = (b) => b.id.toUpperCase() + '-BUILD'
 
 const project = (b) => ({
   project_id: b.project_id, graph_id: b.graph_id, name: b.title,
@@ -28,26 +30,43 @@ const reportPayload = (b) => ({
 })
 
 /* 返回 null 表示"不是内置推演的请求"，交回原来的演示数据分支 */
-export function respondWithBuiltin(path, input) {
+export async function respondWithBuiltin(path, input) {
   const field = (k) => input?.[k] ?? input?.get?.(k)
   if (path === '/api/graph/ontology/generate') {
     const hit = matchRequirement(field('simulation_requirement'))
     if (!hit) { state.active = null; return null }
     state.active = hit
+    /* 本体生成这一步停一会儿：第一步要能看到图谱里只有几个本体 */
+    await wait(2600)
     state.preparePolls = 0; state.runPolls = 0; state.graphPolls = 0; state.logPoll = 0
     const style = String(field('report_style') || '')
     if (/数据|data/i.test(style)) state.reportStyle = 'data'
     else if (/专家|expert/i.test(style)) state.reportStyle = 'expert'
-    return { ...project(hit), status: 'ontology_generated', graph_id: null }
+    return { ...project(hit), status: 'ontology_generated', graph_id: hit.graph_id }
   }
   const b = byAnyId(path) || state.active
   if (!b) return null
   state.active = b
 
-  if (path === '/api/graph/build') return { reused: true, graph_id: b.graph_id }
-  if (path.startsWith('/api/graph/project/')) return project(b)
+  if (path === '/api/graph/build') {
+    state.graphPolls = 0
+    return { task_id: BUILD_TASK(b), project_id: b.project_id }
+  }
+  if (path.startsWith('/api/graph/project/')) {
+    const pct = Math.min(100, (state.graphPolls || 0) * 16)
+    if (pct >= 100) return project(b)
+    /* 构建期间也给 graph_id：前端可以在"本体生成/构建"阶段就把图谱取回来分步铺开 */
+    return { ...project(b), status: 'graph_building', graph_id: b.graph_id, graph_build_task_id: BUILD_TASK(b) }
+  }
   if (path.startsWith('/api/graph/data/')) return graph(b)
-  if (path.startsWith('/api/graph/task/')) return { status: 'completed', progress: 100, message: '内置图谱已就绪（' + b.nodes.length + ' 主体 / ' + b.edges.length + ' 关系）' }
+  if (path.startsWith('/api/graph/task/')) {
+    state.graphPolls = (state.graphPolls || 0) + 1
+    const pct = Math.min(100, state.graphPolls * 16)
+    const done = pct >= 100
+    return { status: done ? 'completed' : 'processing', progress: done ? 100 : pct, graph_id: b.graph_id,
+      message: done ? '内置图谱已就绪（' + b.wave1Count + ' 个本体 / ' + b.edges.length + ' 关系）'
+        : (pct < 50 ? '正在生成本体：抽取实体与类型' : 'GraphRAG 构建中：写入实体、关系与社区摘要') }
+  }
 
   if (path === '/api/simulation/create') return { simulation_id: b.simulation_id, project_id: b.project_id }
   if (path === '/api/simulation/prepare') {

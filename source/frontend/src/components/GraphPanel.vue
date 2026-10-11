@@ -337,54 +337,47 @@ const shownGraph = computed(() => {
   const ids = new Set(nodes.map((n) => n.uuid))
   return { ...g, nodes, edges: (g.edges || []).filter((e) => ids.has(e.source_node_uuid) && ids.has(e.target_node_uuid)), node_count: nodes.length, edge_count: 0 }
 })
-function startReveal(target) {
-  if (revealTimer) { clearInterval(revealTimer); revealTimer = null }
-  if (revealed.value >= target) return
-  revealTimer = setInterval(() => {
-    revealed.value = Math.min(target, revealed.value + 12)
-    if (revealed.value >= target) { clearInterval(revealTimer); revealTimer = null }
-  }, 220)
-}
+/* 流程阶段与双平台开关 */
+const phase = computed(() => { const ph = Number(props.currentPhase); return Number.isFinite(ph) ? ph : 2 })
 const simStarted = ref(false)
-/* 构建阶段（currentPhase）：0 本体生成 → 1 GraphRAG 构建 → >=2 构建完成；
-   每个阶段只放出一部分，环境搭建阶段不再变动，启动双平台后才继续补第二批 */
-const buildStage = computed(() => {
-  const ph = Number(props.currentPhase)
-  if (!Number.isFinite(ph)) return 3
-  return ph <= 0 ? 1 : ph === 1 ? 2 : 3
-})
-/* 三个台阶：先几个（本体生成）→ 一批（GraphRAG）→ 全量（构建完成）；由时间推进，跟流程状态解耦 */
-const stair = ref(0)
-let stairTimer = null
 const revealTarget = () => {
-  if (simStarted.value) return targetOf()
   const w1 = wave1Of()
-  return stair.value <= 0 ? Math.min(8, w1) : stair.value === 1 ? Math.min(64, w1) : w1
+  if (simStarted.value) return targetOf()
+  if (phase.value <= 0) return Math.min(6, w1)
+  if (phase.value === 1) return Math.min(64, w1)
+  return w1
 }
-const startStairs = () => {
-  if (stairTimer) clearInterval(stairTimer)
-  stair.value = 0
-  stairTimer = setInterval(() => {
-    stair.value += 1
-    const target = revealTarget()
-    if (revealed.value !== target) startReveal(target)
-    if (stair.value >= 2) { clearInterval(stairTimer); stairTimer = null }
-  }, 2200)
-}
-const onSimStart = () => { simStarted.value = true; startReveal(targetOf()) }
-watch(() => props.graphData, () => {
-  if (simStarted.value) {
-    if (revealed.value < wave1Of()) revealed.value = wave1Of()
-    startReveal(targetOf())
-    return
-  }
-  revealed.value = 0
-  startStairs()
+window.addEventListener('agrilink:sim-start', () => { simStarted.value = true })
+watch(() => props.isSimulating, (v) => {
+  if (!v) return
+  simStarted.value = true
+  const w1 = wave1Of()
+  revealed.value = Math.max(revealed.value, w1)   /* 原有的 122 个直接保留，只让后面 120 个慢慢长 */
 }, { immediate: true })
-watch(() => props.isSimulating, (v) => { if (v) { simStarted.value = true; startReveal(targetOf()) } })
-watch(shownGraph, () => nextTick(renderGraph))
-onMounted(() => window.addEventListener('agrilink:sim-start', onSimStart))
-onUnmounted(() => { window.removeEventListener('agrilink:sim-start', onSimStart); if (revealTimer) clearInterval(revealTimer); if (stairTimer) clearInterval(stairTimer) })
+
+/* 图谱分期：目标数量只由"当前阶段"决定 —— 本体生成 6 个、GraphRAG 构建 64 个、构建完成 122 个，
+   启动双平台后再慢慢补到 242。心跳每 400ms 重算一次目标、一次只加 3 个，肉眼能跟着看。
+   进度按图 id 缓存：换步骤重挂组件时接着长，不会掉回去重演。 */
+/* 进度缓存要跨组件实例存活：<script setup> 里的变量每次挂载都会重建，所以挂到 window 上 */
+const revealedCache = (window.__agriRevealCache = window.__agriRevealCache || new Map())
+const cacheKey = () => (props.graphData && (props.graphData.graph_id || 'builtin')) || 'none'
+if (!revealTimer) {
+  revealTimer = setInterval(() => {
+    if (!props.graphData || !(props.graphData.nodes || []).length) return
+    const target = revealTarget()
+    if (revealed.value < target) {
+      revealed.value = Math.min(target, revealed.value + 3)
+      revealedCache.set(cacheKey(), revealed.value)
+    }
+  }, 400)
+}
+onUnmounted(() => { if (revealTimer) { clearInterval(revealTimer); revealTimer = null } })
+watch(() => props.graphData, () => {
+  const cached = revealedCache.get(cacheKey()) || 0
+  revealed.value = Math.max(revealed.value, cached)
+}, { immediate: true })
+/* 分期变化就要重画：少了这条，节点数在涨但画面不动（之前就是这个原因） */
+watch(() => revealed.value, () => nextTick(renderGraph))
 
 const renderGraph = () => {
   if (!graphSvg.value || !props.graphData) return

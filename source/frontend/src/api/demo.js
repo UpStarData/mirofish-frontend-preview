@@ -128,7 +128,7 @@ export async function demoResponse(config) {
   const path = config.url.split('?')[0]
   const input = body(config)
   let data
-  const builtin = respondWithBuiltin(path, input)
+  const builtin = await respondWithBuiltin(path, input)
   if (builtin) return { data: { success: true, data: builtin }, status: 200, statusText: 'OK', headers: {}, config }
   if (path === '/api/graph/ontology/generate') {
     state.requirement = String(input.get?.('simulation_requirement') || state.requirement).slice(0, 4000)
