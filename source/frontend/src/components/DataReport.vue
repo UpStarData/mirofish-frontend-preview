@@ -169,7 +169,7 @@ import { computed, onMounted, ref } from 'vue'
 
 const props = defineProps({ item: { type: Object, required: true }, standalone: { type: Boolean, default: false } })
 /* 独立链接：报告在浏览器新标签里整页打开 */
-const standaloneHref = computed(() => location.href.split('#')[0] + '#/report-standalone/' + props.item.report_id)
+const standaloneHref = computed(() => location.href.split('#')[0] + '#/report-standalone/' + props.item.report_id + '?style=data')
 const d = computed(() => props.item.dataset)
 const page = ref(0)
 const root = ref(null)

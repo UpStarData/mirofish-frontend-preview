@@ -424,14 +424,24 @@ const consoleLogs = ref([])
 const agentLogLine = ref(0)
 const consoleLogLine = ref(0)
 const reportOutline = ref(null)
+/* 内置推演的统计口径：本体数、关系数、事实点数；右侧面板优先用它们，避免显示 0 */
+const builtinFlowRef = computed(() => builtinFlows.find(b => String(props.reportId || '').startsWith(b.report_id)) || null)
+const builtinStats = computed(() => {
+  const f = builtinFlowRef.value
+  if (!f) return { facts: 0, entities: 0, relationships: 0 }
+  const facts = (f.dataset?.findings || []).reduce((a, x) => a + ((x.points || []).length), 0) + (f.dataset?.sources || []).length + (f.dataset?.kpis || []).length
+  return { facts, entities: f.nodes.length, relationships: f.edges.length }
+})
 /* 报告风格：启动前在首页选（专家风格 / 数据报表风格），这里决定左栏怎么排版。
    内置推演（report_id 形如 BUILTIN-…-REPORT）在数据报表风格下换成整页报表。 */
 const reportStyle = ref('expert')
 const onSwitchStyle = (next) => { reportStyle.value = next; try { localStorage.setItem('agrilink.report_style', next) } catch (e) {} }
 /* 单独链接：报告在浏览器新标签里整页打开（深度沟通那一步也用它） */
 const openStandalone = () => {
+  /* 按当前风格打开独立的报告页：专家风格就打开专家文档，不生成数据报表 */
   const base = location.href.split('#')[0]
-  window.open(base + '#/report-standalone/' + props.reportId, '_blank', 'noopener')
+  const style = reportStyle.value === 'data' ? 'data' : 'expert'
+  window.open(base + '#/report-standalone/' + props.reportId + '?style=' + style, '_blank', 'noopener')
 }
 const pagedReport = computed(() => {
   if (reportStyle.value !== 'data') return null
@@ -1006,17 +1016,17 @@ const InsightDisplay = {
           h('div', { class: 'header-title' }, 'Deep Insight'),
           h('div', { class: 'header-stats' }, [
             h('span', { class: 'stat-item' }, [
-              h('span', { class: 'stat-value' }, props.result.stats.facts || props.result.facts.length),
+              h('span', { class: 'stat-value' }, props.result.stats.facts || props.result.facts.length || builtinStats.value.facts),
               h('span', { class: 'stat-label' }, 'Facts')
             ]),
             h('span', { class: 'stat-divider' }, '/'),
             h('span', { class: 'stat-item' }, [
-              h('span', { class: 'stat-value' }, props.result.stats.entities || props.result.entities.length),
+              h('span', { class: 'stat-value' }, props.result.stats.entities || props.result.entities.length || builtinStats.value.entities),
               h('span', { class: 'stat-label' }, 'Entities')
             ]),
             h('span', { class: 'stat-divider' }, '/'),
             h('span', { class: 'stat-item' }, [
-              h('span', { class: 'stat-value' }, props.result.stats.relationships || props.result.relations.length),
+              h('span', { class: 'stat-value' }, props.result.stats.relationships || props.result.relations.length || builtinStats.value.relationships),
               h('span', { class: 'stat-label' }, 'Relations')
             ]),
             props.resultLength && h('span', { class: 'stat-divider' }, '·'),

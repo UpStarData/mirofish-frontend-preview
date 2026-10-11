@@ -334,6 +334,7 @@ function visibleIdSet() {
   }
   return new Set(list.map((n) => n.uuid))
 }
+let revealPainted = false
 function applyReveal() {
   if (!gLayers.ready) return
   gLayers.visible = visibleIdSet()
@@ -344,6 +345,16 @@ function applyReveal() {
   if (gLayers.link) gLayers.link.style('opacity', (d) => (on(d.source.id || d.source) && on(d.target.id || d.target) ? 1 : 0))
   if (gLayers.linkLabels) gLayers.linkLabels.style('opacity', (d) => (on(d.source.id || d.source) && on(d.target.id || d.target) ? 1 : 0))
   if (gLayers.linkLabelBg) gLayers.linkLabelBg.style('opacity', (d) => (on(d.source.id || d.source) && on(d.target.id || d.target) ? 1 : 0))
+  const svgEl = graphSvg.value
+  if (svgEl) {
+    d3.select(svgEl).style('visibility', 'visible')
+    if (!revealPainted) {
+      revealPainted = true
+      /* 首帧显示完成后才挂过渡：之后新节点是淡入，不会闪 */
+      setTimeout(() => { [gLayers.node, gLayers.nodeLabels, gLayers.link, gLayers.linkLabels, gLayers.linkLabelBg]
+        .forEach((sel) => sel && sel.style('transition', 'opacity .5s ease')) }, 60)
+    }
+  }
 }
 let linkLabelsRef = null
 let linkLabelBgRef = null
@@ -391,10 +402,11 @@ if (!revealTimer) {
     if (!props.graphData || !(props.graphData.nodes || []).length) return
     const target = revealTarget()
     if (revealed.value < target) {
-      revealed.value = Math.min(target, revealed.value + 3)
+      const stepNow = (phase.value >= 2 && !simStarted.value) ? 6 : 2   /* 构建完成后快快补齐，环境搭建阶段就定住 */
+      revealed.value = Math.min(target, revealed.value + stepNow)
       revealedCache.set(cacheKey(), revealed.value)
     }
-  }, 400)
+  }, 300)
 }
 onUnmounted(() => { if (revealTimer) { clearInterval(revealTimer); revealTimer = null } })
 watch(() => props.graphData, () => {
@@ -422,6 +434,7 @@ const renderGraph = () => {
     .attr('viewBox', `0 0 ${width} ${height}`)
     
   svg.selectAll('*').remove()
+  svg.style('visibility', 'hidden')   /* 首帧先藏住：等可见性算好再显示，避免"先全亮再清空"那一闪 */
   
   const nodesData = shownGraph.value.nodes || []
   const edgesData = shownGraph.value.edges || []
@@ -888,8 +901,13 @@ const renderGraph = () => {
   })
 }
 
-watch(() => props.graphData, () => {
-  nextTick(renderGraph)
+nextTick(applyReveal)
+/* 只有图本身换了（id 或节点数变化）才重建；其它数据刷新只更新可见性 —— 这是所有"闪"的来源 */
+let renderedSig = ''
+watch(() => props.graphData, (val) => {
+  const sig = val ? ((val.graph_id || '') + ':' + ((val.nodes || []).length)) : 'none'
+  if (sig !== renderedSig) { renderedSig = sig; nextTick(renderGraph) }
+  else nextTick(applyReveal)
 }, { deep: true })
 
 // 监听边标签显示开关
