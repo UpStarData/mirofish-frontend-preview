@@ -1,13 +1,18 @@
 // 内置推演在浏览器里跑完整流程：图谱 → 环境 → 双平台推演 → 报告，全部由内置数据驱动，不请求后端。
 import { matchRequirement, byAnyId } from '../data/builtin/mirofish'
 
-const state = { active: null, preparePolls: 0, runPolls: 0, reportStyle: 'expert' }
+const state = { active: null, preparePolls: 0, runPolls: 0, reportStyle: 'expert', logPoll: 0, simStarted: false }
 
 const project = (b) => ({
   project_id: b.project_id, graph_id: b.graph_id, name: b.title,
   simulation_requirement: b.requirement, status: 'graph_completed', ontology: b.ontology
 })
-const graph = (b) => ({ graph_id: b.graph_id, nodes: b.nodes, edges: b.edges, node_count: b.nodes.length, edge_count: b.edges.length })
+const graph = (b) => ({
+  graph_id: b.graph_id, nodes: b.nodes, edges: b.edges,
+  node_count: b.nodes.length, edge_count: b.edges.length,
+  /* 分批：第一批 wave1_count 个（图谱阶段逐步出现），启动双平台后再补 wave2_count 个 */
+  wave1_count: b.wave1Count, wave2_count: b.nodeTotal - b.wave1Count
+})
 const configState = (b) => ({
   status: 'completed', config_generated: true, config: b.simulationConfig,
   summary: {
@@ -68,11 +73,17 @@ export function respondWithBuiltin(path, input) {
   if (path.endsWith('/config/realtime')) return configState(b)
   if (path.endsWith('/config')) return b.simulationConfig
 
-  if (path === '/api/simulation/start') { state.runPolls = 0; return { runner_status: 'running', total_rounds: b.rounds, process_pid: 'builtin' } }
+  if (path === '/api/simulation/start') {
+    state.runPolls = 0; state.simStarted = true
+    /* 图谱面板听这个事件：启动双平台后再补第二批节点 */
+    try { window.dispatchEvent(new CustomEvent('agrilink:sim-start', { detail: { id: b.id } })) } catch (e) {}
+    return { runner_status: 'running', total_rounds: b.rounds, process_pid: 'builtin' }
+  }
   if (path.endsWith('/run-status/detail')) return { all_actions: b.actions.slice(0, Math.max(2, state.runPolls * 6)) }
   if (path.endsWith('/run-status')) {
     state.runPolls++
-    const shown = Math.min(b.rounds, Math.max(1, state.runPolls * 3))
+    /* 一次一轮：两侧逐轮流动，而不是一次把 96 条全灌进去 */
+    const shown = Math.min(b.rounds, Math.max(1, state.runPolls))
     const done = shown >= b.rounds
     const half = Math.floor(shown / 2)
     const count = (p) => b.actions.filter((a) => a.platform === p && a.round_num <= shown).length
@@ -106,7 +117,12 @@ export function respondWithBuiltin(path, input) {
   if (path === '/api/report/generate/status') return { status: 'completed', report_id: b.report_id }
   if (path.endsWith('/agent-log')) {
     const from = Number(field('from_line') || 0)
-    return { logs: b.reportLogs.slice(from), from_line: from }
+    /* 报告是一步一步生成的：第 1 次轮询给"开始 + 大纲"，之后每轮多生成一节，最后收尾 */
+    const sections = b.outline.sections.length
+    state.logPoll++
+    const upto = Math.min(b.reportLogs.length, 2 + Math.max(0, state.logPoll - 1))
+    const logs = b.reportLogs.slice(from, Math.max(from, upto))
+    return { logs, from_line: from + logs.length, total_lines: b.reportLogs.length, generating: from + logs.length < b.reportLogs.length }
   }
   if (path.endsWith('/console-log')) return { logs: [], from_line: Number(field('from_line') || 0) }
   if (path === '/api/report/chat') return { response: '这份内置推演的回答基于内置数据：' + b.summary }

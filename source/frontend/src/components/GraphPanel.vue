@@ -325,6 +325,40 @@ let currentSimulation = null
 let linkLabelsRef = null
 let linkLabelBgRef = null
 
+/* ---------- 分批呈现：第一批 ≈120 个本体缓慢出现，启动双平台后再补 ≈120 个 ---------- */
+const revealed = ref(0)
+let revealTimer = null
+const targetOf = () => (props.graphData?.nodes || []).length
+const wave1Of = () => props.graphData?.wave1_count || targetOf()
+const shownGraph = computed(() => {
+  const g = props.graphData
+  if (!g || !g.nodes || revealed.value >= g.nodes.length) return g || { nodes: [], edges: [] }
+  const nodes = g.nodes.slice(0, revealed.value)
+  const ids = new Set(nodes.map((n) => n.uuid))
+  return { ...g, nodes, edges: (g.edges || []).filter((e) => ids.has(e.source_node_uuid) && ids.has(e.target_node_uuid)), node_count: nodes.length, edge_count: 0 }
+})
+function startReveal(target) {
+  if (revealTimer) { clearInterval(revealTimer); revealTimer = null }
+  if (revealed.value >= target) return
+  revealTimer = setInterval(() => {
+    revealed.value = Math.min(target, revealed.value + 12)
+    if (revealed.value >= target) { clearInterval(revealTimer); revealTimer = null }
+  }, 220)
+}
+const simStarted = ref(false)
+const onSimStart = () => { simStarted.value = true; startReveal(targetOf()) }
+/* 数据刷新不重置进度：第一批展开到 120 左右就停住，启动双平台后才继续补第二批 */
+watch(() => props.graphData, () => {
+  const target = simStarted.value ? targetOf() : wave1Of()
+  /* 已在推演中重挂时，第一批直接摆好，只让第二批 120 个逐步补进来 */
+  if (simStarted.value && revealed.value < wave1Of()) revealed.value = wave1Of()
+  if (revealed.value < target) nextTick(() => startReveal(target))
+}, { immediate: true })
+watch(() => props.isSimulating, (v) => { if (v) { simStarted.value = true; startReveal(targetOf()) } })
+watch(shownGraph, () => nextTick(renderGraph))
+onMounted(() => window.addEventListener('agrilink:sim-start', onSimStart))
+onUnmounted(() => { window.removeEventListener('agrilink:sim-start', onSimStart); if (revealTimer) clearInterval(revealTimer) })
+
 const renderGraph = () => {
   if (!graphSvg.value || !props.graphData) return
   
@@ -344,8 +378,8 @@ const renderGraph = () => {
     
   svg.selectAll('*').remove()
   
-  const nodesData = props.graphData.nodes || []
-  const edgesData = props.graphData.edges || []
+  const nodesData = shownGraph.value.nodes || []
+  const edgesData = shownGraph.value.edges || []
   
   if (nodesData.length === 0) return
 

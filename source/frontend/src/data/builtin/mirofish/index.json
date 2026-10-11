@@ -5,7 +5,9 @@
     "topic": "榴莲",
     "tag": "价格",
     "rounds": 24,
-    "agents": 8
+    "agents": 8,
+    "wave1Count": 122,
+    "nodeTotal": 242
   },
   "BUILTIN-ORIGIN": {
     "id": "builtin-origin",
@@ -13,6 +15,8 @@
     "topic": "产地之争",
     "tag": "到货量",
     "rounds": 24,
-    "agents": 8
+    "agents": 8,
+    "wave1Count": 122,
+    "nodeTotal": 242
   }
 }
