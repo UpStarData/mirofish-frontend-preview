@@ -322,6 +322,29 @@ const closeDetailPanel = () => {
 }
 
 let currentSimulation = null
+/* 各图层选择集：生长时只改它们的透明度，不再重建 DOM */
+const gLayers = { node: null, nodeLabels: null, link: null, linkLabels: null, linkLabelBg: null, visible: new Set(), ready: false }
+function visibleIdSet() {
+  const g = props.graphData
+  if (!g || !g.nodes) return new Set()
+  let list = g.nodes.slice(0, Math.max(revealed.value, simStarted.value ? Math.max(revealed.value, wave1Of()) : revealed.value))
+  if (simStarted.value) {
+    const drop = new Set(g.nodes.filter((n) => n.wave === 1 && (n.degree || 0) <= 1).slice(0, 12).map((n) => n.uuid))
+    if (drop.size) list = list.filter((n) => !drop.has(n.uuid))
+  }
+  return new Set(list.map((n) => n.uuid))
+}
+function applyReveal() {
+  if (!gLayers.ready) return
+  gLayers.visible = visibleIdSet()
+  const seen = gLayers.visible
+  const on = (id) => (seen.has(id) ? 1 : 0)
+  if (gLayers.node) gLayers.node.style('opacity', (d) => on(d.id))
+  if (gLayers.nodeLabels) gLayers.nodeLabels.style('opacity', (d) => on(d.id))
+  if (gLayers.link) gLayers.link.style('opacity', (d) => (on(d.source.id || d.source) && on(d.target.id || d.target) ? 1 : 0))
+  if (gLayers.linkLabels) gLayers.linkLabels.style('opacity', (d) => (on(d.source.id || d.source) && on(d.target.id || d.target) ? 1 : 0))
+  if (gLayers.linkLabelBg) gLayers.linkLabelBg.style('opacity', (d) => (on(d.source.id || d.source) && on(d.target.id || d.target) ? 1 : 0))
+}
 let linkLabelsRef = null
 let linkLabelBgRef = null
 
@@ -332,6 +355,8 @@ const targetOf = () => (props.graphData?.nodes || []).length
 const wave1Of = () => props.graphData?.wave1_count || targetOf()
 const shownGraph = computed(() => {
   const g = props.graphData
+  /* 整张图一次画好（几何/坐标只算一次），可见性由 revealed 控制 —— 不重建，所以不会刷新 */
+  if (g && g.nodes) return g
   if (!g || !g.nodes || revealed.value >= g.nodes.length) return g || { nodes: [], edges: [] }
   const nodes = g.nodes.slice(0, revealed.value)
   const ids = new Set(nodes.map((n) => n.uuid))
@@ -377,7 +402,7 @@ watch(() => props.graphData, () => {
   revealed.value = Math.max(revealed.value, cached)
 }, { immediate: true })
 /* 分期变化就要重画：少了这条，节点数在涨但画面不动（之前就是这个原因） */
-watch(() => revealed.value, () => nextTick(renderGraph))
+watch(() => revealed.value, () => nextTick(applyReveal))
 
 const renderGraph = () => {
   if (!graphSvg.value || !props.graphData) return
@@ -810,6 +835,14 @@ const renderGraph = () => {
     .style('pointer-events', 'none')
     .style('font-family', 'system-ui, sans-serif')
 
+  gLayers.node = node
+  gLayers.nodeLabels = nodeLabels
+  gLayers.link = link
+  gLayers.linkLabels = linkLabels
+  gLayers.linkLabelBg = linkLabelBg
+  gLayers.ready = true
+  const REVEAL_T = '.45s ease'
+  ;[node, nodeLabels, link, linkLabels, linkLabelBg].forEach((sel) => sel && sel.style('transition', 'opacity ' + REVEAL_T))
   simulation.on('tick', () => {
     // 更新曲线路径
     link.attr('d', d => getLinkPath(d))
