@@ -353,22 +353,38 @@ const buildStage = computed(() => {
   if (!Number.isFinite(ph)) return 3
   return ph <= 0 ? 1 : ph === 1 ? 2 : 3
 })
+/* 三个台阶：先几个（本体生成）→ 一批（GraphRAG）→ 全量（构建完成）；由时间推进，跟流程状态解耦 */
+const stair = ref(0)
+let stairTimer = null
 const revealTarget = () => {
   if (simStarted.value) return targetOf()
   const w1 = wave1Of()
-  const st = buildStage.value
-  return st === 1 ? Math.min(8, w1) : st === 2 ? Math.min(64, w1) : w1
+  return stair.value <= 0 ? Math.min(8, w1) : stair.value === 1 ? Math.min(64, w1) : w1
+}
+const startStairs = () => {
+  if (stairTimer) clearInterval(stairTimer)
+  stair.value = 0
+  stairTimer = setInterval(() => {
+    stair.value += 1
+    const target = revealTarget()
+    if (revealed.value !== target) startReveal(target)
+    if (stair.value >= 2) { clearInterval(stairTimer); stairTimer = null }
+  }, 2200)
 }
 const onSimStart = () => { simStarted.value = true; startReveal(targetOf()) }
-watch(() => [props.graphData, buildStage.value], () => {
-  const target = revealTarget()
-  if (simStarted.value && revealed.value < wave1Of()) revealed.value = wave1Of()
-  if (revealed.value !== target) nextTick(() => startReveal(target))
+watch(() => props.graphData, () => {
+  if (simStarted.value) {
+    if (revealed.value < wave1Of()) revealed.value = wave1Of()
+    startReveal(targetOf())
+    return
+  }
+  revealed.value = 0
+  startStairs()
 }, { immediate: true })
 watch(() => props.isSimulating, (v) => { if (v) { simStarted.value = true; startReveal(targetOf()) } })
 watch(shownGraph, () => nextTick(renderGraph))
 onMounted(() => window.addEventListener('agrilink:sim-start', onSimStart))
-onUnmounted(() => { window.removeEventListener('agrilink:sim-start', onSimStart); if (revealTimer) clearInterval(revealTimer) })
+onUnmounted(() => { window.removeEventListener('agrilink:sim-start', onSimStart); if (revealTimer) clearInterval(revealTimer); if (stairTimer) clearInterval(stairTimer) })
 
 const renderGraph = () => {
   if (!graphSvg.value || !props.graphData) return
@@ -402,6 +418,9 @@ const renderGraph = () => {
     id: n.uuid,
     name: n.name || 'Unnamed',
     type: n.labels?.find(l => l !== 'Entity') || 'Entity',
+    degree: n.degree || 0,
+    community: n.community || null,
+    hub: n.hub || 0,
     rawData: n
   }))
   
@@ -514,15 +533,16 @@ const renderGraph = () => {
   const getColor = (type) => colorMap[type] || '#999'
 
   // Simulation - 根据边数量动态调整节点间距
-  /* 类型 → 聚簇中心（3×2 网格），同类型挤成一团，团与团之间留缝 */
-  const CLUSTERS = {
-    '产区': [0.22, 0.30], '农产品': [0.50, 0.22], '市场': [0.78, 0.30],
-    '角色': [0.26, 0.72], '指标': [0.52, 0.78], '制度': [0.78, 0.70]
+  /* 社区锚点：位置刻意不规则（真实图谱不会均分），社区大小也不同 */
+  const COMMUNITY_AT = {
+    c1: [0.20, 0.24], c2: [0.54, 0.16], c3: [0.82, 0.34],
+    c4: [0.34, 0.62], c5: [0.66, 0.74], c6: [0.14, 0.78]
   }
-  const clusterAt = (d) => {
-    const key = Object.keys(CLUSTERS).find((k) => String(d.type || '').includes(k)) || '农产品'
-    const [fx, fy] = CLUSTERS[key]
-    return { x: fx * width, y: fy * height }
+  const communityAt = (d) => {
+    const [fx, fy] = COMMUNITY_AT[d.community] || [0.5, 0.5]
+    /* 每个节点再抖一点，避免社区被拉成规整的圆 */
+    const j = ((d.id || '').split('').reduce((a, c) => a + c.charCodeAt(0), 0) % 40) / 100 - 0.2
+    return { x: (fx + j * 0.25) * width, y: (fy + j * 0.2) * height }
   }
 
   const simulation = d3.forceSimulation(nodes)
@@ -538,8 +558,10 @@ const renderGraph = () => {
     .force('center', d3.forceCenter(width / 2, height / 2))
     .force('collide', d3.forceCollide(16))
     // 添加向中心的引力，让独立的节点群聚集到中心区域
-    .force('x', d3.forceX(d => clusterAt(d).x).strength(0.16))
-    .force('y', d3.forceY(d => clusterAt(d).y).strength(0.16))
+    /* 自然网络布局：社区之间轻微分开，节点在社区内自由散布；
+       枢纽靠度数自然吸住邻居，不再按本体类型摆成一块一块 */
+    .force('x', d3.forceX(d => communityAt(d).x).strength(0.055))
+    .force('y', d3.forceY(d => communityAt(d).y).strength(0.055))
   
   currentSimulation = simulation
 
@@ -711,7 +733,7 @@ const renderGraph = () => {
   const node = nodeGroup.selectAll('circle')
     .data(nodes)
     .enter().append('circle')
-    .attr('r', 10)
+    .attr('r', d => Math.min(15, 5 + Math.sqrt(d.degree || 1) * 2.2))
     .attr('fill', d => getColor(d.type))
     .attr('stroke', '#fff')
     .attr('stroke-width', 2.5)

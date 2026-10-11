@@ -111,7 +111,11 @@
       "summary": "主产季集中在 6—8 月，冷链与分级较成熟",
       "wave": 1,
       "group": "source",
-      "batch": 1
+      "batch": 1,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 8,
+      "hub": 1
     },
     {
       "uuid": "n2",
@@ -123,7 +127,11 @@
       "summary": "尖竹汶一带提前 2—3 周上市，金枕为主",
       "wave": 1,
       "group": "source",
-      "batch": 1
+      "batch": 1,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 9,
+      "hub": 1
     },
     {
       "uuid": "n3",
@@ -135,7 +143,11 @@
       "summary": "鲜果，冷链敏感、货架期短",
       "wave": 1,
       "group": "goods",
-      "batch": 1
+      "batch": 1,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 6,
+      "hub": 0
     },
     {
       "uuid": "n4",
@@ -147,7 +159,11 @@
       "summary": "中高端主力品种，走量最大",
       "wave": 1,
       "group": "goods",
-      "batch": 1
+      "batch": 1,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 8,
+      "hub": 1
     },
     {
       "uuid": "n5",
@@ -159,7 +175,11 @@
       "summary": "高端品种，价格弹性小",
       "wave": 1,
       "group": "goods",
-      "batch": 1
+      "batch": 1,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n6",
@@ -171,7 +191,11 @@
       "summary": "华中集散地，辐射湘赣",
       "wave": 1,
       "group": "market",
-      "batch": 1
+      "batch": 1,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 10,
+      "hub": 1
     },
     {
       "uuid": "n7",
@@ -183,7 +207,11 @@
       "summary": "全国性价格发现市场",
       "wave": 1,
       "group": "market",
-      "batch": 1
+      "batch": 1,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n8",
@@ -195,7 +223,11 @@
       "summary": "锁定产地货量，承担在途库存",
       "wave": 1,
       "group": "actor",
-      "batch": 1
+      "batch": 1,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n9",
@@ -207,7 +239,11 @@
       "summary": "按日定价，反映到货节奏",
       "wave": 1,
       "group": "actor",
-      "batch": 1
+      "batch": 1,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n10",
@@ -219,7 +255,11 @@
       "summary": "传导至终端价格，滞后 3—7 天",
       "wave": 1,
       "group": "actor",
-      "batch": 1
+      "batch": 1,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n11",
@@ -231,7 +271,11 @@
       "summary": "主要观测口径，元/kg",
       "wave": 1,
       "group": "metric",
-      "batch": 1
+      "batch": 1,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 9,
+      "hub": 1
     },
     {
       "uuid": "n12",
@@ -243,7 +287,11 @@
       "summary": "周度到货吨数",
       "wave": 1,
       "group": "metric",
-      "batch": 1
+      "batch": 1,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n13",
@@ -255,7 +303,11 @@
       "summary": "申报到放行时长，决定在途损耗",
       "wave": 1,
       "group": "rule",
-      "batch": 2
+      "batch": 2,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n14",
@@ -267,7 +319,11 @@
       "summary": "节庆与天气驱动，弹性中等",
       "wave": 1,
       "group": "metric",
-      "batch": 2
+      "batch": 2,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 5,
+      "hub": 0
     },
     {
       "uuid": "n15",
@@ -279,7 +335,11 @@
       "summary": "马来西亚彭亨：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n16",
@@ -291,7 +351,11 @@
       "summary": "马来西亚柔佛：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n17",
@@ -303,7 +367,11 @@
       "summary": "马来西亚沙巴：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n18",
@@ -315,7 +383,11 @@
       "summary": "泰国东部尖竹汶：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n19",
@@ -327,7 +399,11 @@
       "summary": "泰国南部春蓬：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n20",
@@ -339,7 +415,11 @@
       "summary": "越南前江：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n21",
@@ -351,7 +431,11 @@
       "summary": "越南平顺：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n22",
@@ -363,7 +447,11 @@
       "summary": "菲律宾达沃：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n23",
@@ -375,7 +463,11 @@
       "summary": "海南保亭：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n24",
@@ -387,7 +479,11 @@
       "summary": "云南西双版纳：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 2
+      "batch": 2,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n25",
@@ -399,7 +495,11 @@
       "summary": "老挝占巴塞：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 3
+      "batch": 3,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n26",
@@ -411,7 +511,11 @@
       "summary": "柬埔寨马德望：可供量、产季窗口与分级能力",
       "wave": 1,
       "group": "source",
-      "batch": 3
+      "batch": 3,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n27",
@@ -423,7 +527,11 @@
       "summary": "金枕 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n28",
@@ -435,7 +543,11 @@
       "summary": "金枕 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n29",
@@ -447,7 +559,11 @@
       "summary": "D24 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n30",
@@ -459,7 +575,11 @@
       "summary": "D24 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n31",
@@ -471,7 +591,11 @@
       "summary": "猫山王 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n32",
@@ -483,7 +607,11 @@
       "summary": "猫山王 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n33",
@@ -495,7 +623,11 @@
       "summary": "黑刺 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n34",
@@ -507,7 +639,11 @@
       "summary": "黑刺 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n35",
@@ -519,7 +655,11 @@
       "summary": "Ri6 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n36",
@@ -531,7 +671,11 @@
       "summary": "Ri6 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 3
+      "batch": 3,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n37",
@@ -543,7 +687,11 @@
       "summary": "干尧 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n38",
@@ -555,7 +703,11 @@
       "summary": "干尧 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n39",
@@ -567,7 +719,11 @@
       "summary": "青尼 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n40",
@@ -579,7 +735,11 @@
       "summary": "青尼 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 7,
+      "hub": 0
     },
     {
       "uuid": "n41",
@@ -591,7 +751,11 @@
       "summary": "甲仑 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n42",
@@ -603,7 +767,11 @@
       "summary": "甲仑 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n43",
@@ -615,7 +783,11 @@
       "summary": "苏丹王 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n44",
@@ -627,7 +799,11 @@
       "summary": "苏丹王 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n45",
@@ -639,7 +815,11 @@
       "summary": "红虾 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n46",
@@ -651,7 +831,11 @@
       "summary": "红虾 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n47",
@@ -663,7 +847,11 @@
       "summary": "托玛尼 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n48",
@@ -675,7 +863,11 @@
       "summary": "托玛尼 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 4
+      "batch": 4,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n49",
@@ -687,7 +879,11 @@
       "summary": "甘尧 的 A 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 5
+      "batch": 5,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n50",
@@ -699,7 +895,11 @@
       "summary": "甘尧 的 B 级 货，分档定价与流向不同",
       "wave": 1,
       "group": "goods",
-      "batch": 5
+      "batch": 5,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n51",
@@ -711,7 +911,11 @@
       "summary": "长沙红星市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 6,
+      "hub": 0
     },
     {
       "uuid": "n52",
@@ -723,7 +927,11 @@
       "summary": "广州江南市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n53",
@@ -735,7 +943,11 @@
       "summary": "北京新发地：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n54",
@@ -747,7 +959,11 @@
       "summary": "上海江桥市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n55",
@@ -759,7 +975,11 @@
       "summary": "成都濛阳市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n56",
@@ -771,7 +991,11 @@
       "summary": "西安雨润市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n57",
@@ -783,7 +1007,11 @@
       "summary": "武汉白沙洲市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 5,
+      "hub": 0
     },
     {
       "uuid": "n58",
@@ -795,7 +1023,11 @@
       "summary": "郑州万邦市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n59",
@@ -807,7 +1039,11 @@
       "summary": "深圳海吉星：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n60",
@@ -819,7 +1055,11 @@
       "summary": "杭州勾庄市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 5
+      "batch": 5,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n61",
@@ -831,7 +1071,11 @@
       "summary": "重庆双福市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 6,
+      "hub": 0
     },
     {
       "uuid": "n62",
@@ -843,7 +1087,11 @@
       "summary": "南京众彩市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n63",
@@ -855,7 +1103,11 @@
       "summary": "青岛城阳市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n64",
@@ -867,7 +1119,11 @@
       "summary": "福州海峡市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n65",
@@ -879,7 +1135,11 @@
       "summary": "昆明王旗营市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n66",
@@ -891,7 +1151,11 @@
       "summary": "南昌深圳农产品市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n67",
@@ -903,7 +1167,11 @@
       "summary": "贵阳农产品物流园：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n68",
@@ -915,7 +1183,11 @@
       "summary": "沈阳盛发市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n69",
@@ -927,7 +1199,11 @@
       "summary": "厦门中埔市场：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 11,
+      "hub": 1
     },
     {
       "uuid": "n70",
@@ -939,7 +1215,11 @@
       "summary": "天津海吉星：集散、价格发现与终端辐射",
       "wave": 1,
       "group": "market",
-      "batch": 6
+      "batch": 6,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n71",
@@ -951,7 +1231,11 @@
       "summary": "进口商：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 6
+      "batch": 6,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 16,
+      "hub": 1
     },
     {
       "uuid": "n72",
@@ -963,7 +1247,11 @@
       "summary": "一级批发商：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 6
+      "batch": 6,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n73",
@@ -975,7 +1263,11 @@
       "summary": "二级批发商：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 15,
+      "hub": 1
     },
     {
       "uuid": "n74",
@@ -987,7 +1279,11 @@
       "summary": "连锁商超采购：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 6,
+      "hub": 0
     },
     {
       "uuid": "n75",
@@ -999,7 +1295,11 @@
       "summary": "水果专营店：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n76",
@@ -1011,7 +1311,11 @@
       "summary": "社区团购平台：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n77",
@@ -1023,7 +1327,11 @@
       "summary": "电商业态：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n78",
@@ -1035,7 +1343,11 @@
       "summary": "冷链承运商：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 28,
+      "hub": 1
     },
     {
       "uuid": "n79",
@@ -1047,7 +1359,11 @@
       "summary": "报关行：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 5,
+      "hub": 0
     },
     {
       "uuid": "n80",
@@ -1059,7 +1375,11 @@
       "summary": "船务代理：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n81",
@@ -1071,7 +1391,11 @@
       "summary": "产地经纪：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 5,
+      "hub": 0
     },
     {
       "uuid": "n82",
@@ -1083,7 +1407,11 @@
       "summary": "终端消费者：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n83",
@@ -1095,7 +1423,11 @@
       "summary": "行业协会：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n84",
@@ -1107,7 +1439,11 @@
       "summary": "市场监管：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 7
+      "batch": 7,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n85",
@@ -1119,7 +1455,11 @@
       "summary": "价格监测机构：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 8
+      "batch": 8,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n86",
@@ -1131,7 +1471,11 @@
       "summary": "结算与保险：在链条上的目标函数与出招方式",
       "wave": 1,
       "group": "actor",
-      "batch": 8
+      "batch": 8,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n87",
@@ -1143,7 +1487,11 @@
       "summary": "批发价：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n88",
@@ -1155,7 +1503,11 @@
       "summary": "到货量：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n89",
@@ -1167,7 +1519,11 @@
       "summary": "日成交量：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n90",
@@ -1179,7 +1535,11 @@
       "summary": "价差：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n91",
@@ -1191,7 +1551,11 @@
       "summary": "损耗率：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n92",
@@ -1203,7 +1567,11 @@
       "summary": "周转天数：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n93",
@@ -1215,7 +1583,11 @@
       "summary": "库存水位：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n94",
@@ -1227,7 +1599,11 @@
       "summary": "零售价：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c1",
+      "communityName": "马来西亚/泰国季重叠",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n95",
@@ -1239,7 +1615,11 @@
       "summary": "终端渗透率：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c3",
+      "communityName": "市场与价格传导",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n96",
@@ -1251,7 +1631,11 @@
       "summary": "鲜度等级：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 8
+      "batch": 8,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n97",
@@ -1263,7 +1647,11 @@
       "summary": "退货率：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 9
+      "batch": 9,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n98",
@@ -1275,7 +1663,11 @@
       "summary": "通关时长：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 9
+      "batch": 9,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n99",
@@ -1287,7 +1679,11 @@
       "summary": "在途天数：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 9
+      "batch": 9,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n100",
@@ -1299,7 +1695,11 @@
       "summary": "市场份额：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 9
+      "batch": 9,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n101",
@@ -1311,7 +1711,11 @@
       "summary": "毛利空间：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 9
+      "batch": 9,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n102",
@@ -1323,7 +1727,11 @@
       "summary": "价格波动率：本案例的观测口径",
       "wave": 1,
       "group": "metric",
-      "batch": 9
+      "batch": 9,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n103",
@@ -1335,7 +1743,11 @@
       "summary": "口岸通关流程：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 9
+      "batch": 9,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n104",
@@ -1347,7 +1759,11 @@
       "summary": "检验检疫要求：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 9
+      "batch": 9,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n105",
@@ -1359,7 +1775,11 @@
       "summary": "产地分级标准：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 9
+      "batch": 9,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n106",
@@ -1371,7 +1791,11 @@
       "summary": "冷链温控规范：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 9
+      "batch": 9,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 5,
+      "hub": 0
     },
     {
       "uuid": "n107",
@@ -1383,7 +1807,11 @@
       "summary": "追溯码规则：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 9
+      "batch": 9,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n108",
@@ -1395,7 +1823,11 @@
       "summary": "进口配额：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 9
+      "batch": 9,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n109",
@@ -1407,7 +1839,11 @@
       "summary": "关税税率：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 3,
+      "hub": 0
     },
     {
       "uuid": "n110",
@@ -1419,7 +1855,11 @@
       "summary": "仓储管理规范：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n111",
@@ -1431,7 +1871,11 @@
       "summary": "批发市场准入：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n112",
@@ -1443,7 +1887,11 @@
       "summary": "价格公示制度：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n113",
@@ -1455,7 +1903,11 @@
       "summary": "质量抽检：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c5",
+      "communityName": "进口与批发协作",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n114",
@@ -1467,7 +1919,11 @@
       "summary": "产地证核验：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 6,
+      "hub": 0
     },
     {
       "uuid": "n115",
@@ -1479,7 +1935,11 @@
       "summary": "运输许可：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n116",
@@ -1491,7 +1951,11 @@
       "summary": "包装标识规范：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n117",
@@ -1503,7 +1967,11 @@
       "summary": "结算账期约定：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 5,
+      "hub": 0
     },
     {
       "uuid": "n118",
@@ -1515,7 +1983,11 @@
       "summary": "争议处理流程：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n119",
@@ -1527,7 +1999,11 @@
       "summary": "应急调运机制：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 5,
+      "hub": 0
     },
     {
       "uuid": "n120",
@@ -1539,7 +2015,11 @@
       "summary": "价格异常预警：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 10
+      "batch": 10,
+      "community": "c4",
+      "communityName": "品种分档与替代",
+      "degree": 4,
+      "hub": 0
     },
     {
       "uuid": "n121",
@@ -1551,7 +2031,11 @@
       "summary": "储备投放规则：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 11
+      "batch": 11,
+      "community": "c2",
+      "communityName": "通关与冷链时效",
+      "degree": 2,
+      "hub": 0
     },
     {
       "uuid": "n122",
@@ -1563,7 +2047,11 @@
       "summary": "口岸作业时长：影响时效与成本的规则",
       "wave": 1,
       "group": "rule",
-      "batch": 11
+      "batch": 11,
+      "community": "c6",
+      "communityName": "口径与监管",
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n123",
@@ -1575,7 +2063,9 @@
       "summary": "市场交易环境：产地报价",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n124",
@@ -1587,7 +2077,9 @@
       "summary": "市场交易环境：到岸成本核算",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n125",
@@ -1599,7 +2091,9 @@
       "summary": "市场交易环境：一批成交",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n126",
@@ -1611,7 +2105,9 @@
       "summary": "市场交易环境：二批分销",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n127",
@@ -1623,7 +2119,9 @@
       "summary": "市场交易环境：补货指令",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n128",
@@ -1635,7 +2133,9 @@
       "summary": "市场交易环境：调运排期",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n129",
@@ -1647,7 +2147,9 @@
       "summary": "市场交易环境：冷库出入库",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n130",
@@ -1659,7 +2161,9 @@
       "summary": "市场交易环境：商超陈列调整",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n131",
@@ -1671,7 +2175,9 @@
       "summary": "市场交易环境：促销活动",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n132",
@@ -1683,7 +2189,9 @@
       "summary": "市场交易环境：临期折价",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n133",
@@ -1695,7 +2203,9 @@
       "summary": "市场交易环境：退货处理",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n134",
@@ -1707,7 +2217,9 @@
       "summary": "市场交易环境：在途改港",
       "wave": 2,
       "group": "trade",
-      "batch": 1
+      "batch": 1,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n135",
@@ -1719,7 +2231,9 @@
       "summary": "市场交易环境：船期变更",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n136",
@@ -1731,7 +2245,9 @@
       "summary": "市场交易环境：集装箱周转",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n137",
@@ -1743,7 +2259,9 @@
       "summary": "市场交易环境：结算回款",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n138",
@@ -1755,7 +2273,9 @@
       "summary": "市场交易环境：价格调整通知",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n139",
@@ -1767,7 +2287,9 @@
       "summary": "市场交易环境：库存盘点",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n140",
@@ -1779,7 +2301,9 @@
       "summary": "市场交易环境：跨市场调货",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n141",
@@ -1791,7 +2315,9 @@
       "summary": "市场交易环境：终端补货",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n142",
@@ -1803,7 +2329,9 @@
       "summary": "市场交易环境：团购开团",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n143",
@@ -1815,7 +2343,9 @@
       "summary": "市场交易环境：档口竞价",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n144",
@@ -1827,7 +2357,9 @@
       "summary": "市场交易环境：到货验收",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n145",
@@ -1839,7 +2371,9 @@
       "summary": "市场交易环境：分拣打包",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n146",
@@ -1851,7 +2385,9 @@
       "summary": "市场交易环境：批发结算",
       "wave": 2,
       "group": "trade",
-      "batch": 2
+      "batch": 2,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n147",
@@ -1863,7 +2399,9 @@
       "summary": "市场交易环境：物流招标",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n148",
@@ -1875,7 +2413,9 @@
       "summary": "市场交易环境：车皮调拨",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n149",
@@ -1887,7 +2427,9 @@
       "summary": "市场交易环境：港口提柜",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n150",
@@ -1899,7 +2441,9 @@
       "summary": "市场交易环境：报关申报",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n151",
@@ -1911,7 +2455,9 @@
       "summary": "市场交易环境：税费核算",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n152",
@@ -1923,7 +2469,9 @@
       "summary": "市场交易环境：批次贴标",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n153",
@@ -1935,7 +2483,9 @@
       "summary": "市场交易环境：品质复检",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n154",
@@ -1947,7 +2497,9 @@
       "summary": "市场交易环境：渠道铺货",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n155",
@@ -1959,7 +2511,9 @@
       "summary": "市场交易环境：电商上架",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n156",
@@ -1971,7 +2525,9 @@
       "summary": "市场交易环境：直播选品",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n157",
@@ -1983,7 +2539,9 @@
       "summary": "市场交易环境：会员团购",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n158",
@@ -1995,7 +2553,9 @@
       "summary": "市场交易环境：价格签更新",
       "wave": 2,
       "group": "trade",
-      "batch": 3
+      "batch": 3,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n159",
@@ -2007,7 +2567,9 @@
       "summary": "市场交易环境：毛利复盘",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n160",
@@ -2019,7 +2581,9 @@
       "summary": "市场交易环境：损耗核销",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n161",
@@ -2031,7 +2595,9 @@
       "summary": "市场交易环境：夜间到货",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n162",
@@ -2043,7 +2609,9 @@
       "summary": "市场交易环境：凌晨开秤",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n163",
@@ -2055,7 +2623,9 @@
       "summary": "市场交易环境：早市议价",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n164",
@@ -2067,7 +2637,9 @@
       "summary": "市场交易环境：午市调价",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n165",
@@ -2079,7 +2651,9 @@
       "summary": "市场交易环境：晚市甩货",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n166",
@@ -2091,7 +2665,9 @@
       "summary": "市场交易环境：周度订货",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n167",
@@ -2103,7 +2679,9 @@
       "summary": "市场交易环境：月度对账",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n168",
@@ -2115,7 +2693,9 @@
       "summary": "市场交易环境：季度返利",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n169",
@@ -2127,7 +2707,9 @@
       "summary": "市场交易环境：同行询价",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n170",
@@ -2139,7 +2721,9 @@
       "summary": "市场交易环境：跨省承运",
       "wave": 2,
       "group": "trade",
-      "batch": 4
+      "batch": 4,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n171",
@@ -2151,7 +2735,9 @@
       "summary": "市场交易环境：城市配送",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n172",
@@ -2163,7 +2749,9 @@
       "summary": "市场交易环境：末端履约",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n173",
@@ -2175,7 +2763,9 @@
       "summary": "市场交易环境：售后理赔",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n174",
@@ -2187,7 +2777,9 @@
       "summary": "市场交易环境：换货补发",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n175",
@@ -2199,7 +2791,9 @@
       "summary": "市场交易环境：仓储租金",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n176",
@@ -2211,7 +2805,9 @@
       "summary": "市场交易环境：装卸排班",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n177",
@@ -2223,7 +2819,9 @@
       "summary": "市场交易环境：磅单核验",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n178",
@@ -2235,7 +2833,9 @@
       "summary": "市场交易环境：冷链打冷",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n179",
@@ -2247,7 +2847,9 @@
       "summary": "市场交易环境：温度记录",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n180",
@@ -2259,7 +2861,9 @@
       "summary": "市场交易环境：包装耗材",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n181",
@@ -2271,7 +2875,9 @@
       "summary": "市场交易环境：电子合同",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n182",
@@ -2283,7 +2889,9 @@
       "summary": "市场交易环境：票据流转",
       "wave": 2,
       "group": "trade",
-      "batch": 5
+      "batch": 5,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n183",
@@ -2295,7 +2903,9 @@
       "summary": "产业协作环境并行：产地共建基地",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n184",
@@ -2307,7 +2917,9 @@
       "summary": "产业协作环境并行：联合采购小组",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n185",
@@ -2319,7 +2931,9 @@
       "summary": "产业协作环境并行：共享冷库",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n186",
@@ -2331,7 +2945,9 @@
       "summary": "产业协作环境并行：干线共配",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n187",
@@ -2343,7 +2959,9 @@
       "summary": "产业协作环境并行：标准分级共建",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n188",
@@ -2355,7 +2973,9 @@
       "summary": "产业协作环境并行：信息互通机制",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n189",
@@ -2367,7 +2987,9 @@
       "summary": "产业协作环境并行：价格指数共建",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n190",
@@ -2379,7 +3001,9 @@
       "summary": "产业协作环境并行：质量追溯联盟",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n191",
@@ -2391,7 +3015,9 @@
       "summary": "产业协作环境并行：产销对接会",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n192",
@@ -2403,7 +3029,9 @@
       "summary": "产业协作环境并行：技术培训",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n193",
@@ -2415,7 +3043,9 @@
       "summary": "产业协作环境并行：订单农业",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n194",
@@ -2427,7 +3057,9 @@
       "summary": "产业协作环境并行：保底收购协议",
       "wave": 2,
       "group": "coop",
-      "batch": 6
+      "batch": 6,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n195",
@@ -2439,7 +3071,9 @@
       "summary": "产业协作环境并行：冷链协同调度",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n196",
@@ -2451,7 +3085,9 @@
       "summary": "产业协作环境并行：纸箱共用池",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n197",
@@ -2463,7 +3099,9 @@
       "summary": "产业协作环境并行：检验互助",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n198",
@@ -2475,7 +3113,9 @@
       "summary": "产业协作环境并行：出口商联合会",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n199",
@@ -2487,7 +3127,9 @@
       "summary": "产业协作环境并行：口岸协调会",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n200",
@@ -2499,7 +3141,9 @@
       "summary": "产业协作环境并行：产业协作平台",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n201",
@@ -2511,7 +3155,9 @@
       "summary": "产业协作环境并行：数据共享协议",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n202",
@@ -2523,7 +3169,9 @@
       "summary": "产业协作环境并行：风险共担基金",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n203",
@@ -2535,7 +3183,9 @@
       "summary": "产业协作环境并行：联合品牌推广",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n204",
@@ -2547,7 +3197,9 @@
       "summary": "产业协作环境并行：产地溯源共建",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n205",
@@ -2559,7 +3211,9 @@
       "summary": "产业协作环境并行：共建检测实验室",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n206",
@@ -2571,7 +3225,9 @@
       "summary": "产业协作环境并行：共用分选线",
       "wave": 2,
       "group": "coop",
-      "batch": 7
+      "batch": 7,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n207",
@@ -2583,7 +3239,9 @@
       "summary": "产业协作环境并行：统一包装标准",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n208",
@@ -2595,7 +3253,9 @@
       "summary": "产业协作环境并行：共建冷链干线",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n209",
@@ -2607,7 +3267,9 @@
       "summary": "产业协作环境并行：共享订单池",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n210",
@@ -2619,7 +3281,9 @@
       "summary": "产业协作环境并行：协同排产",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n211",
@@ -2631,7 +3295,9 @@
       "summary": "产业协作环境并行：共享仓配网络",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n212",
@@ -2643,7 +3309,9 @@
       "summary": "产业协作环境并行：共建价格指数",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n213",
@@ -2655,7 +3323,9 @@
       "summary": "产业协作环境并行：联合议价",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n214",
@@ -2667,7 +3337,9 @@
       "summary": "产业协作环境并行：行业自律公约",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n215",
@@ -2679,7 +3351,9 @@
       "summary": "产业协作环境并行：纠纷调解机制",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n216",
@@ -2691,7 +3365,9 @@
       "summary": "产业协作环境并行：人才联合培养",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n217",
@@ -2703,7 +3379,9 @@
       "summary": "产业协作环境并行：共建试验田",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n218",
@@ -2715,7 +3393,9 @@
       "summary": "产业协作环境并行：共享气象数据",
       "wave": 2,
       "group": "coop",
-      "batch": 8
+      "batch": 8,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n219",
@@ -2727,7 +3407,9 @@
       "summary": "产业协作环境并行：协同防疫",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n220",
@@ -2739,7 +3421,9 @@
       "summary": "产业协作环境并行：共建出口通道",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n221",
@@ -2751,7 +3435,9 @@
       "summary": "产业协作环境并行：共享船期资源",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n222",
@@ -2763,7 +3449,9 @@
       "summary": "产业协作环境并行：联合投保",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n223",
@@ -2775,7 +3463,9 @@
       "summary": "产业协作环境并行：共建结算规则",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n224",
@@ -2787,7 +3477,9 @@
       "summary": "产业协作环境并行：共享信用档案",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n225",
@@ -2799,7 +3491,9 @@
       "summary": "产业协作环境并行：产销信息共建",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n226",
@@ -2811,7 +3505,9 @@
       "summary": "产业协作环境并行：共建应急储备",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n227",
@@ -2823,7 +3519,9 @@
       "summary": "产业协作环境并行：联合质量抽检",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n228",
@@ -2835,7 +3533,9 @@
       "summary": "产业协作环境并行：共建产地仓",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n229",
@@ -2847,7 +3547,9 @@
       "summary": "产业协作环境并行：共用装卸设备",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n230",
@@ -2859,7 +3561,9 @@
       "summary": "产业协作环境并行：共享运力平台",
       "wave": 2,
       "group": "coop",
-      "batch": 9
+      "batch": 9,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n231",
@@ -2871,7 +3575,9 @@
       "summary": "产业协作环境并行：共建加工中心",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n232",
@@ -2883,7 +3589,9 @@
       "summary": "产业协作环境并行：联合培训基地",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n233",
@@ -2895,7 +3603,9 @@
       "summary": "产业协作环境并行：共建标准委员会",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n234",
@@ -2907,7 +3617,9 @@
       "summary": "产业协作环境并行：共享客户资源",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n235",
@@ -2919,7 +3631,9 @@
       "summary": "产业协作环境并行：共建园区",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n236",
@@ -2931,7 +3645,9 @@
       "summary": "产业协作环境并行：联合举办交易会",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n237",
@@ -2943,7 +3659,9 @@
       "summary": "产业协作环境并行：共建线上平台",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n238",
@@ -2955,7 +3673,9 @@
       "summary": "产业协作环境并行：共享数据接口",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n239",
@@ -2967,7 +3687,9 @@
       "summary": "产业协作环境并行：共建评价体系",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n240",
@@ -2979,7 +3701,9 @@
       "summary": "产业协作环境并行：联合风险评估",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n241",
@@ -2991,7 +3715,9 @@
       "summary": "产业协作环境并行：共建绿色通道",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     },
     {
       "uuid": "n242",
@@ -3003,7 +3729,9 @@
       "summary": "产业协作环境并行：共享售后网络",
       "wave": 2,
       "group": "coop",
-      "batch": 10
+      "batch": 10,
+      "degree": 1,
+      "hub": 0
     }
   ],
   "edges": [
@@ -3121,1282 +3849,1282 @@
     },
     {
       "uuid": "e15",
-      "source_node_uuid": "n15",
-      "target_node_uuid": "n27",
+      "source_node_uuid": "n11",
+      "target_node_uuid": "n15",
       "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e16",
-      "source_node_uuid": "n15",
-      "target_node_uuid": "n51",
+      "source_node_uuid": "n69",
+      "target_node_uuid": "n16",
       "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e17",
-      "source_node_uuid": "n16",
-      "target_node_uuid": "n28",
+      "source_node_uuid": "n2",
+      "target_node_uuid": "n17",
       "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e18",
-      "source_node_uuid": "n16",
-      "target_node_uuid": "n52",
+      "source_node_uuid": "n75",
+      "target_node_uuid": "n18",
       "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e19",
-      "source_node_uuid": "n17",
-      "target_node_uuid": "n29",
+      "source_node_uuid": "n34",
+      "target_node_uuid": "n19",
       "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e20",
-      "source_node_uuid": "n17",
-      "target_node_uuid": "n53",
+      "source_node_uuid": "n78",
+      "target_node_uuid": "n20",
       "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e21",
-      "source_node_uuid": "n18",
-      "target_node_uuid": "n30",
+      "source_node_uuid": "n2",
+      "target_node_uuid": "n21",
       "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e22",
-      "source_node_uuid": "n18",
-      "target_node_uuid": "n54",
+      "source_node_uuid": "n1",
+      "target_node_uuid": "n22",
       "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e23",
-      "source_node_uuid": "n19",
-      "target_node_uuid": "n31",
+      "source_node_uuid": "n2",
+      "target_node_uuid": "n23",
       "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e24",
-      "source_node_uuid": "n19",
-      "target_node_uuid": "n55",
+      "source_node_uuid": "n78",
+      "target_node_uuid": "n24",
       "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e25",
-      "source_node_uuid": "n20",
-      "target_node_uuid": "n32",
+      "source_node_uuid": "n19",
+      "target_node_uuid": "n25",
       "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e26",
-      "source_node_uuid": "n20",
-      "target_node_uuid": "n56",
+      "source_node_uuid": "n2",
+      "target_node_uuid": "n26",
       "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e27",
-      "source_node_uuid": "n21",
-      "target_node_uuid": "n33",
+      "source_node_uuid": "n91",
+      "target_node_uuid": "n26",
       "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "fact": "产地供给进入市场与品种链路",
       "wave": 1
     },
     {
       "uuid": "e28",
-      "source_node_uuid": "n21",
-      "target_node_uuid": "n57",
-      "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "source_node_uuid": "n1",
+      "target_node_uuid": "n27",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e29",
-      "source_node_uuid": "n22",
-      "target_node_uuid": "n34",
-      "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "source_node_uuid": "n4",
+      "target_node_uuid": "n28",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e30",
-      "source_node_uuid": "n22",
-      "target_node_uuid": "n58",
-      "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "source_node_uuid": "n53",
+      "target_node_uuid": "n29",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e31",
-      "source_node_uuid": "n23",
-      "target_node_uuid": "n35",
-      "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "source_node_uuid": "n28",
+      "target_node_uuid": "n30",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e32",
-      "source_node_uuid": "n23",
-      "target_node_uuid": "n59",
-      "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "source_node_uuid": "n120",
+      "target_node_uuid": "n31",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e33",
-      "source_node_uuid": "n24",
-      "target_node_uuid": "n36",
-      "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "source_node_uuid": "n99",
+      "target_node_uuid": "n32",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e34",
-      "source_node_uuid": "n24",
-      "target_node_uuid": "n60",
-      "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "source_node_uuid": "n38",
+      "target_node_uuid": "n33",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e35",
-      "source_node_uuid": "n25",
-      "target_node_uuid": "n37",
-      "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "source_node_uuid": "n94",
+      "target_node_uuid": "n34",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e36",
-      "source_node_uuid": "n25",
-      "target_node_uuid": "n61",
-      "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "source_node_uuid": "n38",
+      "target_node_uuid": "n35",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e37",
-      "source_node_uuid": "n26",
-      "target_node_uuid": "n38",
-      "name": "供应流向",
-      "fact": "产地供给进入品种分档",
+      "source_node_uuid": "n21",
+      "target_node_uuid": "n36",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e38",
-      "source_node_uuid": "n26",
-      "target_node_uuid": "n62",
-      "name": "供应流向",
-      "fact": "产地货源流向集散市场",
+      "source_node_uuid": "n40",
+      "target_node_uuid": "n37",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e39",
-      "source_node_uuid": "n27",
-      "target_node_uuid": "n71",
-      "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "source_node_uuid": "n31",
+      "target_node_uuid": "n38",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e40",
-      "source_node_uuid": "n27",
-      "target_node_uuid": "n87",
+      "source_node_uuid": "n24",
+      "target_node_uuid": "n39",
       "name": "价格传导",
       "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e41",
-      "source_node_uuid": "n28",
-      "target_node_uuid": "n72",
-      "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "source_node_uuid": "n6",
+      "target_node_uuid": "n40",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e42",
-      "source_node_uuid": "n28",
-      "target_node_uuid": "n88",
+      "source_node_uuid": "n21",
+      "target_node_uuid": "n41",
       "name": "价格传导",
       "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e43",
-      "source_node_uuid": "n29",
-      "target_node_uuid": "n73",
-      "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "source_node_uuid": "n73",
+      "target_node_uuid": "n42",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e44",
-      "source_node_uuid": "n29",
-      "target_node_uuid": "n89",
+      "source_node_uuid": "n36",
+      "target_node_uuid": "n43",
       "name": "价格传导",
       "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e45",
-      "source_node_uuid": "n30",
-      "target_node_uuid": "n74",
-      "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "source_node_uuid": "n2",
+      "target_node_uuid": "n44",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e46",
-      "source_node_uuid": "n30",
-      "target_node_uuid": "n90",
+      "source_node_uuid": "n107",
+      "target_node_uuid": "n44",
       "name": "价格传导",
       "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e47",
-      "source_node_uuid": "n31",
-      "target_node_uuid": "n75",
-      "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "source_node_uuid": "n7",
+      "target_node_uuid": "n45",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e48",
-      "source_node_uuid": "n31",
-      "target_node_uuid": "n91",
+      "source_node_uuid": "n4",
+      "target_node_uuid": "n46",
       "name": "价格传导",
       "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e49",
-      "source_node_uuid": "n32",
-      "target_node_uuid": "n76",
-      "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "source_node_uuid": "n89",
+      "target_node_uuid": "n47",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e50",
-      "source_node_uuid": "n32",
-      "target_node_uuid": "n92",
+      "source_node_uuid": "n2",
+      "target_node_uuid": "n48",
       "name": "价格传导",
       "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e51",
-      "source_node_uuid": "n33",
-      "target_node_uuid": "n77",
-      "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "source_node_uuid": "n47",
+      "target_node_uuid": "n48",
+      "name": "价格传导",
+      "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e52",
-      "source_node_uuid": "n33",
-      "target_node_uuid": "n93",
+      "source_node_uuid": "n45",
+      "target_node_uuid": "n49",
       "name": "价格传导",
       "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
       "uuid": "e53",
-      "source_node_uuid": "n34",
-      "target_node_uuid": "n78",
-      "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
-      "wave": 1
-    },
-    {
-      "uuid": "e54",
-      "source_node_uuid": "n34",
-      "target_node_uuid": "n94",
+      "source_node_uuid": "n69",
+      "target_node_uuid": "n50",
       "name": "价格传导",
       "fact": "分档价格进入观测口径",
       "wave": 1
     },
     {
-      "uuid": "e55",
-      "source_node_uuid": "n35",
-      "target_node_uuid": "n79",
+      "uuid": "e54",
+      "source_node_uuid": "n20",
+      "target_node_uuid": "n71",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "经营主体在市场内成交",
+      "wave": 1
+    },
+    {
+      "uuid": "e55",
+      "source_node_uuid": "n6",
+      "target_node_uuid": "n72",
+      "name": "供应流向",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e56",
       "source_node_uuid": "n35",
-      "target_node_uuid": "n95",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "target_node_uuid": "n73",
+      "name": "供应流向",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e57",
-      "source_node_uuid": "n36",
-      "target_node_uuid": "n80",
+      "source_node_uuid": "n57",
+      "target_node_uuid": "n74",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e58",
-      "source_node_uuid": "n36",
-      "target_node_uuid": "n96",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n3",
+      "target_node_uuid": "n75",
+      "name": "供应流向",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e59",
-      "source_node_uuid": "n37",
-      "target_node_uuid": "n81",
+      "source_node_uuid": "n65",
+      "target_node_uuid": "n75",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e60",
-      "source_node_uuid": "n37",
-      "target_node_uuid": "n97",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n112",
+      "target_node_uuid": "n76",
+      "name": "供应流向",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e61",
-      "source_node_uuid": "n38",
-      "target_node_uuid": "n82",
+      "source_node_uuid": "n76",
+      "target_node_uuid": "n77",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e62",
-      "source_node_uuid": "n38",
-      "target_node_uuid": "n98",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n37",
+      "target_node_uuid": "n78",
+      "name": "供应流向",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e63",
-      "source_node_uuid": "n39",
-      "target_node_uuid": "n83",
+      "source_node_uuid": "n35",
+      "target_node_uuid": "n79",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e64",
-      "source_node_uuid": "n39",
-      "target_node_uuid": "n99",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n96",
+      "target_node_uuid": "n80",
+      "name": "供应流向",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e65",
-      "source_node_uuid": "n40",
-      "target_node_uuid": "n84",
+      "source_node_uuid": "n14",
+      "target_node_uuid": "n81",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e66",
-      "source_node_uuid": "n40",
-      "target_node_uuid": "n100",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n2",
+      "target_node_uuid": "n82",
+      "name": "供应流向",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e67",
-      "source_node_uuid": "n41",
-      "target_node_uuid": "n85",
+      "source_node_uuid": "n117",
+      "target_node_uuid": "n83",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e68",
-      "source_node_uuid": "n41",
-      "target_node_uuid": "n101",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n64",
+      "target_node_uuid": "n84",
+      "name": "供应流向",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e69",
-      "source_node_uuid": "n42",
-      "target_node_uuid": "n86",
+      "source_node_uuid": "n40",
+      "target_node_uuid": "n85",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e70",
-      "source_node_uuid": "n42",
-      "target_node_uuid": "n102",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n88",
+      "target_node_uuid": "n86",
+      "name": "供应流向",
+      "fact": "经营主体在市场内成交",
       "wave": 1
     },
     {
       "uuid": "e71",
-      "source_node_uuid": "n43",
-      "target_node_uuid": "n71",
+      "source_node_uuid": "n24",
+      "target_node_uuid": "n51",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e72",
-      "source_node_uuid": "n43",
-      "target_node_uuid": "n87",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n118",
+      "target_node_uuid": "n52",
+      "name": "供应流向",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e73",
-      "source_node_uuid": "n44",
-      "target_node_uuid": "n72",
+      "source_node_uuid": "n1",
+      "target_node_uuid": "n53",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e74",
-      "source_node_uuid": "n44",
-      "target_node_uuid": "n88",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n32",
+      "target_node_uuid": "n53",
+      "name": "供应流向",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e75",
-      "source_node_uuid": "n45",
-      "target_node_uuid": "n73",
+      "source_node_uuid": "n51",
+      "target_node_uuid": "n54",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e76",
-      "source_node_uuid": "n45",
-      "target_node_uuid": "n89",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n37",
+      "target_node_uuid": "n55",
+      "name": "供应流向",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e77",
-      "source_node_uuid": "n46",
-      "target_node_uuid": "n74",
+      "source_node_uuid": "n6",
+      "target_node_uuid": "n56",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e78",
-      "source_node_uuid": "n46",
-      "target_node_uuid": "n90",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n14",
+      "target_node_uuid": "n57",
+      "name": "供应流向",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e79",
-      "source_node_uuid": "n47",
-      "target_node_uuid": "n75",
+      "source_node_uuid": "n90",
+      "target_node_uuid": "n58",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e80",
-      "source_node_uuid": "n47",
-      "target_node_uuid": "n91",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n37",
+      "target_node_uuid": "n59",
+      "name": "供应流向",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e81",
-      "source_node_uuid": "n48",
-      "target_node_uuid": "n76",
+      "source_node_uuid": "n71",
+      "target_node_uuid": "n60",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e82",
-      "source_node_uuid": "n48",
-      "target_node_uuid": "n92",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n3",
+      "target_node_uuid": "n61",
+      "name": "供应流向",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e83",
-      "source_node_uuid": "n49",
-      "target_node_uuid": "n77",
+      "source_node_uuid": "n90",
+      "target_node_uuid": "n62",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e84",
-      "source_node_uuid": "n49",
-      "target_node_uuid": "n93",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n14",
+      "target_node_uuid": "n63",
+      "name": "供应流向",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e85",
-      "source_node_uuid": "n50",
-      "target_node_uuid": "n78",
+      "source_node_uuid": "n61",
+      "target_node_uuid": "n64",
       "name": "供应流向",
-      "fact": "品种货权流转到经营主体",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e86",
-      "source_node_uuid": "n50",
-      "target_node_uuid": "n94",
-      "name": "价格传导",
-      "fact": "分档价格进入观测口径",
+      "source_node_uuid": "n63",
+      "target_node_uuid": "n65",
+      "name": "供应流向",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e87",
-      "source_node_uuid": "n71",
-      "target_node_uuid": "n51",
+      "source_node_uuid": "n38",
+      "target_node_uuid": "n66",
       "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e88",
-      "source_node_uuid": "n72",
-      "target_node_uuid": "n52",
+      "source_node_uuid": "n70",
+      "target_node_uuid": "n67",
       "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e89",
-      "source_node_uuid": "n73",
-      "target_node_uuid": "n53",
+      "source_node_uuid": "n6",
+      "target_node_uuid": "n68",
       "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e90",
-      "source_node_uuid": "n74",
-      "target_node_uuid": "n54",
+      "source_node_uuid": "n54",
+      "target_node_uuid": "n68",
       "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e91",
-      "source_node_uuid": "n75",
-      "target_node_uuid": "n55",
+      "source_node_uuid": "n34",
+      "target_node_uuid": "n69",
       "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e92",
-      "source_node_uuid": "n76",
-      "target_node_uuid": "n56",
+      "source_node_uuid": "n82",
+      "target_node_uuid": "n70",
       "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "fact": "集散市场的货流与价格发现",
       "wave": 1
     },
     {
       "uuid": "e93",
-      "source_node_uuid": "n77",
-      "target_node_uuid": "n57",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "source_node_uuid": "n69",
+      "target_node_uuid": "n87",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e94",
       "source_node_uuid": "n78",
-      "target_node_uuid": "n58",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "target_node_uuid": "n88",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e95",
-      "source_node_uuid": "n79",
-      "target_node_uuid": "n59",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "source_node_uuid": "n94",
+      "target_node_uuid": "n89",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e96",
-      "source_node_uuid": "n80",
-      "target_node_uuid": "n60",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "source_node_uuid": "n49",
+      "target_node_uuid": "n90",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e97",
-      "source_node_uuid": "n81",
-      "target_node_uuid": "n61",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "source_node_uuid": "n99",
+      "target_node_uuid": "n91",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e98",
-      "source_node_uuid": "n82",
-      "target_node_uuid": "n62",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "source_node_uuid": "n52",
+      "target_node_uuid": "n92",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e99",
-      "source_node_uuid": "n83",
-      "target_node_uuid": "n63",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "source_node_uuid": "n42",
+      "target_node_uuid": "n93",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e100",
-      "source_node_uuid": "n84",
-      "target_node_uuid": "n64",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "source_node_uuid": "n21",
+      "target_node_uuid": "n94",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e101",
-      "source_node_uuid": "n85",
-      "target_node_uuid": "n65",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "source_node_uuid": "n55",
+      "target_node_uuid": "n95",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e102",
-      "source_node_uuid": "n86",
-      "target_node_uuid": "n66",
-      "name": "供应流向",
-      "fact": "经营主体在市场内成交",
+      "source_node_uuid": "n69",
+      "target_node_uuid": "n96",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e103",
-      "source_node_uuid": "n87",
-      "target_node_uuid": "n103",
-      "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "source_node_uuid": "n4",
+      "target_node_uuid": "n96",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e104",
-      "source_node_uuid": "n88",
-      "target_node_uuid": "n104",
-      "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "source_node_uuid": "n11",
+      "target_node_uuid": "n97",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e105",
-      "source_node_uuid": "n89",
-      "target_node_uuid": "n105",
-      "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "source_node_uuid": "n40",
+      "target_node_uuid": "n97",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e106",
-      "source_node_uuid": "n90",
-      "target_node_uuid": "n106",
-      "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "source_node_uuid": "n14",
+      "target_node_uuid": "n98",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e107",
-      "source_node_uuid": "n91",
-      "target_node_uuid": "n107",
-      "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "source_node_uuid": "n114",
+      "target_node_uuid": "n99",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e108",
-      "source_node_uuid": "n92",
-      "target_node_uuid": "n108",
-      "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "source_node_uuid": "n83",
+      "target_node_uuid": "n100",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e109",
-      "source_node_uuid": "n93",
-      "target_node_uuid": "n109",
-      "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "source_node_uuid": "n6",
+      "target_node_uuid": "n101",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e110",
-      "source_node_uuid": "n94",
-      "target_node_uuid": "n110",
-      "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "source_node_uuid": "n32",
+      "target_node_uuid": "n102",
+      "name": "价格传导",
+      "fact": "口径随链条变化",
       "wave": 1
     },
     {
       "uuid": "e111",
-      "source_node_uuid": "n95",
-      "target_node_uuid": "n111",
+      "source_node_uuid": "n82",
+      "target_node_uuid": "n103",
       "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e112",
-      "source_node_uuid": "n96",
-      "target_node_uuid": "n112",
+      "source_node_uuid": "n85",
+      "target_node_uuid": "n104",
       "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e113",
-      "source_node_uuid": "n97",
-      "target_node_uuid": "n113",
+      "source_node_uuid": "n46",
+      "target_node_uuid": "n105",
       "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e114",
-      "source_node_uuid": "n98",
-      "target_node_uuid": "n114",
+      "source_node_uuid": "n42",
+      "target_node_uuid": "n106",
       "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e115",
-      "source_node_uuid": "n99",
-      "target_node_uuid": "n115",
+      "source_node_uuid": "n40",
+      "target_node_uuid": "n107",
       "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e116",
-      "source_node_uuid": "n100",
-      "target_node_uuid": "n116",
+      "source_node_uuid": "n30",
+      "target_node_uuid": "n108",
       "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e117",
-      "source_node_uuid": "n101",
-      "target_node_uuid": "n117",
+      "source_node_uuid": "n17",
+      "target_node_uuid": "n109",
       "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e118",
-      "source_node_uuid": "n102",
-      "target_node_uuid": "n118",
+      "source_node_uuid": "n99",
+      "target_node_uuid": "n110",
       "name": "时效约束",
-      "fact": "口径受制度与流程约束",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e119",
-      "source_node_uuid": "n103",
-      "target_node_uuid": "n15",
+      "source_node_uuid": "n68",
+      "target_node_uuid": "n111",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e120",
-      "source_node_uuid": "n104",
-      "target_node_uuid": "n16",
+      "source_node_uuid": "n73",
+      "target_node_uuid": "n112",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e121",
-      "source_node_uuid": "n105",
-      "target_node_uuid": "n17",
+      "source_node_uuid": "n114",
+      "target_node_uuid": "n113",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e122",
-      "source_node_uuid": "n106",
-      "target_node_uuid": "n18",
+      "source_node_uuid": "n40",
+      "target_node_uuid": "n114",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e123",
-      "source_node_uuid": "n107",
-      "target_node_uuid": "n19",
+      "source_node_uuid": "n6",
+      "target_node_uuid": "n115",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e124",
-      "source_node_uuid": "n108",
-      "target_node_uuid": "n20",
+      "source_node_uuid": "n42",
+      "target_node_uuid": "n115",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e125",
-      "source_node_uuid": "n109",
-      "target_node_uuid": "n21",
+      "source_node_uuid": "n40",
+      "target_node_uuid": "n116",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e126",
-      "source_node_uuid": "n110",
-      "target_node_uuid": "n22",
+      "source_node_uuid": "n1",
+      "target_node_uuid": "n117",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e127",
-      "source_node_uuid": "n111",
-      "target_node_uuid": "n23",
+      "source_node_uuid": "n81",
+      "target_node_uuid": "n118",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e128",
-      "source_node_uuid": "n112",
-      "target_node_uuid": "n24",
+      "source_node_uuid": "n11",
+      "target_node_uuid": "n119",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e129",
-      "source_node_uuid": "n113",
-      "target_node_uuid": "n25",
+      "source_node_uuid": "n28",
+      "target_node_uuid": "n119",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e130",
-      "source_node_uuid": "n114",
-      "target_node_uuid": "n26",
+      "source_node_uuid": "n45",
+      "target_node_uuid": "n120",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e131",
-      "source_node_uuid": "n115",
-      "target_node_uuid": "n15",
+      "source_node_uuid": "n78",
+      "target_node_uuid": "n121",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e132",
-      "source_node_uuid": "n116",
-      "target_node_uuid": "n16",
+      "source_node_uuid": "n4",
+      "target_node_uuid": "n122",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "制度约束回压到出货节奏",
       "wave": 1
     },
     {
       "uuid": "e133",
-      "source_node_uuid": "n117",
-      "target_node_uuid": "n17",
+      "source_node_uuid": "n1",
+      "target_node_uuid": "n13",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "社区之间的主干传导",
       "wave": 1
     },
     {
       "uuid": "e134",
-      "source_node_uuid": "n118",
-      "target_node_uuid": "n18",
-      "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "source_node_uuid": "n13",
+      "target_node_uuid": "n6",
+      "name": "价格传导",
+      "fact": "社区之间的主干传导",
       "wave": 1
     },
     {
       "uuid": "e135",
-      "source_node_uuid": "n119",
-      "target_node_uuid": "n19",
+      "source_node_uuid": "n6",
+      "target_node_uuid": "n4",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "社区之间的主干传导",
       "wave": 1
     },
     {
       "uuid": "e136",
-      "source_node_uuid": "n120",
-      "target_node_uuid": "n20",
-      "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "source_node_uuid": "n4",
+      "target_node_uuid": "n8",
+      "name": "价格传导",
+      "fact": "社区之间的主干传导",
       "wave": 1
     },
     {
       "uuid": "e137",
-      "source_node_uuid": "n121",
-      "target_node_uuid": "n21",
+      "source_node_uuid": "n8",
+      "target_node_uuid": "n11",
       "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "fact": "社区之间的主干传导",
       "wave": 1
     },
     {
       "uuid": "e138",
-      "source_node_uuid": "n122",
-      "target_node_uuid": "n22",
-      "name": "时效约束",
-      "fact": "制度约束回压到产地出货节奏",
+      "source_node_uuid": "n11",
+      "target_node_uuid": "n1",
+      "name": "价格传导",
+      "fact": "社区之间的主干传导",
       "wave": 1
     },
     {
       "uuid": "e139",
-      "source_node_uuid": "n51",
+      "source_node_uuid": "n79",
       "target_node_uuid": "n123",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e140",
-      "source_node_uuid": "n52",
+      "source_node_uuid": "n68",
       "target_node_uuid": "n124",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e141",
-      "source_node_uuid": "n53",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n125",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e142",
-      "source_node_uuid": "n54",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n126",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e143",
-      "source_node_uuid": "n55",
+      "source_node_uuid": "n79",
       "target_node_uuid": "n127",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e144",
-      "source_node_uuid": "n56",
+      "source_node_uuid": "n58",
       "target_node_uuid": "n128",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e145",
-      "source_node_uuid": "n57",
+      "source_node_uuid": "n81",
       "target_node_uuid": "n129",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e146",
-      "source_node_uuid": "n58",
+      "source_node_uuid": "n59",
       "target_node_uuid": "n130",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e147",
-      "source_node_uuid": "n59",
+      "source_node_uuid": "n58",
       "target_node_uuid": "n131",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e148",
-      "source_node_uuid": "n60",
+      "source_node_uuid": "n75",
       "target_node_uuid": "n132",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e149",
-      "source_node_uuid": "n61",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n133",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e150",
-      "source_node_uuid": "n62",
+      "source_node_uuid": "n69",
       "target_node_uuid": "n134",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e151",
-      "source_node_uuid": "n63",
+      "source_node_uuid": "n57",
       "target_node_uuid": "n135",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e152",
-      "source_node_uuid": "n64",
+      "source_node_uuid": "n59",
       "target_node_uuid": "n136",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e153",
-      "source_node_uuid": "n65",
+      "source_node_uuid": "n61",
       "target_node_uuid": "n137",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e154",
-      "source_node_uuid": "n66",
+      "source_node_uuid": "n63",
       "target_node_uuid": "n138",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e155",
-      "source_node_uuid": "n67",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n139",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e156",
-      "source_node_uuid": "n68",
+      "source_node_uuid": "n79",
       "target_node_uuid": "n140",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e157",
-      "source_node_uuid": "n69",
+      "source_node_uuid": "n85",
       "target_node_uuid": "n141",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e158",
-      "source_node_uuid": "n70",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n142",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e159",
-      "source_node_uuid": "n51",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n143",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e160",
-      "source_node_uuid": "n52",
+      "source_node_uuid": "n80",
       "target_node_uuid": "n144",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e161",
-      "source_node_uuid": "n53",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n145",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e162",
-      "source_node_uuid": "n54",
+      "source_node_uuid": "n63",
       "target_node_uuid": "n146",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e163",
-      "source_node_uuid": "n55",
+      "source_node_uuid": "n51",
       "target_node_uuid": "n147",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e164",
-      "source_node_uuid": "n56",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n148",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e165",
-      "source_node_uuid": "n57",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n149",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e166",
-      "source_node_uuid": "n58",
+      "source_node_uuid": "n61",
       "target_node_uuid": "n150",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e167",
-      "source_node_uuid": "n59",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n151",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e168",
-      "source_node_uuid": "n60",
+      "source_node_uuid": "n69",
       "target_node_uuid": "n152",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e169",
-      "source_node_uuid": "n61",
+      "source_node_uuid": "n69",
       "target_node_uuid": "n153",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e170",
-      "source_node_uuid": "n62",
+      "source_node_uuid": "n74",
       "target_node_uuid": "n154",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e171",
-      "source_node_uuid": "n63",
+      "source_node_uuid": "n51",
       "target_node_uuid": "n155",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e172",
-      "source_node_uuid": "n64",
+      "source_node_uuid": "n69",
       "target_node_uuid": "n156",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e173",
-      "source_node_uuid": "n65",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n157",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e174",
-      "source_node_uuid": "n66",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n158",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
@@ -4404,319 +5132,319 @@
       "source_node_uuid": "n67",
       "target_node_uuid": "n159",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e176",
-      "source_node_uuid": "n68",
+      "source_node_uuid": "n51",
       "target_node_uuid": "n160",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e177",
-      "source_node_uuid": "n69",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n161",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e178",
-      "source_node_uuid": "n70",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n162",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e179",
-      "source_node_uuid": "n51",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n163",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e180",
-      "source_node_uuid": "n52",
+      "source_node_uuid": "n65",
       "target_node_uuid": "n164",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e181",
-      "source_node_uuid": "n53",
+      "source_node_uuid": "n57",
       "target_node_uuid": "n165",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e182",
-      "source_node_uuid": "n54",
+      "source_node_uuid": "n74",
       "target_node_uuid": "n166",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e183",
-      "source_node_uuid": "n55",
+      "source_node_uuid": "n61",
       "target_node_uuid": "n167",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e184",
-      "source_node_uuid": "n56",
+      "source_node_uuid": "n59",
       "target_node_uuid": "n168",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e185",
-      "source_node_uuid": "n57",
+      "source_node_uuid": "n69",
       "target_node_uuid": "n169",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e186",
-      "source_node_uuid": "n58",
+      "source_node_uuid": "n74",
       "target_node_uuid": "n170",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e187",
-      "source_node_uuid": "n59",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n171",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e188",
-      "source_node_uuid": "n60",
+      "source_node_uuid": "n51",
       "target_node_uuid": "n172",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e189",
-      "source_node_uuid": "n61",
+      "source_node_uuid": "n81",
       "target_node_uuid": "n173",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e190",
-      "source_node_uuid": "n62",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n174",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e191",
-      "source_node_uuid": "n63",
+      "source_node_uuid": "n61",
       "target_node_uuid": "n175",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e192",
-      "source_node_uuid": "n64",
+      "source_node_uuid": "n77",
       "target_node_uuid": "n176",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e193",
-      "source_node_uuid": "n65",
+      "source_node_uuid": "n57",
       "target_node_uuid": "n177",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e194",
-      "source_node_uuid": "n66",
+      "source_node_uuid": "n69",
       "target_node_uuid": "n178",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e195",
-      "source_node_uuid": "n67",
+      "source_node_uuid": "n74",
       "target_node_uuid": "n179",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e196",
-      "source_node_uuid": "n68",
+      "source_node_uuid": "n54",
       "target_node_uuid": "n180",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e197",
-      "source_node_uuid": "n69",
+      "source_node_uuid": "n72",
       "target_node_uuid": "n181",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e198",
-      "source_node_uuid": "n70",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n182",
       "name": "市场交易",
-      "fact": "交易事件由市场侧发起",
+      "fact": "交易事件挂在最活跃的市场与主体上",
       "wave": 2
     },
     {
       "uuid": "e199",
-      "source_node_uuid": "n71",
+      "source_node_uuid": "n106",
       "target_node_uuid": "n183",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e200",
-      "source_node_uuid": "n72",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n184",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e201",
-      "source_node_uuid": "n73",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n185",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e202",
-      "source_node_uuid": "n74",
+      "source_node_uuid": "n106",
       "target_node_uuid": "n186",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e203",
-      "source_node_uuid": "n75",
+      "source_node_uuid": "n79",
       "target_node_uuid": "n187",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e204",
-      "source_node_uuid": "n76",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n188",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e205",
-      "source_node_uuid": "n77",
+      "source_node_uuid": "n83",
       "target_node_uuid": "n189",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e206",
-      "source_node_uuid": "n78",
+      "source_node_uuid": "n114",
       "target_node_uuid": "n190",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e207",
-      "source_node_uuid": "n79",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n191",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e208",
-      "source_node_uuid": "n80",
+      "source_node_uuid": "n103",
       "target_node_uuid": "n192",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e209",
-      "source_node_uuid": "n81",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n193",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e210",
-      "source_node_uuid": "n82",
+      "source_node_uuid": "n117",
       "target_node_uuid": "n194",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e211",
-      "source_node_uuid": "n83",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n195",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e212",
-      "source_node_uuid": "n84",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n196",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e213",
-      "source_node_uuid": "n85",
+      "source_node_uuid": "n117",
       "target_node_uuid": "n197",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e214",
-      "source_node_uuid": "n86",
+      "source_node_uuid": "n121",
       "target_node_uuid": "n198",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
@@ -4724,55 +5452,55 @@
       "source_node_uuid": "n71",
       "target_node_uuid": "n199",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e216",
-      "source_node_uuid": "n72",
+      "source_node_uuid": "n119",
       "target_node_uuid": "n200",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e217",
-      "source_node_uuid": "n73",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n201",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e218",
-      "source_node_uuid": "n74",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n202",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e219",
-      "source_node_uuid": "n75",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n203",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e220",
-      "source_node_uuid": "n76",
+      "source_node_uuid": "n74",
       "target_node_uuid": "n204",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e221",
-      "source_node_uuid": "n77",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n205",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
@@ -4780,79 +5508,79 @@
       "source_node_uuid": "n78",
       "target_node_uuid": "n206",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e223",
-      "source_node_uuid": "n79",
+      "source_node_uuid": "n117",
       "target_node_uuid": "n207",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e224",
-      "source_node_uuid": "n80",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n208",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e225",
-      "source_node_uuid": "n81",
+      "source_node_uuid": "n114",
       "target_node_uuid": "n209",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e226",
-      "source_node_uuid": "n82",
+      "source_node_uuid": "n106",
       "target_node_uuid": "n210",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e227",
-      "source_node_uuid": "n83",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n211",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e228",
-      "source_node_uuid": "n84",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n212",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e229",
-      "source_node_uuid": "n85",
+      "source_node_uuid": "n114",
       "target_node_uuid": "n213",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e230",
-      "source_node_uuid": "n86",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n214",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e231",
-      "source_node_uuid": "n71",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n215",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
@@ -4860,7 +5588,7 @@
       "source_node_uuid": "n72",
       "target_node_uuid": "n216",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
@@ -4868,207 +5596,207 @@
       "source_node_uuid": "n73",
       "target_node_uuid": "n217",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e234",
-      "source_node_uuid": "n74",
+      "source_node_uuid": "n120",
       "target_node_uuid": "n218",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e235",
-      "source_node_uuid": "n75",
+      "source_node_uuid": "n119",
       "target_node_uuid": "n219",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e236",
-      "source_node_uuid": "n76",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n220",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e237",
-      "source_node_uuid": "n77",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n221",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e238",
-      "source_node_uuid": "n78",
+      "source_node_uuid": "n83",
       "target_node_uuid": "n222",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e239",
-      "source_node_uuid": "n79",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n223",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e240",
-      "source_node_uuid": "n80",
+      "source_node_uuid": "n106",
       "target_node_uuid": "n224",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e241",
-      "source_node_uuid": "n81",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n225",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e242",
-      "source_node_uuid": "n82",
+      "source_node_uuid": "n109",
       "target_node_uuid": "n226",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e243",
-      "source_node_uuid": "n83",
+      "source_node_uuid": "n81",
       "target_node_uuid": "n227",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e244",
-      "source_node_uuid": "n84",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n228",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e245",
-      "source_node_uuid": "n85",
+      "source_node_uuid": "n109",
       "target_node_uuid": "n229",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e246",
-      "source_node_uuid": "n86",
+      "source_node_uuid": "n119",
       "target_node_uuid": "n230",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e247",
-      "source_node_uuid": "n71",
+      "source_node_uuid": "n115",
       "target_node_uuid": "n231",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e248",
-      "source_node_uuid": "n72",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n232",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e249",
-      "source_node_uuid": "n73",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n233",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e250",
-      "source_node_uuid": "n74",
+      "source_node_uuid": "n80",
       "target_node_uuid": "n234",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e251",
-      "source_node_uuid": "n75",
+      "source_node_uuid": "n120",
       "target_node_uuid": "n235",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e252",
-      "source_node_uuid": "n76",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n236",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e253",
-      "source_node_uuid": "n77",
+      "source_node_uuid": "n80",
       "target_node_uuid": "n237",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e254",
-      "source_node_uuid": "n78",
+      "source_node_uuid": "n71",
       "target_node_uuid": "n238",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e255",
-      "source_node_uuid": "n79",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n239",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e256",
-      "source_node_uuid": "n80",
+      "source_node_uuid": "n78",
       "target_node_uuid": "n240",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e257",
-      "source_node_uuid": "n81",
+      "source_node_uuid": "n73",
       "target_node_uuid": "n241",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     },
     {
       "uuid": "e258",
-      "source_node_uuid": "n82",
+      "source_node_uuid": "n115",
       "target_node_uuid": "n242",
       "name": "产业协作",
-      "fact": "协作事件由经营主体与协会发起",
+      "fact": "协作事件挂在活跃主体与规则上",
       "wave": 2
     }
   ],
