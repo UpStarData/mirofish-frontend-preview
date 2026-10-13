@@ -39,11 +39,17 @@
     <main class="content-area">
       <!-- Left Panel: Graph -->
       <div class="panel-wrapper left left-col" :style="leftPanelStyle">
-        <!-- 左侧视图切换：默认图谱；可切到地图（与关联层的图谱/地图切换同一套思路）
-             放在面板上方一排，避免被图谱画布盖住 -->
-        <div class="left-view-switch">
-          <button :class="{ on: leftView === 'graph' }" @click="leftView = 'graph'">图谱</button>
-          <button :class="{ on: leftView === 'map' }" @click="leftView = 'map'">地图</button>
+        <!-- 左侧视图切换：按钮放在右下角，按下图/地图图标切换（参照关联层的 3D/2D 切换样式） -->
+        <div class="left-view-switch" role="group" aria-label="左侧视图">
+          <button :class="{ on: leftView === 'graph' }" @click="leftView = 'graph'" title="图谱视图">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="6" cy="7" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="17" r="2.4"/>
+              <path d="M8.2 7.6l7.6-1.2M7.4 9.2l3.4 5.8M16.6 8.2l-3.4 6.6"/></svg>
+          </button>
+          <button :class="{ on: leftView === 'map' }" @click="leftView = 'map'" title="地图视图">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
+          </button>
         </div>
         <GraphPanel
           v-if="leftView === 'graph'"
@@ -574,9 +580,13 @@ onUnmounted(() => {
   border-right: 1px solid #EAEAEA;
 }
 
-.left-col{display:flex;flex-direction:column}
-.left-view-switch{flex:0 0 auto;display:flex;gap:4px;align-items:center;background:#fff;border-bottom:1px solid #e3e8f3;padding:7px 12px}
-.left-col > :not(.left-view-switch){flex:1;min-height:0}
+.left-col{display:flex;flex-direction:column;position:relative}
+.left-view-switch{position:absolute;right:12px;bottom:12px;z-index:22;display:flex;gap:4px;align-items:center;
+  background:#ffffffeb;border:1px solid #e3e8f3;border-radius:999px;padding:4px;box-shadow:0 6px 18px #0f172a14}
+.left-view-switch button{width:28px;height:28px;display:grid;place-items:center;border:0;border-radius:999px;background:transparent;
+  color:#64748b;cursor:pointer;transition:.18s}
+.left-view-switch button:hover{background:#eef2f9;color:#0f172a}
+.left-view-switch button.on{background:#1d4ed8;color:#fff}
 .left-view-switch button{border:0;background:transparent;font:600 11px inherit;color:#64748b;padding:4px 11px;border-radius:999px;cursor:pointer;transition:.18s}
 .left-view-switch button:hover{color:#0f172a}
 .left-view-switch button.on{background:#1d4ed8;color:#fff}
