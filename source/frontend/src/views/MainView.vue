@@ -46,9 +46,13 @@
               <circle cx="6" cy="7" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="17" r="2.4"/>
               <path d="M8.2 7.6l7.6-1.2M7.4 9.2l3.4 5.8M16.6 8.2l-3.4 6.6"/></svg>
           </button>
-          <button :class="{ on: leftView === 'map' }" @click="leftView = 'map'" title="地图视图">
+          <button :class="{ on: leftView === 'map' }" @click="leftView = 'map'" title="地图视图（2D）">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
+          </button>
+          <button :class="{ on: leftView === 'globe' }" @click="leftView = 'globe'" title="地球视图（3D）">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
           </button>
         </div>
         <GraphPanel
@@ -59,7 +63,8 @@
           @refresh="refreshGraph"
           @toggle-maximize="toggleMaximize('graph')"
         />
-        <PanelMap v-else :graphData="graphData" />
+        <PanelMap v-else-if="leftView === 'map'" :graphData="graphData" />
+        <PanelGlobe v-else :graphData="graphData" />
       </div>
 
       <!-- Right Panel: Step Components -->
@@ -96,6 +101,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import GraphPanel from '../components/GraphPanel.vue'
 import PanelMap from '../components/PanelMap.vue'
+import PanelGlobe from '../components/PanelGlobe.vue'
 import Step1GraphBuild from '../components/Step1GraphBuild.vue'
 import Step2EnvSetup from '../components/Step2EnvSetup.vue'
 import { generateOntology, getProject, buildGraph, getTaskStatus, getGraphData } from '../api/graph'
