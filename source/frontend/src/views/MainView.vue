@@ -38,14 +38,22 @@
     <!-- Main Content Area -->
     <main class="content-area">
       <!-- Left Panel: Graph -->
-      <div class="panel-wrapper left" :style="leftPanelStyle">
+      <div class="panel-wrapper left left-col" :style="leftPanelStyle">
+        <!-- 左侧视图切换：默认图谱；可切到地图（与关联层的图谱/地图切换同一套思路）
+             放在面板上方一排，避免被图谱画布盖住 -->
+        <div class="left-view-switch">
+          <button :class="{ on: leftView === 'graph' }" @click="leftView = 'graph'">图谱</button>
+          <button :class="{ on: leftView === 'map' }" @click="leftView = 'map'">地图</button>
+        </div>
         <GraphPanel
+          v-if="leftView === 'graph'"
           :graphData="graphData"
           :loading="graphLoading"
           :currentPhase="currentPhase"
           @refresh="refreshGraph"
           @toggle-maximize="toggleMaximize('graph')"
         />
+        <PanelMap v-else :graphData="graphData" />
       </div>
 
       <!-- Right Panel: Step Components -->
@@ -81,6 +89,7 @@ import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import GraphPanel from '../components/GraphPanel.vue'
+import PanelMap from '../components/PanelMap.vue'
 import Step1GraphBuild from '../components/Step1GraphBuild.vue'
 import Step2EnvSetup from '../components/Step2EnvSetup.vue'
 import { generateOntology, getProject, buildGraph, getTaskStatus, getGraphData } from '../api/graph'
@@ -105,7 +114,8 @@ const graphLoading = ref(false)
 const error = ref('')
 const projectData = ref(null)
 const graphData = ref(null)
-const currentPhase = ref(-1) // -1: Upload, 0: Ontology, 1: Build, 2: Complete
+const currentPhase = ref(-1)
+const leftView = ref('graph')   /* 左栏默认图谱，可切地图 */ // -1: Upload, 0: Ontology, 1: Build, 2: Complete
 const ontologyProgress = ref(null)
 const buildProgress = ref(null)
 const systemLogs = ref([])
@@ -563,4 +573,11 @@ onUnmounted(() => {
 .panel-wrapper.left {
   border-right: 1px solid #EAEAEA;
 }
+
+.left-col{display:flex;flex-direction:column}
+.left-view-switch{flex:0 0 auto;display:flex;gap:4px;align-items:center;background:#fff;border-bottom:1px solid #e3e8f3;padding:7px 12px}
+.left-col > :not(.left-view-switch){flex:1;min-height:0}
+.left-view-switch button{border:0;background:transparent;font:600 11px inherit;color:#64748b;padding:4px 11px;border-radius:999px;cursor:pointer;transition:.18s}
+.left-view-switch button:hover{color:#0f172a}
+.left-view-switch button.on{background:#1d4ed8;color:#fff}
 </style>
